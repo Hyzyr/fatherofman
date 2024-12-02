@@ -6,30 +6,13 @@ import gsap from 'gsap';
 import { calcMouseFromCenter } from '@/utils/calcEvent';
 import { throttle } from '@/utils/debounce';
 
-const PRELOADER_DATA = {
-  bg: '/images/preloader/abraham-monke-bg.webp',
-  bgpos: 'bottom',
-  bgMove: 4,
-  items: [
-    {
-      id: 'abraham-monkey',
-      bottom: 20,
-      left: 32.2,
-      width: 30,
-      img: '/images/preloader/abraham-monke-alpha.webp',
-      direction: 1,
-      speed: 0.35,
-      move: 8,
-    },
-  ],
-};
-
-const Preloader = () => {
-  const data = PRELOADER_DATA;
+const Preloader = ({ data }) => {
   const ref = useRef(null);
+  console.log(data);
 
   useGSAP(
     () => {
+      if (!ref.current) return;
       const bg = ref.current.querySelector('.preloader__main-bg');
 
       gsap.set(bg, {
@@ -65,10 +48,16 @@ const Preloader = () => {
     { scrope: ref }
   );
 
+  if (!data) return null;
+
   return (
     <>
       <div className="preloader__main" ref={ref}>
-        <img src={data.bg} className="preloader__main-bg" alt="preloader-bg" />
+        <img
+          src={'/images/preloader/' + data.bg}
+          className="preloader__main-bg"
+          alt="preloader-bg"
+        />
         {data.items.map(({ id, ...item }) => (
           <PreloaderImage key={id} id={id} {...item} />
         ))}
