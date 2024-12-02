@@ -1,5 +1,5 @@
 'use client';
-import React, { memo } from 'react';
+import React from 'react';
 
 const PreloaderImage = ({ img, id, children, ...style }) => {
   const getStyles = () => {
@@ -17,6 +17,7 @@ const PreloaderImage = ({ img, id, children, ...style }) => {
     <div className="preloader__img" id={id} style={getStyles()}>
       {img && (
         <img
+          suppressHydrationWarning
           src={'/images/preloader/' + img}
           alt="preloader-bg"
           style={{
@@ -30,4 +31,4 @@ const PreloaderImage = ({ img, id, children, ...style }) => {
   );
 };
 
-export default memo(PreloaderImage);
+export default PreloaderImage;

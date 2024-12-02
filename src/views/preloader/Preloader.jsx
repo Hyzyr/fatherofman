@@ -12,7 +12,7 @@ const Preloader = ({ data }) => {
 
   useGSAP(
     () => {
-      if (!ref.current) return;
+      if (!ref.current || typeof window === 'undefined') return;
       const bg = ref.current.querySelector('.preloader__main-bg');
 
       gsap.set(bg, {
@@ -44,6 +44,9 @@ const Preloader = ({ data }) => {
       }, 80);
 
       document.addEventListener('mousemove', debouncedMouseMove);
+      return () => {
+        document.removeEventListener('mousemove', debouncedMouseMove);
+      };
     },
     { scrope: ref }
   );
@@ -57,6 +60,7 @@ const Preloader = ({ data }) => {
           src={'/images/preloader/' + data.bg}
           className="preloader__main-bg"
           alt="preloader-bg"
+          suppressHydrationWarning
         />
         {data.items.map(({ id, ...item }) => (
           <PreloaderImage key={id} id={id} {...item} />

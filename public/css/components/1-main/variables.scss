@@ -3,6 +3,5 @@ $secondary: #2f5bd1;
 $black: #101010;
 $white: #fff;
 
-$font-primary: "Urbanist", sans-serif;
-$font-secondary: "Inter", sans-serif;
-$font-dm-sans: "DM Sans", $font-secondary;
+$font-primary: var(--font-procopius), sans-serif;
+$font-secondary: 'Inter', sans-serif;

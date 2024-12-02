@@ -1,38 +1,32 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import Preloader from './Preloader';
 import AnimatedImage from '@/components/animatedImage/AnimatedImage';
-import { PRELOADERS } from './constants';
+
+import ProgressBar from '@/components/ProgressBar';
+import PreloaderSlider from './PreloaderSlider';
 
 const PreloaderScreen = () => {
-  const [activeIndex, setActiveIndex] = useState(9);
+  const [hydrated, setHydrated] = useState(false);
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     let newIndex =
-  //       activeIndex + 1 === PRELOADERS.length ? 0 : activeIndex + 1;
-  //     console.log({ activeIndex, length: PRELOADERS.length });
-  //     console.log(
-  //       activeIndex + 1,
-  //       activeIndex,
-  //       activeIndex + 1 === PRELOADERS.length
-  //     );
-  //     setActiveIndex(newIndex);
-  //   }, 4000);
-  //   return () => clearInterval(interval);
-  // }, [activeIndex, setActiveIndex]);
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
+
+  if (!hydrated) {
+    return null;
+  }
 
   return (
     <div className="preloader">
-      <div className="preloader-fog"></div>
-      {activeIndex !== undefined && (
-        <Preloader data={PRELOADERS[activeIndex]} />
-      )}
-      <div className="preloader__spinner">
-        <AnimatedImage
-          url="/images/animations/loader-monkey.zip"
-          speed={0.095}
-        />
+      <PreloaderSlider suppressHydrationWarning />
+      <div className="preloader__progress">
+        <div className="preloader__progress-spinner">
+          <AnimatedImage
+            url="/images/animations/loader-monkey.zip"
+            speed={0.14}
+          />
+        </div>
+        <ProgressBar />
       </div>
     </div>
   );

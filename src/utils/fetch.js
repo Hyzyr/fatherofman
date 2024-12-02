@@ -36,7 +36,7 @@ export const loadArchiveImages = async (zip) => {
   return images64;
 };
 
-const promiseLoadImage = (src) => {
+export const promiseLoadImage = (src) => {
   return new Promise((resolve, reject) => {
     const img = new Image();
     img.src = src;
@@ -44,4 +44,13 @@ const promiseLoadImage = (src) => {
       resolve(img);
     };
   });
+};
+export const promiseLoadImageArr = async (srcList) => {
+  let images = [];
+  for (let index = 0; index < srcList.length; index++) {
+    const imgSRC = srcList[index];
+    let img = await promiseLoadImage(imgSRC);
+    images.push(img);
+  }
+  return images;
 };

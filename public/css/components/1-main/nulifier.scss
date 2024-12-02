@@ -49,17 +49,20 @@ input::-webkit-inner-spin-button {
 }
 
 body {
+  cursor: url(/images/cursor/select-cursor.png), auto;
   height: 100%;
-  cursor: default;
-  font-family: $font-secondary, sans-serif;
+  font-family: $font-primary, sans-serif;
   font-size: 14px;
   color: $black;
   line-height: 1.7em;
   font-weight: 400;
-  background: $white;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   background: $white;
+
+  &:active {
+    cursor: url(/images/cursor/clicked-cursor.png), auto;
+  }
 }
 body.active {
   overflow: hidden;
@@ -80,4 +83,5 @@ li {
 img,
 svg {
   pointer-events: none;
+  @include noSelect;
 }

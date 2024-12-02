@@ -1,4 +1,6 @@
 export const calcMouseFromCenter = (event) => {
+  if (typeof window === 'undefined') return {};
+
   const windowWidth = window.innerWidth;
   const windowHeight = window.innerHeight;
 
