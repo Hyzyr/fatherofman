@@ -1,7 +1,7 @@
 'use client';
 import React, { memo } from 'react';
 
-const PreloaderImage = memo(({ img, id, ...style }) => {
+const PreloaderImage = memo(({ img, id, children, ...style }) => {
   const getStyles = () => {
     return {
       top: style.top ? `${style.top}%` : 'unset',
@@ -12,16 +12,11 @@ const PreloaderImage = memo(({ img, id, ...style }) => {
       height: style.height ? `${style.height}%` : 'auto',
     };
   };
-  const getImgStyles = () => {
-    return {
-      //   width: style.width ? `${style.width}%` : 'auto',
-      //   height: style.height ? `${style.height}%` : 'auto',
-    };
-  };
 
   return (
     <div className="preloader__img" id={id} style={getStyles()}>
-      <img src={img} alt="preloader-bg" style={getImgStyles()} />
+      {img && <img src={img} alt="preloader-bg" />}
+      {children && children}
     </div>
   );
 });

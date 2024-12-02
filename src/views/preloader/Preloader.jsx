@@ -1,5 +1,5 @@
 'use client';
-import React, { memo, useRef } from 'react';
+import React, { useRef } from 'react';
 import PreloaderImage from './PreloaderImage';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
@@ -25,8 +25,8 @@ const PRELOADER_DATA = {
 };
 
 const Preloader = () => {
-  const ref = useRef();
   const data = PRELOADER_DATA;
+  const ref = useRef(null);
 
   useGSAP(
     () => {
@@ -39,7 +39,6 @@ const Preloader = () => {
 
       const debouncedMouseMove = throttle((event) => {
         const { percentageX, percentageY } = calcMouseFromCenter(event);
-        console.log({ percentageX, percentageY });
         gsap.to(bg, {
           xPercent: -percentageX * (data.bgMove / 100 / 2),
           yPercent: -percentageY * (data.bgMove / 100 / 2),
@@ -67,14 +66,14 @@ const Preloader = () => {
   );
 
   return (
-    <div className="preloader" ref={ref}>
-      <div className="preloader__main">
+    <>
+      <div className="preloader__main" ref={ref}>
         <img src={data.bg} className="preloader__main-bg" alt="preloader-bg" />
         {data.items.map(({ id, ...item }) => (
           <PreloaderImage key={id} id={id} {...item} />
         ))}
       </div>
-    </div>
+    </>
   );
 };
 

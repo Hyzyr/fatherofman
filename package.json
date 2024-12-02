@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "watch": "sass --watch --no-source-map --style compressed ./public/css/main.scss ./public/css/main.css",
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

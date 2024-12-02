@@ -1,4 +1,4 @@
-import Preloader from '@/views/preloader/Preloader';
+import Preloader from '@/views/preloader/PreloaderScreen';
 
 export default function Home() {
   return <Preloader />;
