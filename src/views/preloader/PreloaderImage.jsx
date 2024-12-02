@@ -1,7 +1,7 @@
 'use client';
 import React, { memo } from 'react';
 
-const PreloaderImage = memo(({ img, id, children, ...style }) => {
+const PreloaderImage = ({ img, id, children, ...style }) => {
   const getStyles = () => {
     return {
       top: style.top ? `${style.top}%` : 'unset',
@@ -19,6 +19,6 @@ const PreloaderImage = memo(({ img, id, children, ...style }) => {
       {children && children}
     </div>
   );
-});
+};
 
-export default PreloaderImage;
+export default memo(PreloaderImage);

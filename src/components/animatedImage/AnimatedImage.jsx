@@ -2,7 +2,7 @@
 import React, { memo, useEffect, useRef } from 'react';
 import useAnimatedImages from './useAnimatedImages';
 
-const AnimatedImage = memo(({ url, speed }) => {
+const AnimatedImage = ({ url, speed }) => {
   const index = useRef(0);
   const ref = useRef();
 
@@ -36,6 +36,6 @@ const AnimatedImage = memo(({ url, speed }) => {
   if (!url) return null;
 
   return <canvas ref={ref} />;
-});
+};
 
-export default AnimatedImage;
+export default memo(AnimatedImage);
