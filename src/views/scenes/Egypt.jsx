@@ -11,9 +11,9 @@ const bgMove = 12;
 const moveFactor = 2;
 const moveFactorMain = 1.5;
 const direction = 1;
-const IMAGES_URL = '/images/scenes/dynasty/';
+const IMAGES_URL = '/images/scenes/egypt/';
 
-const Dynasty = () => {
+const Egypt = () => {
   const ref = useRef(null);
 
   useGSAP(
@@ -63,50 +63,47 @@ const Dynasty = () => {
   );
 
   return (
-    <Scene name="dynasty" forwardRef={ref}>
-      <div className="scene__back"></div>
+    <Scene name="egypt" forwardRef={ref}>
+      <div className="scene__back">
+        <SceneItem
+          url={IMAGES_URL + 'birds.zip'}
+          addClass="birds"
+          speed={0.1}
+        />
+        <SceneItem
+          url={IMAGES_URL + 'birds-2.zip'}
+          addClass="birds2"
+          speed={0.1}
+        />
+      </div>
       <div className="scene__main">
         <SceneItem
-          url={IMAGES_URL + 'arrows.zip'}
-          addClass="arrows"
-          speed={0.1}
-          fill
-        />
-        <SceneItem
-          url={IMAGES_URL + 'city.zip'}
-          addClass="city"
+          url={IMAGES_URL + 'pyramids.zip'}
+          addClass="pyramids"
           speed={0.16}
           fill
-        />
-        <SceneItem url={IMAGES_URL + 'ground.webp'} addClass="ground" fill />
-        <SceneItem
-          url={IMAGES_URL + 'warriors.zip'}
-          addClass="warriors"
-          speed={0.16}
         />
       </div>
       <div className="scene__front">
-        <SceneItem url={IMAGES_URL + 'road.webp'} addClass="road" fill />
         <SceneItem
-          url={IMAGES_URL + 'sun-tzu.webp'}
-          addClass="suntzu"
-          controlHeight
+          url={IMAGES_URL + 'sphinx.webp'}
+          addClass="sphinx"
+        />
+        <SceneItem url={IMAGES_URL + 'sand.webp'} addClass="ground" fill />
+        <SceneItem
+          url={IMAGES_URL + 'grass.zip'}
+          addClass="grass"
+          speed={0.1}
         />
         <SceneItem
           url={IMAGES_URL + 'grass.zip'}
+          addClass="grass2"
           speed={0.16}
-          addClass="land"
-          fill
         />
         <SceneItem
-          url={IMAGES_URL + 'dynasty-soldier.zip'}
-          addClass="soldier"
+          url={IMAGES_URL + 'chararacter.zip'}
+          addClass="chararacter"
           clickable
-          speed={0.16}
-        />
-        <SceneItem
-          url={IMAGES_URL + 'glows.zip'}
-          addClass="glwos"
           speed={0.1}
         />
       </div>
@@ -114,4 +111,4 @@ const Dynasty = () => {
   );
 };
 
-export default Dynasty;
+export default Egypt;

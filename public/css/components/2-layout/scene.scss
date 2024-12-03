@@ -108,6 +108,12 @@
       width: 100%;
       height: 50%;
     }
+    &.arrows {
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
   }
 
   &.dynasty & {
@@ -137,6 +143,51 @@
         left: 0%;
         width: 100%;
         bottom: 2%;
+      }
+    }
+  }
+  &.egypt & {
+    &__item {
+      &.birds {
+        top: -1%;
+        right: 0;
+        width: 30%;
+      }
+      &.birds2 {
+        top: 3%;
+        left: 30%;
+        width: 35%;
+      }
+      &.sphinx {
+        bottom: -3%;
+        width: 44%;
+        left: -1.2%;
+      }
+      &.pyramids {
+        right: -6%;
+        bottom: 10%;
+        width: 90%;
+      }
+      &.ground {
+        bottom: 0;
+        left: -2%;
+        width: 104%;
+        height: 28%;
+      }
+      &.chararacter {
+        left: 34%;
+        width: 24%;
+        bottom: 1%;
+      }
+      &.grass {
+        left: 14%;
+        width: 9%;
+        bottom: 14%;
+      }
+      &.grass2 {
+        right: -1%;
+        width: 9%;
+        bottom: 4%;
       }
     }
   }
