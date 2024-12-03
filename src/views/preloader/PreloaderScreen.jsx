@@ -4,6 +4,7 @@ import AnimatedImage from '@/components/animatedImage/AnimatedImage';
 
 import ProgressBar from '@/components/ProgressBar';
 import PreloaderSlider from './PreloaderSlider';
+import Popup from './Popup';
 
 const PreloaderScreen = () => {
   const [hydrated, setHydrated] = useState(false);
@@ -18,7 +19,7 @@ const PreloaderScreen = () => {
 
   return (
     <div className="preloader">
-      <PreloaderSlider suppressHydrationWarning />
+      <PreloaderSlider />
       <div className="preloader__progress">
         <div className="preloader__progress-spinner">
           <AnimatedImage
@@ -28,6 +29,7 @@ const PreloaderScreen = () => {
         </div>
         <ProgressBar />
       </div>
+      <Popup />
     </div>
   );
 };

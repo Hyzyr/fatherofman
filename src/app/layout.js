@@ -6,7 +6,7 @@ export const metadata = {
 };
 
 const myFont = localFont({
-  src: '../../public/fonts/procopius-regular.ttf',
+  src: '../fonts/procopius-regular.ttf',
   display: 'swap',
   variable: '--font-procopius',
 });
@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="stylesheet" href="/css/main.css" />
       </head>
-      <body className={``}>
+      <body className={`${myFont.variable}`}>
         <main className="main">{children}</main>
       </body>
     </html>

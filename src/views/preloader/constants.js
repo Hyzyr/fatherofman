@@ -2,7 +2,7 @@ export const PRELOADERS = [
   {
     bg: 'adam-bg.webp',
     bgpos: 'center',
-    bgMove: 6,
+    bgMove: 2,
     items: [
       {
         id: 'abraham-monkey',
@@ -12,7 +12,7 @@ export const PRELOADERS = [
         img: 'adam-transparent.webp',
         direction: 1,
         speed: 0.35,
-        move: 4,
+        move: 1,
       },
     ],
   },
@@ -29,14 +29,14 @@ export const PRELOADERS = [
         img: 'moses-transparent.webp',
         direction: 1,
         speed: 0.35,
-        move: 4,
+        move: 1,
       },
     ],
   },
   {
     bg: 'china-warlord-2-bg.webp',
     bgpos: 'top',
-    bgMove: 3,
+    bgMove: 2,
     items: [
       {
         id: 'abraham-monkey',
@@ -46,14 +46,14 @@ export const PRELOADERS = [
         img: 'yunpeng-li-syzlb-monke-alpha.webp',
         direction: 1,
         speed: 0.35,
-        move: 2,
+        move: 1,
       },
     ],
   },
   {
     bg: 'hitler-bg.webp',
     bgpos: 'bottom right',
-    bgMove: 3,
+    bgMove: 2,
     items: [
       {
         id: 'abraham-monkey',
@@ -63,14 +63,14 @@ export const PRELOADERS = [
         img: 'hitler-transparent.webp',
         direction: 1,
         speed: 0.65,
-        move: 3,
+        move: 1,
       },
     ],
   },
   {
     bg: 'andrew-boxing-bg.webp',
     bgpos: 'bottom',
-    bgMove: 3,
+    bgMove: 2,
     items: [
       {
         id: 'abraham-monkey',
@@ -80,7 +80,7 @@ export const PRELOADERS = [
         img: 'andrew-boxing-transparent.webp',
         direction: -1,
         speed: 0.35,
-        move: 6,
+        move: 1,
       },
     ],
   },
@@ -98,14 +98,14 @@ export const PRELOADERS = [
         img: 'adam-and-eve-transparent.webp',
         direction: 1,
         speed: 0.35,
-        move: 5,
+        move: 1,
       },
     ],
   },
   {
     bg: 'abraham-monke-bg.webp',
     bgpos: 'bottom',
-    bgMove: 4,
+    bgMove: 2,
     items: [
       {
         id: 'abraham-monkey',
@@ -115,14 +115,14 @@ export const PRELOADERS = [
         img: 'abraham-monke-alpha.webp',
         direction: 1,
         speed: 0.35,
-        move: 8,
+        move: 1,
       },
     ],
   },
   {
     bg: 'china-warlord-3-bg.webp',
     bgpos: 'bottom',
-    bgMove: 7,
+    bgMove: 2,
     items: [
       {
         id: 'abraham-monkey',
@@ -132,14 +132,14 @@ export const PRELOADERS = [
         img: 'china-warlord-3-monke-alpha.webp',
         direction: 1,
         speed: 0.35,
-        move: 6,
+        move: 1,
       },
     ],
   },
   {
     bg: 'martin-luther-bg.webp',
     bgpos: 'center',
-    bgMove: 8,
+    bgMove: 2,
     items: [
       {
         id: 'abraham-monkey',
@@ -149,14 +149,14 @@ export const PRELOADERS = [
         img: 'martin-luther-transparent.webp',
         direction: 1,
         speed: 0.35,
-        move: 6,
+        move: 1,
       },
     ],
   },
   {
     bg: 'leonardo-bg.webp',
     bgpos: 'bottom',
-    bgMove: 8,
+    bgMove: 2,
     items: [
       {
         id: 'abraham-monkey',
@@ -166,7 +166,7 @@ export const PRELOADERS = [
         img: 'leonardo-transparent.webp',
         direction: -1,
         speed: 0.35,
-        move: 4,
+        move: 1,
       },
     ],
   },

@@ -21,6 +21,12 @@ const Preloader = ({ data }) => {
 
       const debouncedMouseMove = throttle((event) => {
         const { percentageX, percentageY } = calcMouseFromCenter(event);
+        gsap.to(bg, {
+          xPercent: -percentageX * (data.bgMove / 100 / 2),
+          yPercent: -percentageY * (data.bgMove / 100 / 2),
+          ease: 'Power2.easeOut',
+          duration: 0.4,
+        });
 
         data.items.forEach((img) => {
           const direction = img.direction ?? 1;
