@@ -43,6 +43,7 @@
   }
   &__item {
     position: absolute;
+    pointer-events: none;
 
     img,
     canvas {
@@ -62,6 +63,24 @@
         height: 100%;
         width: 100%;
         object-fit: fill;
+      }
+    }
+    &._event {
+      pointer-events: all;
+      img,
+      canvas {
+        transition: 0.3s ease-out;
+      }
+      &:hover {
+        canvas {
+          filter: drop-shadow(2px 4px 10px #eafcca);
+        }
+      }
+      &:active {
+        canvas {
+          filter: drop-shadow(2px 4px 10px #eafcca);
+          transform: rotateX(12deg);
+        }
       }
     }
 

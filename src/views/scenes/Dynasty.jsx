@@ -96,6 +96,7 @@ const Dynasty = () => {
         <SceneItem
           url={IMAGES_URL + 'dynasty-soldier.zip'}
           addClass="soldier"
+          clickable
           speed={0.16}
         />
         <SceneItem
