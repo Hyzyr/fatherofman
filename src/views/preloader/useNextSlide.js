@@ -23,7 +23,6 @@ const useNextSlide = ({ data }) => {
         console.log(err.message);
         setError(true);
       });
-
   }, [data]);
 
   return {

@@ -1,13 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { PRELOADERS } from './constants';
-import { getRandomToN } from '@/utils/random';
 import Preloader from './Preloader';
 import useNextSlide from './useNextSlide';
 import gsap from 'gsap';
-
-const initialIndex = getRandomToN(PRELOADERS.length);
-const initialNextInex = getRandomToN(PRELOADERS.length, initialIndex);
-const interval = 200;
 
 const MIN_DELAY = 6;
 const PreloaderSlider = () => {
@@ -23,10 +18,6 @@ const PreloaderSlider = () => {
     if (timeline.current === null) timeline.current = gsap.timeline();
     return timeline.current;
   };
-  const getPrevTime = () => {
-    if (timePrev.current === null) timePrev.current = new Date().getTime();
-    return timePrev.current;
-  };
   const updatePreloader = () => {
     const tl = getTimeline();
 
@@ -35,7 +26,7 @@ const PreloaderSlider = () => {
       duration: 0.7,
       onComplete: () => {
         setActiveIndex(nextIndex);
-        setNextIndex(getRandomToN(PRELOADERS.length, nextIndex));
+        setNextIndex(getNextIndex(nextIndex));
       },
     })
       .fromTo(
@@ -47,20 +38,28 @@ const PreloaderSlider = () => {
       .to(fogRef.current, {
         opacity: 0,
         duration: 0.5,
+        delay: 0.1
       });
+  };
+  const getNextIndex = (currentIndex = activeIndex) => {
+    return currentIndex + 1 === PRELOADERS.length ? 0 : currentIndex + 1;
   };
 
   useEffect(() => {
-    if (nextIndex === null) setNextIndex(getRandomToN(PRELOADERS.length));
+    if (nextIndex === null) setNextIndex(0);
   }, []);
 
   useEffect(() => {
     const checkUpdates = () => {
-      let lastCallTime = getPrevTime();
+      let lastCallTime = timePrev.current;
       const currentTime = new Date().getTime();
-      if (activeIndex && currentTime - lastCallTime <= MIN_DELAY * 1000) return;
-
-      if (error) setNextIndex(getRandomToN(PRELOADERS.length, activeIndex));
+      if (
+        activeIndex !== null &&
+        lastCallTime &&
+        currentTime - lastCallTime <= MIN_DELAY * 1000
+      )
+        return;
+      if (error) setNextIndex(getNextIndex(nextIndex));
       if (loaded) {
         timePrev.current = new Date().getTime();
         clearInterval(interval);
