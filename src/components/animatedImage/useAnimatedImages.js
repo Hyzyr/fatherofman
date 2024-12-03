@@ -11,7 +11,11 @@ const useAnimatedImages = ({ url }) => {
   useEffect(() => {
     fetchArchiveImages(url)
       .then((zip) => loadArchiveImages(zip))
-      .then((images) => updateImages(images));
+      .then((images) => updateImages(images))
+      .catch((err) => {
+        console.log('ERROR fetching : ', url);
+        console.log(err.message);
+      });
 
     return () => {};
   }, []);

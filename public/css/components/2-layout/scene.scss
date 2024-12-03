@@ -85,7 +85,7 @@
     }
 
     &.ground {
-      bottom: 0;
+      bottom: -2%;
       left: 0;
       width: 100%;
       height: 45%;
@@ -169,7 +169,7 @@
         width: 90%;
       }
       &.ground {
-        bottom: 0;
+        bottom: -2%;
         left: -2%;
         width: 104%;
         height: 28%;
@@ -188,6 +188,79 @@
         right: -1%;
         width: 9%;
         bottom: 4%;
+      }
+    }
+  }
+  &.prehystoric & {
+    &__item {
+      &.ptero {
+        top: 0;
+        left: 0;
+        width: 35%;
+      }
+      &.silhouetteL {
+        bottom: -3%;
+        width: 44%;
+        left: -1.2%;
+      }
+
+      &.silhouetteR {
+        bottom: -3%;
+        width: 44%;
+        right: -1.2%;
+      }
+      &.ground {
+        bottom: -2%;
+        left: -2%;
+        width: 104%;
+        height: 45%;
+      }
+      &.ground-mid {
+        bottom: 8%;
+        left: 4%;
+        width: 75%;
+      }
+      &.dinos {
+        bottom: 25%;
+        left: 18%;
+        width: 73%;
+      }
+      &.character {
+        left: 28.3%;
+        width: 24%;
+        bottom: 1%;
+      }
+      &.grass {
+        left: -2%;
+        width: 104%;
+        bottom: -2%;
+      }
+      &.tree {
+        right: -8%;
+        height: 110%;
+        bottom: -4%;
+      }
+      &.palms {
+        bottom: -3%;
+        width: 44%;
+        left: -1.2%;
+      }
+      &.smoke {
+        left: 39.8%;
+        height: 50.3%;
+        top: -2%;
+      }
+      &.volcano {
+        bottom: 6.6%;
+        left: 2%;
+        width: 100%;
+        height: 79%;
+
+        img,
+        canvas {
+          object-fit: contain;
+          object-position: bottom;
+        }
       }
     }
   }

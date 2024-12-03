@@ -6,5 +6,5 @@ import Egypt from '@/views/scenes/Egypt';
 import Prehystoric from '@/views/scenes/Prehystoric';
 
 export default function Home() {
-  return <Preloader  />;
+  return <Prehystoric  />;
 }

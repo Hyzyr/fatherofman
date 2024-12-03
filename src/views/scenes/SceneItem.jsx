@@ -3,7 +3,7 @@ import React from 'react';
 
 const SceneItem = ({
   url,
-  speed,
+  speed = 0.1,
   addClass = '',
   controlHeight = false,
   fill = false,
