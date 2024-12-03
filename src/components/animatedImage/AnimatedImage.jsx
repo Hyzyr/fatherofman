@@ -2,7 +2,7 @@
 import React, { memo, useEffect, useRef } from 'react';
 import useAnimatedImages from './useAnimatedImages';
 
-const AnimatedImage = ({ url, speed }) => {
+const AnimatedImage = ({ url, speed, ...props }) => {
   const index = useRef(0);
   const ref = useRef();
 
