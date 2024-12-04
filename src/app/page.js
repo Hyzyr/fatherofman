@@ -8,9 +8,10 @@ import AScenes from '@/views/scenes/AScenes';
 import { useState } from 'react';
 
 export default function Home() {
-  const [granted, setGranted] = useState(false);
-  const { loaded, progress } = useAssetLoader({ assets: AllAssetFiles });
+  // const [granted, setGranted] = useState(true);
+  // const { loaded, progress } = useAssetLoader({ assets: AllAssetFiles });
 
+  return <AScenes />;
   return (
     <>
       {!granted && <Preloader progress={progress} />}

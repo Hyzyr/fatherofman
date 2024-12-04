@@ -184,7 +184,7 @@
 // }
 .button {
   position: relative;
-  cursor: url(/images/cursor/hover-cursor.png), auto;
+  cursor: $cursor-pointer;
 
   display: flex;
   align-items: center;
@@ -216,7 +216,7 @@
     transform: scale(1.05);
   }
   &:active {
-    cursor: url(/images/cursor/clicked-cursor.png), auto;
+    cursor: $cursor-click;
     opacity: 1;
     transform: scale(0.97);
   }

@@ -13,7 +13,7 @@ html {
   box-sizing: border-box;
 }
 button {
-  cursor: pointer;
+  cursor: $cursor-pointer;
   outline: none;
   background: transparent;
   &:focus {
@@ -48,7 +48,7 @@ input::-webkit-inner-spin-button {
 }
 
 body {
-  cursor: url(/images/cursor/select-cursor.png), auto;
+  cursor: $cursor-pointer;
   height: 100%;
   font-family: $font-primary, sans-serif;
   font-size: 14px;
@@ -60,14 +60,14 @@ body {
   background: $white;
 
   &:active {
-    cursor: url(/images/cursor/clicked-cursor.png), auto;
+    cursor: $cursor-click;
   }
 }
 body.active {
   overflow: hidden;
 }
 a {
-  cursor: pointer;
+  cursor: $cursor-pointer;
   text-decoration: none;
   color: #000;
 }
