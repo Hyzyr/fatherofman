@@ -9,6 +9,8 @@ const SceneItem = ({
   controlHeight = false,
   fill = false,
   clickable = false,
+  onClick,
+  animate = true,
 }) => {
   if (!url || typeof url !== 'string') return null;
   let className = `scene__item ${addClass}`;
@@ -16,9 +18,20 @@ const SceneItem = ({
   className += clickable ? ' _event' : '';
   className += fill ? ' _fill' : '';
 
+  const onClickFunc = () => {
+    if (clickable && onClick) onClick();
+  };
+
   return (
-    <div className={className} data-name={url}>
-      {url.endsWith('zip') && <AnimatedImage url={url} speed={speed}  delay={delay}/>}
+    <div className={className} data-name={url} onClick={onClickFunc}>
+      {url.endsWith('zip') && (
+        <AnimatedImage
+          url={url}
+          speed={speed}
+          delay={delay}
+          animate={animate}
+        />
+      )}
       {!url.endsWith('zip') && <img src={url} alt={url.split('.')[0]} />}
     </div>
   );
