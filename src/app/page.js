@@ -1,13 +1,26 @@
 'use client';
 
+import { AllAssetFiles } from '@/contants/Assets';
+import useAssetLoader from '@/hooks/useAssetLoader';
+import Popup from '@/views/preloader/Popup';
 import Preloader from '@/views/preloader/PreloaderScreen';
 import AScenes from '@/views/scenes/AScenes';
-import Dynasty from '@/views/scenes/Dynasty';
-import Egypt from '@/views/scenes/Egypt';
-import NYC from '@/views/scenes/NYC';
-import Prehystoric from '@/views/scenes/Prehystoric';
-import WW2 from '@/views/scenes/WW2';
+import { useState } from 'react';
 
 export default function Home() {
-  return <AScenes animated={false} />;
+  const [granted, setGranted] = useState(false);
+  const { loaded, progress } = useAssetLoader({ assets: AllAssetFiles });
+
+  return (
+    <>
+      {!granted && <Preloader progress={progress} />}
+      {granted && <AScenes />}
+      {loaded && !granted && (
+        <Popup
+          onConfirm={() => setGranted(true)}
+          onCancel={() => setGranted(false)}
+        />
+      )}
+    </>
+  );
 }

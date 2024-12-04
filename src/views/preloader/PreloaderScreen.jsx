@@ -4,9 +4,8 @@ import AnimatedImage from '@/components/animatedImage/AnimatedImage';
 
 import ProgressBar from '@/components/ProgressBar';
 import PreloaderSlider from './PreloaderSlider';
-import Popup from './Popup';
 
-const PreloaderScreen = () => {
+const PreloaderScreen = ({ progress }) => {
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
@@ -27,9 +26,8 @@ const PreloaderScreen = () => {
             speed={0.14}
           />
         </div>
-        <ProgressBar />
+        <ProgressBar percentage={progress} />
       </div>
-      <Popup />
     </div>
   );
 };

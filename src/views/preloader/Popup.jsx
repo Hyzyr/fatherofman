@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '@/components/Button';
 
-const Popup = () => {
+const Popup = ({ onConfirm, onCancel }) => {
   return (
     <div className="popup">
       <div className="popup__inner">
@@ -18,8 +18,8 @@ const Popup = () => {
               />
             </div>
             <div className="popup__inner-actions-row">
-              <Button text="Yes" />
-              <Button text="No" />
+              <Button text="Yes" onClick={onConfirm} />
+              <Button text="No" onClick={onCancel} />
             </div>
           </div>
         </div>

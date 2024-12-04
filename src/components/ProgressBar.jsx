@@ -1,7 +1,6 @@
 import React from 'react';
 
-const ProgressBar = () => {
-  const percentage = 15;
+const ProgressBar = ({ percentage = 0 }) => {
   return (
     <span className="progressbar">
       <span
