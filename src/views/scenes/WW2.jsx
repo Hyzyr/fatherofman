@@ -8,12 +8,12 @@ import { throttle } from '@/utils/debounce';
 import { calcMouseFromCenter } from '@/utils/calcEvent';
 
 const bgMove = 12;
-const moveFactor = 2;
-const moveFactorMain = 1.5;
+const moveFactor = 1.5;
+const moveFactorMain = 0.35;
 const direction = 1;
-const IMAGES_URL = '/images/scenes/egypt/';
+const IMAGES_URL = '/images/scenes/ww2/';
 
-const Egypt = () => {
+const WW2 = () => {
   const ref = useRef(null);
 
   useGSAP(
@@ -38,7 +38,7 @@ const Egypt = () => {
           xPercent: -percentageX * -direction * (moveFactorMain / 100 / 2),
           yPercent: -percentageY * -direction * (moveFactorMain / 100 / 2),
           ease: 'Power1.easeOut',
-          duration: 15,
+          duration: 7,
         });
         gsap.to(`.scene__front`, {
           xPercent: -percentageX * direction * (moveFactor / 100 / 2),
@@ -63,47 +63,69 @@ const Egypt = () => {
   );
 
   return (
-    <Scene name="egypt" forwardRef={ref}>
-      <div className="scene__back">
-        <SceneItem
-          url={IMAGES_URL + 'birds.zip'}
-          addClass="birds"
-          speed={0.1}
-        />
-        <SceneItem
-          url={IMAGES_URL + 'birds-2.zip'}
-          addClass="birds2"
-          speed={0.1}
-        />
-      </div>
+    <Scene name="ww2" forwardRef={ref}>
+      <div className="scene__back"></div>
       <div className="scene__main">
+        <SceneItem url={IMAGES_URL + 'bg-2.webp'} addClass="mountain" fill />
         <SceneItem
-          url={IMAGES_URL + 'pyramids.zip'}
-          addClass="pyramids"
-          speed={0.16}
-          fill
+          url={IMAGES_URL + 'trees.zip'}
+          addClass="trees"
+          speed={0.13}
+        />
+        <SceneItem
+          url={IMAGES_URL + 'smoke-bg.zip'}
+          addClass="smoke-bg"
+          speed={0.1}
         />
       </div>
       <div className="scene__front">
+        <SceneItem url={IMAGES_URL + 'bg.webp'} addClass="city" fill />
         <SceneItem
-          url={IMAGES_URL + 'sphinx.webp'}
-          addClass="sphinx"
+          url={IMAGES_URL + 'fire.zip'}
+          addClass="fire"
+          speed={0.13}
+          fill
         />
-        <SceneItem url={IMAGES_URL + 'sand.webp'} addClass="ground" fill />
         <SceneItem
-          url={IMAGES_URL + 'grass.zip'}
-          addClass="grass"
+          url={IMAGES_URL + 'smoke-l.zip'}
+          addClass="smokeL"
+          speed={0.08}
+          fill
+        />
+        <SceneItem
+          url={IMAGES_URL + 'smoke-r.zip'}
+          addClass="smokeR"
+          speed={0.08}
+          fill
+        />{' '}
+        <SceneItem
+          url={IMAGES_URL + 'bullets.zip'}
+          addClass="bullets"
+          speed={0.16}
+          fill
+        />
+        <SceneItem
+          url={IMAGES_URL + 'soldiers.zip'}
+          addClass="soldiers"
+          speed={0.1}
+          fill
+        />
+        <SceneItem url={IMAGES_URL + 'stone.webp'} addClass="stone" />
+        <SceneItem
+          url={IMAGES_URL + 'soldier.zip'}
+          addClass="soldier"
+          speed={0.13}
+        />
+        <SceneItem
+          url={IMAGES_URL + 'character.zip'}
+          addClass="character"
+          clickable
           speed={0.1}
         />
+        <SceneItem url={IMAGES_URL + 'dust.zip'} addClass="dust" speed={0.1} />
         <SceneItem
-          url={IMAGES_URL + 'grass.zip'}
-          addClass="grass2"
-          speed={0.16}
-        />
-        <SceneItem
-          url={IMAGES_URL + 'chararacter.zip'}
-          addClass="chararacter"
-          clickable
+          url={IMAGES_URL + 'sparks.zip'}
+          addClass="sparks"
           speed={0.1}
         />
       </div>
@@ -111,4 +133,4 @@ const Egypt = () => {
   );
 };
 
-export default Egypt;
+export default WW2;

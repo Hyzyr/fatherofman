@@ -4,6 +4,7 @@ import React from 'react';
 const SceneItem = ({
   url,
   speed = 0.1,
+  delay = 0,
   addClass = '',
   controlHeight = false,
   fill = false,
@@ -17,7 +18,7 @@ const SceneItem = ({
 
   return (
     <div className={className} data-name={url}>
-      {url.endsWith('zip') && <AnimatedImage url={url} speed={speed} />}
+      {url.endsWith('zip') && <AnimatedImage url={url} speed={speed}  delay={delay}/>}
       {!url.endsWith('zip') && <img src={url} alt={url.split('.')[0]} />}
     </div>
   );

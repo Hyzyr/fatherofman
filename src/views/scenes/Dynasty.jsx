@@ -1,7 +1,7 @@
 'use client';
 import React, { useRef } from 'react';
-import Scene from './Scene';
-import SceneItem from './SceneItem';
+import Scene from './components/Scene';
+import SceneItem from './components/SceneItem';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { throttle } from '@/utils/debounce';

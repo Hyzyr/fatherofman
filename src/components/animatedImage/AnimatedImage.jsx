@@ -2,7 +2,7 @@
 import React, { memo, useEffect, useRef } from 'react';
 import useAnimatedImages from './useAnimatedImages';
 
-const AnimatedImage = ({ url, speed, ...props }) => {
+const AnimatedImage = ({ url, speed = 0.1, delay = 0, ...props }) => {
   const index = useRef(0);
   const ref = useRef();
 
@@ -28,7 +28,9 @@ const AnimatedImage = ({ url, speed, ...props }) => {
       updateCanvas(images[currentImage]);
 
       index.current += 1;
-      timout = setTimeout(showNextImage, speed * 1000);
+      let addDelay = 0;
+      if (index.current === images.length - 1) addDelay = delay;
+      timout = setTimeout(showNextImage, speed * 1000 + addDelay * 1000);
     }
     showNextImage();
     return () => clearTimeout(timout);
