@@ -6,7 +6,9 @@ import NYC from './NYC';
 import Prehystoric from './Prehystoric';
 import WW2 from './WW2';
 import useSceneController from './hooks/useSceneController';
-import Nav, { NAV_ITEMS, NavItem } from '@/components/Nav';
+import Nav, { NAV_ITEMS, NavArrow, NavItem } from '@/components/Nav';
+import Social from './components/Social';
+import DropBox from './components/DropBox';
 
 const SCENES = {
   PREHYSTORIC: 'prehystoric',
@@ -16,52 +18,73 @@ const SCENES = {
   NYC: 'nyc',
 };
 const sceneNamesArr = Object.values(SCENES);
+const IMAGES_URL = '/images/scenes/';
 
 const AScenes = () => {
   const [activeScene, setActive] = useState(sceneNamesArr[0]);
   const wrapper = useRef(null);
 
-  console.log({ activeScene });
-  const { navTo } = useSceneController({
+  const { navTo, navNext, navPrev } = useSceneController({
     wrapper,
-    scenesCount: sceneNamesArr.length,
+    activeScene,
+    sceneNames: sceneNamesArr,
   });
 
   const setActiveScene = (sceneName) => {
     setActive(sceneName);
     navTo(sceneNamesArr.indexOf(sceneName));
   };
+  const navNextScene = () => {
+    let newSceneName = navNext();
+    setActive(newSceneName);
+  };
+  const navPrevScene = () => {
+    let newSceneName = navPrev();
+    setActive(newSceneName);
+  };
+  React.useEffect(() => {
+    console.log({ activeScene });
+  }, [activeScene]);
 
   return (
     <>
-      <Nav>
-        <NavItem
-          type={NAV_ITEMS.PREHYSTORIC}
-          active={activeScene === SCENES.PREHYSTORIC}
-          onClick={() => setActiveScene(SCENES.PREHYSTORIC)}
-        />
-        <NavItem
-          type={NAV_ITEMS.DYNASTY}
-          active={activeScene === SCENES.DYNASTY}
-          onClick={() => setActiveScene(SCENES.DYNASTY)}
-        />
-        <NavItem
-          type={NAV_ITEMS.EGYPT}
-          active={activeScene === SCENES.EGYPT}
-          onClick={() => setActiveScene(SCENES.EGYPT)}
-        />
-        <NavItem
-          type={NAV_ITEMS.WW2}
-          active={activeScene === SCENES.WW2}
-          onClick={() => setActiveScene(SCENES.WW2)}
-        />
-        <NavItem
-          type={NAV_ITEMS.NYC}
-          active={activeScene === SCENES.NYC}
-          onClick={() => setActiveScene(SCENES.NYC)}
-        />
-      </Nav>
+      <div className="uicontrols">
+        <Nav>
+          <NavItem
+            type={NAV_ITEMS.PREHYSTORIC}
+            active={activeScene === SCENES.PREHYSTORIC}
+            onClick={() => setActiveScene(SCENES.PREHYSTORIC)}
+          />
+          <NavItem
+            type={NAV_ITEMS.DYNASTY}
+            active={activeScene === SCENES.DYNASTY}
+            onClick={() => setActiveScene(SCENES.DYNASTY)}
+          />
+          <NavItem
+            type={NAV_ITEMS.EGYPT}
+            active={activeScene === SCENES.EGYPT}
+            onClick={() => setActiveScene(SCENES.EGYPT)}
+          />
+          <NavItem
+            type={NAV_ITEMS.WW2}
+            active={activeScene === SCENES.WW2}
+            onClick={() => setActiveScene(SCENES.WW2)}
+          />
+          <NavItem
+            type={NAV_ITEMS.NYC}
+            active={activeScene === SCENES.NYC}
+            onClick={() => setActiveScene(SCENES.NYC)}
+          />
+        </Nav>
+        <NavArrow prev onClick={navPrevScene} />
+        <NavArrow next onClick={navNextScene} />
+        <Social />
+        <DropBox />
+      </div>
       <div className="sceneController" ref={wrapper}>
+        <div className="scene__bg">
+          <img src={IMAGES_URL + 'sky.webp'} alt="sky" />
+        </div>
         <div className="sceneController__track">
           <SceneWrapper active={SCENES.PREHYSTORIC === activeScene}>
             <Prehystoric

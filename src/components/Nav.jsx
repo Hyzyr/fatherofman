@@ -53,4 +53,16 @@ export const NavItem = ({ type = NAV_ITEMS[0], onClick, active }) => {
   );
 };
 
+export const NavArrow = ({ next = false, prev = false, ...props }) => {
+  let addClass = '';
+  addClass += next ? '_next' : '';
+  addClass += prev ? '_prev' : '';
+  
+  return (
+    <button type="button" className={`nav-arrow ${addClass}`} {...props}>
+      {prev && <img src="/images/components/prev.png" alt="prev" />}
+      {next && <img src="/images/components/next.png" alt="next" />}
+    </button>
+  );
+};
 export default Nav;

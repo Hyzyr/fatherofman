@@ -12,15 +12,14 @@ const Prehystoric = ({ animated = true, onCharClick }) => {
 
   return (
     <Scene name="prehystoric" forwardRef={ref}>
-      <div className="scene__back">
+      <div className="scene__back"></div>
+      <div className="scene__main">
         <SceneItem
           url={IMAGES_URL + 'ptero.zip'}
           animate={animated}
           addClass="ptero"
           speed={0.1}
         />
-      </div>
-      <div className="scene__main">
         <SceneItem
           url={IMAGES_URL + 'smoke.zip'}
           animate={animated}
