@@ -30,6 +30,38 @@
     color: $white;
   }
 }
+.colorPiker {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  gap: 0.4em;
+
+  &-title {
+    font-size: 1em;
+    line-height: 1.2;
+    font-weight: 700;
+    color: $brown;
+  }
+  &-color {
+    width: 2em;
+    height: 2em;
+    border-radius: 2em;
+    border: 3px solid $white;
+    background: $white;
+  }
+  &-picker {
+    position: absolute;
+    left: 50%;
+    top: 105%;
+    transform: translateX(-50%);
+    width: 100px;
+    .react-picker {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
 // .input {
 //   display: flex;
 //   width: 100%;

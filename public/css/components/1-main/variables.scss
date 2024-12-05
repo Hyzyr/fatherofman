@@ -1,10 +1,12 @@
 $primary: #b5ed3d;
 $secondary: #2f5bd1;
 $black: #101010;
+$brown: #503d2e;
 $white: #fff;
 $yellow: #f7c99b;
 
-$cursor-pointer: url(/images/cursor/select-cursor.png), auto;
+$cursor-default: url(/images/cursor/select-cursor.png), auto;
+$cursor-pointer: url(/images/cursor/hover-cursor.png), auto;
 $cursor-click: url(/images/cursor/clicked-cursor.png), auto;
 
 $font-primary: var(--font-procopius), sans-serif;
