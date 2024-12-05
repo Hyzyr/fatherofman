@@ -5,20 +5,20 @@ const Social = () => {
     <div className="social">
       <div className="social__links">
         <button type="button" className="social-link">
-          <img src="/images/components/social-icons/dex.png " alt="" />
+          <img src="/images/components/social-icons/dex.webp " alt="" />
         </button>
         <button type="button" className="social-link">
-          <img src="/images/components/social-icons/insta.png " alt="" />
+          <img src="/images/components/social-icons/insta.webp " alt="" />
         </button>
         <button type="button" className="social-link">
-          <img src="/images/components/social-icons/x_twitter.png " alt="" />
+          <img src="/images/components/social-icons/x_twitter.webp " alt="" />
         </button>
         <button type="button" className="social-link">
-          <img src="/images/components/social-icons/tiktok.png" alt="" />
+          <img src="/images/components/social-icons/tiktok.webp" alt="" />
         </button>
         <button type="button" className="social-link">
           <img
-            src="/images/components/social-icons/telegram gold.png "
+            src="/images/components/social-icons/telegram gold.webp "
             alt=""
           />
         </button>
