@@ -17,8 +17,9 @@ const AnimatedImage = ({
     const canvas = ref.current;
     canvas.width = img.width;
     canvas.height = img.height;
-    const ctx = canvas.getContext('2d');
-    ctx.drawImage(img, 0, 0);
+    canvas.src = img.src;
+    // const ctx = canvas.getContext('2d');
+    // ctx.drawImage(img, 0, 0);
   };
 
   useEffect(() => {
@@ -44,7 +45,7 @@ const AnimatedImage = ({
   }, [images, animate]);
   if (!url) return null;
 
-  return <canvas ref={ref} />;
+  return <img ref={ref} />;
 };
 
 export default memo(AnimatedImage);

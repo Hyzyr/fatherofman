@@ -1,6 +1,6 @@
 'use client';
 import React, { useRef, useState } from 'react';
-import Dynasty from './Dynasty';
+import Dynasty from './dynasty/Dynasty';
 import Egypt from './Egypt';
 import NYC from './NYC';
 import Prehystoric from './Prehystoric';

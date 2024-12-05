@@ -80,11 +80,13 @@
         transition: 0.3s ease-out;
       }
       &:hover {
+        img,
         canvas {
           filter: drop-shadow(2px 4px 10px #eafcca);
         }
       }
       &:active {
+        img,
         canvas {
           filter: drop-shadow(2px 4px 10px #eafcca);
           transform: rotateX(12deg);

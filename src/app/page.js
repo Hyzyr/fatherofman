@@ -1,5 +1,6 @@
 'use client';
 
+import CursorHelper from '@/components/CursorHelper';
 import { AllAssetFiles } from '@/contants/Assets';
 import useAssetLoader from '@/hooks/useAssetLoader';
 import Popup from '@/views/preloader/Popup';
@@ -29,6 +30,7 @@ export default function Home() {
           onCancel={() => showError(false)}
         />
       )}
+      <CursorHelper />
     </>
   );
 }

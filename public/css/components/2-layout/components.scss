@@ -9,6 +9,28 @@
   margin: 0 auto;
   padding: 0 60px;
 }
+
+.helper {
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  transform: translate(-100%, -100%);
+  z-index: 5;
+  padding-top: 1em;
+  padding-left: 3em;
+
+  img {
+    height: 4em;
+    width: auto;
+  }
+  &-text {
+    color: $white;
+  }
+}
 // .input {
 //   display: flex;
 //   width: 100%;
