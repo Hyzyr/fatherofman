@@ -1,9 +1,9 @@
 'use client';
 import React, { useRef, useState } from 'react';
-import Dynasty from './dynasty/Dynasty';
+import Dynasty from './dynasty/DynastyScene';
 import Egypt from './Egypt';
 import NYC from './NYC';
-import Prehystoric from './Prehystoric';
+import Prehystoric from './prehystoric/Prehystoric';
 import WW2 from './WW2';
 import useSceneController from './hooks/useSceneController';
 import Nav, { NAV_ITEMS, NavArrow, NavItem } from '@/components/Nav';

@@ -1,11 +1,11 @@
 'use client';
 import React, { useRef } from 'react';
-import Scene from './components/Scene';
-import SceneItem from './components/SceneItem';
+import Scene from '../components/Scene';
+import SceneItem from '../components/SceneItem';
 
 const IMAGES_URL = '/images/scenes/prehystoric/';
 
-const Prehystoric = ({ animated = true, onCharClick }) => {
+const PrehystoricScene = ({ animated = true, onCharClick }) => {
   return (
     <Scene name="prehystoric">
       <div className="scene__back"></div>
@@ -79,4 +79,4 @@ const Prehystoric = ({ animated = true, onCharClick }) => {
   );
 };
 
-export default Prehystoric;
+export default PrehystoricScene;

@@ -2,6 +2,7 @@
 import React, { memo, useEffect, useRef } from 'react';
 import useAnimatedImages from './useAnimatedImages';
 
+const useCanvas = false;
 const AnimatedImage = ({
   url,
   speed = 0.1,
@@ -17,9 +18,11 @@ const AnimatedImage = ({
     const canvas = ref.current;
     canvas.width = img.width;
     canvas.height = img.height;
-    canvas.src = img.src;
-    // const ctx = canvas.getContext('2d');
-    // ctx.drawImage(img, 0, 0);
+    if (!useCanvas) canvas.src = img.src;
+    else {
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0);
+    }
   };
 
   useEffect(() => {
@@ -32,7 +35,7 @@ const AnimatedImage = ({
         currentImage = 0;
         index.current = 0;
       }
-      updateCanvas(images[currentImage]);
+      requestAnimationFrame(() => updateCanvas(images[currentImage]));
 
       index.current += 1;
       let addDelay = 0;
@@ -45,6 +48,7 @@ const AnimatedImage = ({
   }, [images, animate]);
   if (!url) return null;
 
+  if (useCanvas) return <canvas ref={ref} />;
   return <img ref={ref} />;
 };
 

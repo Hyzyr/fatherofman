@@ -16,6 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="stylesheet" href="/css/main.css" />
+        <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
       </head>
       <body className={`${myFont.variable}`}>
         <main className="main">{children}</main>
