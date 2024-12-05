@@ -32,6 +32,11 @@ const SceneItem = ({
           animate={animate}
         />
       )}
+      {clickable && (
+        <div className="scene__item-arrow">
+          <img src={'/images/components/click-him.webp'} alt="arrow" />
+        </div>
+      )}
       {!url.endsWith('zip') && <img src={url} alt={url.split('.')[0]} />}
     </div>
   );

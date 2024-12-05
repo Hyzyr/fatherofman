@@ -5,13 +5,13 @@ export const NAV_ITEMS = {
     icon: 'ic1.webp',
     iconActive: 'ic1-active.webp',
   },
-  DYNASTY: {
-    icon: 'ic2.webp',
-    iconActive: 'ic2-active.webp',
-  },
   EGYPT: {
     icon: 'ic3.webp',
     iconActive: 'ic3-active.webp',
+  },
+  DYNASTY: {
+    icon: 'ic2.webp',
+    iconActive: 'ic2-active.webp',
   },
   WW2: {
     icon: 'ic4.webp',

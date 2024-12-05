@@ -13,8 +13,8 @@ import useCameraAnimations from './hooks/useCameraAnimations';
 
 const SCENES = {
   PREHYSTORIC: 'prehystoric',
-  DYNASTY: 'dynasty',
   EGYPT: 'egypt',
+  DYNASTY: 'dynasty',
   WW2: 'ww2',
   NYC: 'nyc',
 };
@@ -58,14 +58,14 @@ const AScenes = () => {
             onClick={() => setActiveScene(SCENES.PREHYSTORIC)}
           />
           <NavItem
-            type={NAV_ITEMS.DYNASTY}
-            active={activeScene === SCENES.DYNASTY}
-            onClick={() => setActiveScene(SCENES.DYNASTY)}
-          />
-          <NavItem
             type={NAV_ITEMS.EGYPT}
             active={activeScene === SCENES.EGYPT}
             onClick={() => setActiveScene(SCENES.EGYPT)}
+          />
+          <NavItem
+            type={NAV_ITEMS.DYNASTY}
+            active={activeScene === SCENES.DYNASTY}
+            onClick={() => setActiveScene(SCENES.DYNASTY)}
           />
           <NavItem
             type={NAV_ITEMS.WW2}
@@ -94,16 +94,16 @@ const AScenes = () => {
               // onCharClick={() => setActiveScene(SCENES.WW2)}
             />
           </SceneWrapper>
-          <SceneWrapper active={SCENES.DYNASTY === activeScene}>
-            <Dynasty
-              animated={SCENES.DYNASTY === activeScene}
-              // onCharClick={() => setActiveScene(SCENES.EGYPT)}
-            />
-          </SceneWrapper>
           <SceneWrapper active={SCENES.EGYPT === activeScene}>
             <Egypt
               animated={SCENES.EGYPT === activeScene}
               // onCharClick={() => setActiveScene(SCENES.NYC)}
+            />
+          </SceneWrapper>
+          <SceneWrapper active={SCENES.DYNASTY === activeScene}>
+            <Dynasty
+              animated={SCENES.DYNASTY === activeScene}
+              // onCharClick={() => setActiveScene(SCENES.EGYPT)}
             />
           </SceneWrapper>
           <SceneWrapper active={SCENES.WW2 === activeScene}>

@@ -26,13 +26,13 @@ const Prehystoric = ({ animated = true, onCharClick }) => {
       </div>
       <div className="scene__front">
         <SceneItem url={IMAGES_URL + 'ground.webp'} addClass="ground" fill />
+        <SceneItem url={IMAGES_URL + 'mid-ground.webp'} addClass="ground-mid" />
         <SceneItem
           url={IMAGES_URL + 'dinos.zip'}
           animate={animated}
           addClass="dinos"
           speed={0.13}
         />
-        <SceneItem url={IMAGES_URL + 'mid-ground.webp'} addClass="ground-mid" />
         <SceneItem
           url={IMAGES_URL + 'snake-tree.zip'}
           animate={animated}

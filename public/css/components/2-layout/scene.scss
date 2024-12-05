@@ -82,6 +82,17 @@
           transform: rotateX(12deg);
         }
       }
+      .scene__item-arrow {
+        position: absolute;
+        bottom: 90%;
+        left: 40%;
+        transform: translate(-50%);
+        width: 8vw;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
     }
   }
 
@@ -104,9 +115,9 @@
         right: 1.2%;
       }
       &.soldier {
-        left: 26%;
-        width: 37%;
-        bottom: 4%;
+        left: 29%;
+        width: 33%;
+        bottom: 3%;
       }
       &.glwos {
         left: 0%;
@@ -171,12 +182,12 @@
         bottom: -2%;
         left: -2%;
         width: 104%;
-        height: 28%;
+        height: 33%;
       }
       &.chararacter {
-        left: 34%;
-        width: 24%;
-        bottom: 1%;
+        left: 35%;
+        width: 18%;
+        bottom: 9%;
       }
       &.grass {
         left: 14%;
@@ -212,7 +223,7 @@
         bottom: -2%;
         left: -2%;
         width: 104%;
-        height: 45%;
+        height: 47%;
       }
       &.ground-mid {
         bottom: 8%;
@@ -220,14 +231,14 @@
         width: 75%;
       }
       &.dinos {
-        bottom: 25%;
-        left: 18%;
-        width: 73%;
+        bottom: 20%;
+        left: 11%;
+        width: 77%;
       }
       &.character {
-        left: 28.3%;
-        width: 24%;
-        bottom: 1%;
+        left: 38.3%;
+        width: 19%;
+        bottom: 5%;
       }
       &.grass {
         left: -2%;
@@ -368,9 +379,9 @@
         bottom: -2%;
       }
       &.character {
-        left: 44.3%;
-        width: 12%;
-        bottom: 7%;
+        left: 44.9%;
+        width: 11.7%;
+        bottom: 9%;
       }
     }
   }
@@ -458,8 +469,8 @@
       }
       &.character {
         left: 34.4%;
-        height: 42.6%;
-        bottom: 5%;
+        height: 44.2%;
+        bottom: 10%;
       }
       &.smokeL {
         left: 20.9%;

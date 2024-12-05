@@ -21,7 +21,7 @@ const Dynasty = ({ animated = true, onCharClick }) => {
           url={IMAGES_URL + 'city.zip'}
           animate={animated}
           addClass="city"
-          speed={0.16}
+          speed={0.12}
           fill
         />
         <SceneItem url={IMAGES_URL + 'ground.webp'} addClass="ground" fill />
@@ -29,7 +29,7 @@ const Dynasty = ({ animated = true, onCharClick }) => {
           url={IMAGES_URL + 'warriors.zip'}
           animate={animated}
           addClass="warriors"
-          speed={0.16}
+          speed={0.12}
         />
       </div>
       <div className="scene__front">
@@ -42,7 +42,7 @@ const Dynasty = ({ animated = true, onCharClick }) => {
         <SceneItem
           url={IMAGES_URL + 'grass.zip'}
           animate={animated}
-          speed={0.16}
+          speed={0.1}
           addClass="land"
           fill
         />
@@ -52,7 +52,7 @@ const Dynasty = ({ animated = true, onCharClick }) => {
           addClass="soldier"
           clickable
           onClick={onCharClick}
-          speed={0.16}
+          speed={0.1}
         />
         <SceneItem
           url={IMAGES_URL + 'glows.zip'}
