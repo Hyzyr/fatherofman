@@ -13,6 +13,7 @@ html {
   box-sizing: border-box;
 }
 button {
+  pointer-events: all;
   cursor: $cursor-pointer;
   outline: none;
   background: transparent;
@@ -67,6 +68,8 @@ body.active {
   overflow: hidden;
 }
 a {
+  pointer-events: all;
+
   cursor: $cursor-pointer;
   text-decoration: none;
   color: #000;

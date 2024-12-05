@@ -11,6 +11,7 @@ export default function Home() {
   const [granted, setGranted] = useState(false);
   const { loaded, progress } = useAssetLoader({ assets: AllAssetFiles });
 
+  return <AScenes />;
   return (
     <>
       {!granted && <Preloader progress={progress} />}

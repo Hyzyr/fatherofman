@@ -2,16 +2,12 @@
 import React, { useRef } from 'react';
 import Scene from './components/Scene';
 import SceneItem from './components/SceneItem';
-import useCameraAnimations from './hooks/useCameraAnimations';
 
 const IMAGES_URL = '/images/scenes/nyc/';
 
 const NYC = ({ animated = true, onCharClick }) => {
-  const ref = useRef(null);
-  useCameraAnimations({ animated, wrapper: ref });
-
   return (
-    <Scene name="nyc" forwardRef={ref}>
+    <Scene name="nyc">
       <div className="scene__back"></div>
       <div className="scene__main">
         <SceneItem

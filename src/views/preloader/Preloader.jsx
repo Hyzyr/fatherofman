@@ -47,7 +47,7 @@ const Preloader = ({ data }) => {
         document.removeEventListener('mousemove', debouncedMouseMove);
       };
     },
-    { scrope: ref }
+    { scope: ref }
   );
 
   if (!data) return null;

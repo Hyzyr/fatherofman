@@ -2,16 +2,13 @@
 import React, { useRef } from 'react';
 import Scene from './components/Scene';
 import SceneItem from './components/SceneItem';
-import useCameraAnimations from './hooks/useCameraAnimations';
 
 const IMAGES_URL = '/images/scenes/egypt/';
 
 const Egypt = ({ animated = true, onCharClick }) => {
-  const ref = useRef(null);
-  useCameraAnimations({ animated, wrapper: ref });
 
   return (
-    <Scene name="egypt" forwardRef={ref}>
+    <Scene name="egypt">
       <div className="scene__back">
         <SceneItem
           url={IMAGES_URL + 'birds.zip'}

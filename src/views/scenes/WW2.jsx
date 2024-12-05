@@ -2,16 +2,12 @@
 import React, { useRef } from 'react';
 import Scene from './components/Scene';
 import SceneItem from './components/SceneItem';
-import useCameraAnimations from './hooks/useCameraAnimations';
 
 const IMAGES_URL = '/images/scenes/ww2/';
 
 const WW2 = ({ animated = true, onCharClick }) => {
-  const ref = useRef(null);
-  useCameraAnimations({ animated, wrapper: ref });
-
   return (
-    <Scene name="ww2" forwardRef={ref}>
+    <Scene name="ww2">
       <div className="scene__back"></div>
       <div className="scene__main">
         <SceneItem url={IMAGES_URL + 'bg-2.webp'} addClass="mountain" fill />

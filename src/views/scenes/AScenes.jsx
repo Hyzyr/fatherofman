@@ -9,6 +9,7 @@ import useSceneController from './hooks/useSceneController';
 import Nav, { NAV_ITEMS, NavArrow, NavItem } from '@/components/Nav';
 import Social from './components/Social';
 import DropBox from './components/DropBox';
+import useCameraAnimations from './hooks/useCameraAnimations';
 
 const SCENES = {
   PREHYSTORIC: 'prehystoric',
@@ -29,6 +30,10 @@ const AScenes = () => {
     activeScene,
     sceneNames: sceneNamesArr,
   });
+  useCameraAnimations({
+    wrapperSelector: `.scene.${activeScene}`,
+    scope: wrapper,
+  });
 
   const setActiveScene = (sceneName) => {
     setActive(sceneName);
@@ -42,9 +47,6 @@ const AScenes = () => {
     let newSceneName = navPrev();
     setActive(newSceneName);
   };
-  React.useEffect(() => {
-    console.log({ activeScene });
-  }, [activeScene]);
 
   return (
     <>
