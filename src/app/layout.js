@@ -20,6 +20,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${myFont.variable}`}>
         <main className="main">{children}</main>
+        <div id="popups"></div>
       </body>
     </html>
   );

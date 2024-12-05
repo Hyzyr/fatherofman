@@ -1,11 +1,11 @@
 'use client';
 import React, { useRef } from 'react';
-import Scene from './components/Scene';
-import SceneItem from './components/SceneItem';
+import Scene from '../components/Scene';
+import SceneItem from '../components/SceneItem';
 
 const IMAGES_URL = '/images/scenes/egypt/';
 
-const Egypt = ({ animated = true, onCharClick }) => {
+const EgyptScene = ({ animated = true, onCharClick }) => {
 
   return (
     <Scene name="egypt">
@@ -60,4 +60,4 @@ const Egypt = ({ animated = true, onCharClick }) => {
   );
 };
 
-export default Egypt;
+export default EgyptScene;

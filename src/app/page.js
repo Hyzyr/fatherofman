@@ -3,7 +3,7 @@
 import CursorHelper from '@/components/CursorHelper';
 import { AllAssetFiles } from '@/contants/Assets';
 import useAssetLoader from '@/hooks/useAssetLoader';
-import Popup from '@/views/preloader/Popup';
+import Popup from '@/views/preloader/PreloaderPopup';
 import Preloader from '@/views/preloader/PreloaderScreen';
 import AScenes from '@/views/scenes/AScenes';
 import { useState } from 'react';
