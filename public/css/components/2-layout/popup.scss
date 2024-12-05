@@ -127,4 +127,29 @@
       }
     }
   }
+  &--ww2 & {
+    &__inner {
+      width: 90%;
+      max-width: 1000px;
+      top: 57%;
+      min-height: 78vh;
+
+      &-journal {
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        width: 80%;
+        height: 80%;
+        background: rgba(0, 0, 0, 0.5);
+
+        p {
+          font-size: 34px;
+          font-weight: bold;
+          line-height: 1.55;
+          letter-spacing: 0.04em;
+          color: #171513;
+        }
+      }
+    }
+  }
 }
