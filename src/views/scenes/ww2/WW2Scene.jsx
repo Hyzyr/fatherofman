@@ -1,11 +1,11 @@
 'use client';
 import React, { useRef } from 'react';
-import Scene from './components/Scene';
-import SceneItem from './components/SceneItem';
+import Scene from '../components/Scene';
+import SceneItem from '../components/SceneItem';
 
 const IMAGES_URL = '/images/scenes/ww2/';
 
-const WW2 = ({ animated = true, onCharClick }) => {
+const WW2Scene = ({ animated = true, onCharClick }) => {
   return (
     <Scene name="ww2">
       <div className="scene__back"></div>
@@ -93,4 +93,4 @@ const WW2 = ({ animated = true, onCharClick }) => {
   );
 };
 
-export default WW2;
+export default WW2Scene;

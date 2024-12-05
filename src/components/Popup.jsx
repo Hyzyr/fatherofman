@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 const Popup = ({ active, close, addClass, children }) => {
+  const [hydrated, setHydrated] = useState(false);
   const closePopup = (event) => {
     if (event.target === event.currentTarget) close();
   };
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
+
+  if (!hydrated || !document.getElementById('popups')) return null;
 
   return createPortal(
     <div

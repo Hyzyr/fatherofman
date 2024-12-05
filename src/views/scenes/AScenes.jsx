@@ -4,7 +4,7 @@ import Dynasty from './dynasty/Dynasty';
 import Egypt from './egypt/Egypt';
 import NYC from './NYC';
 import Prehystoric from './prehystoric/Prehystoric';
-import WW2 from './WW2';
+import WW2 from './ww2/WW2';
 import useSceneController from './hooks/useSceneController';
 import Nav, { NAV_ITEMS, NavArrow, NavItem } from '@/components/Nav';
 import Social from './components/Social';
