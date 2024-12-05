@@ -5,7 +5,7 @@ import AnimatedImage from '@/components/animatedImage/AnimatedImage';
 import ProgressBar from '@/components/ProgressBar';
 import PreloaderSlider from './PreloaderSlider';
 
-const PreloaderScreen = ({ progress }) => {
+const PreloaderScreen = ({ progress, error, completed }) => {
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
@@ -17,15 +17,29 @@ const PreloaderScreen = ({ progress }) => {
   }
 
   return (
-    <div className="preloader">
+    <div className={`preloader`}>
       <PreloaderSlider />
       <div className="preloader__progress">
-        <div className="preloader__progress-spinner">
-          <AnimatedImage
-            url="/images/animations/loader-monkey.zip"
-            speed={0.14}
-          />
-        </div>
+        {completed && (
+          <div className={`preloader__progress-img  ${error ? '_error' : ''}`}>
+            <img
+              src="/images/cursor/cursor-helper/following-cursor-normal.png"
+              alt="completed"
+            />
+            <img
+              src="/images/cursor/cursor-helper/following-cursor-clicked.png"
+              alt="completed"
+            />
+          </div>
+        )}
+        {!completed && (
+          <div className="preloader__progress-spinner">
+            <AnimatedImage
+              url="/images/animations/loader-monkey.zip"
+              speed={0.14}
+            />
+          </div>
+        )}
         <ProgressBar percentage={progress} />
       </div>
     </div>

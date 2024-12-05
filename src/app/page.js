@@ -10,16 +10,23 @@ import { useState } from 'react';
 export default function Home() {
   const [granted, setGranted] = useState(false);
   const { loaded, progress } = useAssetLoader({ assets: AllAssetFiles });
+  const [error, setError] = useState(false);
 
-  return <AScenes />;
+  const showError = () => {
+    setError(true);
+    setTimeout(() => setError(false), 2000);
+  };
+
   return (
     <>
-      {!granted && <Preloader progress={progress} />}
+      {!granted && (
+        <Preloader completed={loaded} error={error} progress={progress} />
+      )}
       {granted && <AScenes />}
       {loaded && !granted && (
         <Popup
           onConfirm={() => setGranted(true)}
-          onCancel={() => setGranted(false)}
+          onCancel={() => showError(false)}
         />
       )}
     </>

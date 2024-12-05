@@ -1,3 +1,11 @@
+@keyframes arrow {
+  from {
+    transform: translate(-50%, 0) scale(1.02);
+  }
+  to {
+    transform: translate(-50%, 3%) scale(0.98);
+  }
+}
 .scene {
   position: fixed;
   top: 0;
@@ -85,9 +93,10 @@
       .scene__item-arrow {
         position: absolute;
         bottom: 90%;
-        left: 40%;
+        left: 44.3%;
         transform: translate(-50%);
         width: 8vw;
+        animation: arrow 0.5s ease infinite alternate;
         img {
           width: 100%;
           height: auto;
@@ -118,6 +127,11 @@
         left: 29%;
         width: 33%;
         bottom: 3%;
+
+        .scene__item-arrow {
+          bottom: 88%;
+          left: 59%;
+        }
       }
       &.glwos {
         left: 0%;
@@ -471,6 +485,11 @@
         left: 34.4%;
         height: 44.2%;
         bottom: 10%;
+
+        .scene__item-arrow {
+          bottom: 95.5%;
+          left: 42%;
+        }
       }
       &.smokeL {
         left: 20.9%;
