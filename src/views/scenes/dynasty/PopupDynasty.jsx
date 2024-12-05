@@ -9,9 +9,9 @@ const PopupDynasty = (props) => {
       </div>
       <div className="popup__inner-dynasty">
         <p>
-          The Art of Him To Ape is the essence of Him To fade one's ancestors is
-          to ensure one’s own self destruction Before Man, came HIM. Before
-          liquidity came the swim One should elect HIM regardless of one's
+          {
+            "The Art of Him To Ape is the essence of Him To fade one's ancestors is \nto ensure one’s own self destruction Before Man, came HIM. Before \nliquidity came the swim One should elect HIM regardless of one's"
+          }
         </p>
       </div>
     </Popup>
