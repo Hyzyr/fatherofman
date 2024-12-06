@@ -55,7 +55,7 @@ const PopupNYC = ({ close, ...props }) => {
     const backgroundVideo = backgroundVideoRef.current;
     const currentVideo = videoRefs.current[currentIndex];
     if (backgroundVideo) {
-      if (isPaused) {
+      if (isPaused || !props.active) {
         backgroundVideo.pause();
         currentVideo?.pause();
       } else {
@@ -63,7 +63,7 @@ const PopupNYC = ({ close, ...props }) => {
         currentVideo?.play();
       }
     }
-  }, [isPaused, currentIndex]);
+  }, [isPaused, props.active, currentIndex]);
 
   // useEffect(() => {
   //   if (isPaused) {
@@ -191,10 +191,7 @@ const PopupNYC = ({ close, ...props }) => {
               {/* Pause Indicator */}
               {isPaused && !isLoading && (
                 <div className="popupTablet__player-play">
-                  <img
-                    src={imgURL + 'play.webp'}
-                    alt="Pause"
-                  />
+                  <img src={imgURL + 'play.webp'} alt="Pause" />
                 </div>
               )}
 

@@ -4,7 +4,7 @@ import PopupNYC from './PopupNYC';
 
 const NYC = ({ animated }) => {
   const [test, settest] = useState(false);
-  const [popup, setPopup] = useState(true);
+  const [popup, setPopup] = useState(false);
 
   React.useEffect(() => {
     settest(true);

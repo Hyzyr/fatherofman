@@ -451,3 +451,8 @@ export const videosData = [
     bLiked: false,
   },
 ];
+
+
+export const screenVideos = [
+  videosData[0]
+];
