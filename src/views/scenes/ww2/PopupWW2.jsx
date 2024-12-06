@@ -1,9 +1,11 @@
 import Popup from '@/components/Popup';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { memorabiliaImages, randomTextList } from './contants';
 import ColorPiker from '../components/ColorPiker';
 import PopupCanvas from './PopupCanvas';
 import { getRandomToN } from '@/utils/random';
+import InputRange from '@/components/InputRange';
+import useExportImg from './useExportImg';
 
 let getRandomText = () => {
   let index = getRandomToN(randomTextList.length);
@@ -16,8 +18,15 @@ const PopupWW2 = (props) => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [textColor, setTextColor] = useState('#ff0000');
   const [manualText, setManualText] = useState(getRandomText());
+  const [fontSize, setFontSize] = useState(18);
+
+  const exportEl = useRef(null);
 
   const randomText = () => setManualText(getRandomText());
+  const handleFontSize = (e) => {
+    setFontSize(e.target.value);
+  };
+  const { exportCanvasAsImage } = useExportImg({ wrapper: exportEl });
 
   return (
     <Popup {...props}>
@@ -36,13 +45,13 @@ const PopupWW2 = (props) => {
                 className="popupEditor__actions-btn"
                 type="button"
                 onClick={() => setInstaStyle(false)}>
-                <img src="/images/components/ww2/1-1.png" alt="1X1" />
+                <img src="/images/components/ww2/1-1.webp" alt="1X1" />
               </button>
               <button
                 className="popupEditor__actions-btn"
                 type="button"
                 onClick={() => setInstaStyle(true)}>
-                <img src="/images/components/ww2/9-16.png" alt="1X1" />
+                <img src="/images/components/ww2/9-16.webp" alt="1X1" />
               </button>
               {/* <button className="popupEditor__actions-btn" type="button">
                 <img src="/images/components/ww2/1-1.png" alt="1X1" />
@@ -50,17 +59,30 @@ const PopupWW2 = (props) => {
               <ColorPiker currentColor={textColor} onChange={setTextColor} />
             </div>
             <PopupCanvas
+              ref={exportEl}
               instaStyle={instaStyle}
               textColor={textColor}
               manualText={manualText}
+              fontSize={fontSize}
               setManualText={setManualText}
-              image={`/images/journal/${selectedImage?.image}`}
+              image={
+                selectedImage ? `/images/journal/${selectedImage?.image}` : null
+              }
             />
 
-            <div className="popupEditor__range"></div>
+            <div className="popupEditor__range">
+              <span className="_small">A</span>
+              <InputRange value={fontSize} onChange={handleFontSize} />
+              <span className="_big">A</span>
+            </div>
             <div className="popupEditor__footer">
-              <button className="textbutton" onClick={() => randomText()}>
+              <button className="buttonText" onClick={() => randomText()}>
                 Randomize
+              </button>
+              <button
+                className="buttonText"
+                onClick={() => exportCanvasAsImage()}>
+                Export
               </button>
             </div>
           </div>

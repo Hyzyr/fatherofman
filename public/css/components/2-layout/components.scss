@@ -56,10 +56,81 @@
     top: 105%;
     transform: translateX(-50%);
     width: 100px;
-    .react-picker {
-      width: 100px;
-      height: 100px;
+    z-index: 2;
+    .react-colorful {
+      width: 130px;
+      height: 130px;
+      &__pointer {
+        width: 15px;
+        height: 15px;
+      }
     }
+  }
+}
+.inputRange {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  z-index: 0;
+
+  &:after {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    top: 50%;
+    left: 3px;
+    width: calc(100% - 6px);
+    height: 4px;
+    border-radius: 2px;
+    border: 1px solid $black;
+    background: transparent;
+    transform: translateY(-2px);
+  }
+
+  input {
+    cursor: $cursor-pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    outline: none;
+    background: transparent;
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none; /* Override default look */
+      appearance: none;
+      height: 30px;
+      width: 30px;
+      background-image: url('/images/components/ww2/coin.webp');
+      background-size: cover;
+      border-radius: 50%;
+      border: none;
+    }
+    &::-moz-range-thumb {
+      -webkit-appearance: none; /* Override default look */
+      appearance: none;
+      height: 30px;
+      width: 30px;
+      background-image: url('/images/components/ww2/coin.webp');
+      background-size: cover;
+      border-radius: 50%;
+      border: none;
+    }
+  }
+}
+.buttonText {
+  display: flex;
+  font-family: $font-primary;
+  font-size: 32px;
+  color: $brown;
+  font-weight: 900;
+  transition: 0.3s ease-out;
+
+  &:hover {
+    color: $brown-1;
+  }
+  &:active {
+    color: $brown-1;
+    transform: scale(0.98);
   }
 }
 // .input {

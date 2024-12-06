@@ -17,6 +17,9 @@ button {
   cursor: $cursor-pointer;
   outline: none;
   background: transparent;
+  &:active {
+    cursor: $cursor-click;
+  }
   &:focus {
     outline: none;
   }
@@ -29,23 +32,23 @@ input::-webkit-inner-spin-button {
 }
 /* width */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 3px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #fff;
+  background: $yellow;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgba($color: #000, $alpha: 0.2);
+  background: rgba($brown, 0.6);
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba($color: #000, $alpha: 0.3);
+  background: rgba($brown, 0.8);
 }
 
 body {
@@ -73,6 +76,9 @@ a {
   cursor: $cursor-pointer;
   text-decoration: none;
   color: #000;
+  &:active {
+    cursor: $cursor-click;
+  }
 }
 
 ul,
@@ -83,7 +89,13 @@ li {
 }
 
 img,
+canvas,
 svg {
   pointer-events: none;
   @include noSelect;
+  border: none;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  box-shadow: 0;
 }

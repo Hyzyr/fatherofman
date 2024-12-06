@@ -155,7 +155,7 @@
 .popupEditor {
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
+  gap: 1em;
   color: $brown;
 
   h3 {
@@ -168,11 +168,47 @@
     justify-content: center;
     gap: 0.5em;
     font-size: 18px;
+
+    .colorPiker {
+      margin-left: 1em;
+    }
+  }
+  &__range {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    gap: 10px;
+
+    span {
+      font-family: $font-primary;
+      font-weight: 700;
+      font-size: 18px;
+      padding-top: 0.3em;
+
+      &._small {
+        font-size: 0.8em;
+      }
+      &._big {
+        font-size: 1.2em;
+      }
+    }
   }
   &__canvas {
+    position: relative;
+    z-index: 0;
     width: 100%;
+    height: 35vh;
     max-width: 340px;
     margin: 0 auto;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
     .space {
       position: absolute;
@@ -182,6 +218,20 @@
       height: 100%;
       background: $white;
       box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+    }
+    .react-draggable {
+      textarea {
+        width: 100%;
+        height: 100%;
+        font-family: $font-primary;
+        line-height: 1.2;
+        font-weight: bold;
+        text-align: center;
+        border: 1px dashed rgba($brown, 0.2);
+        overflow-wrap: break-word;
+        background: transparent;
+        resize: none;
+      }
     }
   }
   &__list {
@@ -209,5 +259,11 @@
         cursor: $cursor-click;
       }
     }
+  }
+  &__footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
   }
 }
