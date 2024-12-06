@@ -39,7 +39,7 @@ const PopupWW2 = (props) => {
       <div className="popup__inner-journal">
         <div className="popup__inner-journal-column">
           <div className="popupEditor">
-            <h3>Him's Journal</h3>
+            <h3>{"Him's Journal"}</h3>
             <div className="popupEditor__actions">
               <button
                 className="popupEditor__actions-btn"
