@@ -11,6 +11,7 @@ const SceneItem = ({
   clickable = false,
   onClick,
   animate = true,
+  children
 }) => {
   if (!url || typeof url !== 'string') return null;
   let className = `scene__item ${addClass}`;
@@ -24,6 +25,7 @@ const SceneItem = ({
 
   return (
     <div className={className} data-name={url} onClick={onClickFunc}>
+      {children}
       {url.endsWith('zip') && (
         <AnimatedImage
           url={url}

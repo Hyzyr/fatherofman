@@ -2,7 +2,7 @@
 import React, { useRef, useState } from 'react';
 import Dynasty from './dynasty/Dynasty';
 import Egypt from './egypt/Egypt';
-import NYC from './NYC';
+import NYC from './nyc/NYCScene';
 import Prehystoric from './prehystoric/Prehystoric';
 import WW2 from './ww2/WW2';
 import useSceneController from './hooks/useSceneController';

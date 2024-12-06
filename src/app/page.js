@@ -7,7 +7,7 @@ import useSounds from '@/hooks/useSounds';
 import Popup from '@/views/preloader/PreloaderPopup';
 import Preloader from '@/views/preloader/PreloaderScreen';
 import AScenes from '@/views/scenes/AScenes';
-import WW2 from '@/views/scenes/ww2/WW2';
+import NYC from '@/views/scenes/nyc/NYC';
 import { useState } from 'react';
 
 export default function Home() {
@@ -23,7 +23,6 @@ export default function Home() {
     setTimeout(() => setError(false), 2000);
   };
 
-  return <WW2 animated />;
   return (
     <>
       {!granted && (
