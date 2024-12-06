@@ -99,7 +99,7 @@
         &:last-child {
           opacity: 1;
           transform: unset;
-          filter: saturate(2.4) hue-rotate(-40deg);
+          filter: sepia(0.7) hue-rotate(317deg) saturate(6);
           transition: 0.1s ease-out;
         }
       }

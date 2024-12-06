@@ -452,7 +452,9 @@ export const videosData = [
   },
 ];
 
-
-export const screenVideos = [
-  videosData[0]
-];
+const videsWithIds = (idsArr) => {
+  return videosData.filter((data) => idsArr.indexOf(data.id) !== -1);
+};
+export const screenVideos = videsWithIds([
+  32, 33, 34, 30, 31, 12, 28, 19, 40, 27,
+]);

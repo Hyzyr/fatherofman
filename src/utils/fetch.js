@@ -80,7 +80,7 @@ export const preloadFiles = async (fileUrls, callback) => {
           callback(percentage > 100 ? 100 : percentage);
         })
         .catch((error) => {
-          console.error('Error loading file:', error);
+          console.log('Error loading file:', error);
         })
     );
     await Promise.all(promises);

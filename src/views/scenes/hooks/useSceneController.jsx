@@ -2,7 +2,12 @@ import React, { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
-const useSceneController = ({ wrapper, activeScene, sceneNames }) => {
+const useSceneController = ({
+  wrapper,
+  setScrolling,
+  activeScene,
+  sceneNames,
+}) => {
   const scenesCount = sceneNames.length;
   const navTimeline = useRef(null);
 
@@ -13,7 +18,7 @@ const useSceneController = ({ wrapper, activeScene, sceneNames }) => {
         '.sceneController__scene'
       );
 
-      gsap.set('.sceneController__scene', {
+      gsap.set('.sceneController__scene, .sceneController__scene .scene', {
         width: window.innerWidth,
         height: window.innerHeight,
       });
@@ -25,14 +30,22 @@ const useSceneController = ({ wrapper, activeScene, sceneNames }) => {
       scope: wrapper,
     }
   );
+
   const navTo = (index) => {
-    console.log({ activeScene });
     const track = wrapper.current.querySelector('.sceneController__track');
-    console.log('transform to ', (100 / scenesCount) * index);
+
     gsap.to(track, {
-      xPercent: (100 / scenesCount) * -index,
+      left: `${window.innerWidth * -index}px`,
       duration: 2,
       ease: 'power3.out',
+      onStart: () => {
+        gsap.set(track, { willChange: 'auto' });
+        if (setScrolling) setScrolling(true);
+      },
+      onComplete: () => {
+        gsap.set(track, { willChange: 'unset' });
+        if (setScrolling) setScrolling(false);
+      },
     });
   };
   const navNext = () => {

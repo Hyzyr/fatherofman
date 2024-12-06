@@ -159,7 +159,7 @@ export default function JournalBook() {
         link.href = newCanvas.toDataURL("image/png");
         link.click();
       } catch (error) {
-        console.error("Export failed:", error);
+        console.log("Export failed:", error);
       } finally {
         // Clean up the temporary container
         document.body.removeChild(tempContainer);

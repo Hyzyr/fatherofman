@@ -77,7 +77,7 @@ const useExportImg = ({ wrapper }) => {
         link.href = newCanvas.toDataURL('image/png');
         link.click();
       } catch (error) {
-        console.error('Export failed:', error);
+        console.log('Export failed:', error);
       } finally {
         document.body.removeChild(tempContainer);
       }

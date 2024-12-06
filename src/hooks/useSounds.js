@@ -26,7 +26,7 @@ async function playBackgroundSound(url, loop) {
     source.start();
     return source;
   } catch (error) {
-    console.error('Error playing sound:', error);
+    console.log('Error playing sound:', error);
     return null;
   }
 }

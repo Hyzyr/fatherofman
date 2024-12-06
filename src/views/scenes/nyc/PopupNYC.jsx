@@ -31,6 +31,10 @@ const PopupNYC = ({ close, ...props }) => {
   };
 
   useEffect(() => {
+    setIsPaused(!props.active);
+  }, [props.active]);
+
+  useEffect(() => {
     const shuffledVideos = [...initialVideos].sort(() => Math.random() - 0.5);
     setVideos(shuffledVideos);
   }, []);
@@ -55,7 +59,7 @@ const PopupNYC = ({ close, ...props }) => {
     const backgroundVideo = backgroundVideoRef.current;
     const currentVideo = videoRefs.current[currentIndex];
     if (backgroundVideo) {
-      if (isPaused || !props.active) {
+      if (isPaused) {
         backgroundVideo.pause();
         currentVideo?.pause();
       } else {
@@ -63,7 +67,7 @@ const PopupNYC = ({ close, ...props }) => {
         currentVideo?.play();
       }
     }
-  }, [isPaused, props.active, currentIndex]);
+  }, [isPaused, currentIndex]);
 
   // useEffect(() => {
   //   if (isPaused) {
@@ -170,7 +174,6 @@ const PopupNYC = ({ close, ...props }) => {
                 ref={(el) => setVideoRef(el, currentIndex)}
                 src={'/videos/' + videos[currentIndex]?.src}
                 loop
-                autoPlay
                 onLoadedData={() => handleVideoLoaded(currentIndex)}
                 onWaiting={() => handleVideoLoading(currentIndex)}
               />

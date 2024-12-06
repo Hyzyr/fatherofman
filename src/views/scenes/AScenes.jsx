@@ -1,8 +1,8 @@
 'use client';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Dynasty from './dynasty/Dynasty';
 import Egypt from './egypt/Egypt';
-import NYC from './nyc/NYCScene';
+import NYC from './nyc/NYC';
 import Prehystoric from './prehystoric/Prehystoric';
 import WW2 from './ww2/WW2';
 import useSceneController from './hooks/useSceneController';
@@ -10,6 +10,8 @@ import Nav, { NAV_ITEMS, NavArrow, NavItem } from '@/components/Nav';
 import Social from './components/Social';
 import DropBox from './components/DropBox';
 import useCameraAnimations from './hooks/useCameraAnimations';
+
+import gsap from 'gsap';
 
 const SCENES = {
   PREHYSTORIC: 'prehystoric',
@@ -22,17 +24,25 @@ const sceneNamesArr = Object.values(SCENES);
 const IMAGES_URL = '/images/scenes/';
 
 const AScenes = () => {
+  const [scrolling, setScrolling] = useState(false);
   const [activeScene, setActive] = useState(sceneNamesArr[0]);
   const wrapper = useRef(null);
+  const killAnimations = useRef(false);
 
   const { navTo, navNext, navPrev } = useSceneController({
     wrapper,
     activeScene,
     sceneNames: sceneNamesArr,
+    setScrolling: (state) => {
+      killAnimations.current = state;
+      setScrolling(state);
+    },
   });
   useCameraAnimations({
-    wrapperSelector: `.scene.${activeScene}`,
+    animated: !scrolling,
+    wrapperSelector: `.sceneController`,
     scope: wrapper,
+    killAnimations,
   });
 
   const setActiveScene = (sceneName) => {
@@ -54,27 +64,27 @@ const AScenes = () => {
         <Nav>
           <NavItem
             type={NAV_ITEMS.PREHYSTORIC}
-            active={activeScene === SCENES.PREHYSTORIC}
+            active={!scrolling && activeScene === SCENES.PREHYSTORIC}
             onClick={() => setActiveScene(SCENES.PREHYSTORIC)}
           />
           <NavItem
             type={NAV_ITEMS.EGYPT}
-            active={activeScene === SCENES.EGYPT}
+            active={!scrolling && activeScene === SCENES.EGYPT}
             onClick={() => setActiveScene(SCENES.EGYPT)}
           />
           <NavItem
             type={NAV_ITEMS.DYNASTY}
-            active={activeScene === SCENES.DYNASTY}
+            active={!scrolling && activeScene === SCENES.DYNASTY}
             onClick={() => setActiveScene(SCENES.DYNASTY)}
           />
           <NavItem
             type={NAV_ITEMS.WW2}
-            active={activeScene === SCENES.WW2}
+            active={!scrolling && activeScene === SCENES.WW2}
             onClick={() => setActiveScene(SCENES.WW2)}
           />
           <NavItem
             type={NAV_ITEMS.NYC}
-            active={activeScene === SCENES.NYC}
+            active={!scrolling && activeScene === SCENES.NYC}
             onClick={() => setActiveScene(SCENES.NYC)}
           />
         </Nav>

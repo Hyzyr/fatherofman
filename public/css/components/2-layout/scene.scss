@@ -212,7 +212,7 @@
         height: 33%;
       }
       &.chararacter {
-        left: 35%;
+        left: 42%;
         width: 18%;
         bottom: 9%;
       }
@@ -240,7 +240,6 @@
         width: 44%;
         left: -1.2%;
       }
-
       &.silhouetteR {
         bottom: -3%;
         width: 44%;
@@ -258,12 +257,12 @@
         width: 75%;
       }
       &.dinos {
-        bottom: 20%;
-        left: 11%;
+        bottom: 18.6%;
+        left: 14%;
         width: 77%;
       }
       &.character {
-        left: 38.3%;
+        left: 42.7%;
         width: 19%;
         bottom: 5%;
       }
@@ -474,10 +473,10 @@
         height: 32.8%;
       }
       &.taxi {
-        bottom: -1%;
+        bottom: -3%;
         left: 0;
-        width: 102.8%;
-        height: 102%;
+        width: 100.8%;
+        height: 76%;
       }
       &.people {
         right: 5%;
@@ -495,7 +494,7 @@
         bottom: -1%;
       }
       &.character {
-        left: 36.7%;
+        left: 36%;
         height: 46.2%;
         bottom: 4%;
 
@@ -620,6 +619,7 @@
   height: 100%;
 
   &__track {
+    position: relative;
     display: flex;
   }
   &__scene {

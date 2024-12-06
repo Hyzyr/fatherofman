@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { videosData } from '../nyc/constants';
+import { screenVideos } from '../nyc/constants';
 import { getRandomToN } from '@/utils/random';
 
 const SceneVideo = ({
@@ -10,10 +10,12 @@ const SceneVideo = ({
 }) => {
   const [loaded, setLoaded] = useState(false);
   const video = React.useMemo(() => {
-    let index = getRandomToN(videosData.length);
-    return videosData[index];
+    console.log(screenVideos);
+    let index = getRandomToN(screenVideos.length);
+    return screenVideos[index];
   }, []);
   const ref = React.useRef(null);
+  console.log({ video });
 
   let className = `scene__video ${addClass}`;
   className += controlHeight ? ' _height' : '';
@@ -27,13 +29,13 @@ const SceneVideo = ({
     <div className={className} data-name={addClass} onClick={onClickFunc}>
       {!loaded && (
         <div className="scene__video-thumb">
-          <img src={`/videos/thumb/${video.img}`} alt="video thumbn" />
+          <img src={`/videos/thumb/${video?.thumb ?? ''}`} alt="video thumbn" />
         </div>
       )}
       {play && (
         <video
           ref={ref}
-          src={`/videos/${video.video}`}
+          src={`/videos/${video.src}`}
           muted
           loop
           autoPlay={play}
