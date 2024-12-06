@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-async function playBackgroundSound(url, loop) {
+async function playBackgroundSound(url, loop, start) {
   try {
     console.log('play url', url);
     // Fetch the audio file
@@ -23,7 +23,7 @@ async function playBackgroundSound(url, loop) {
     source.connect(audioContext.destination);
 
     // Play the sound
-    source.start();
+    if (start) source.start();
     return source;
   } catch (error) {
     console.log('Error playing sound:', error);
@@ -37,8 +37,9 @@ const useSounds = ({ url, loop = false } = {}) => {
     if (url) ref.current = playBackgroundSound(url, loop);
   }, [url]);
 
-  const playSound = (url, loop) => {
-    ref.current = playBackgroundSound(url, loop);
+  const playSound = async (url, loop, start = true) => {
+    ref.current = await playBackgroundSound(url, loop, start);
+    return ref.current;
   };
 
   return { playSound, ref };

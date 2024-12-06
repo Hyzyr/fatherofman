@@ -227,15 +227,54 @@
   &-text {
     display: flex;
     justify-content: center;
-    color: rgba($whit, 0.8);
+    color: rgba($white, 0.8);
     font-size: 14px;
     padding: 0.2em;
     line-height: 1.2;
   }
 }
 
-.mute{
-  
+.muteButton {
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  font-size: 18px;
+  width: 2.5em;
+  height: 2.5em;
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    height: 90%;
+    transform: translate(-50%, -50%);
+    transition: 0.2s ease-out;
+
+    &:nth-child(1) {
+      opacity: 1;
+    }
+    &:nth-child(2) {
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    img {
+      transform: translate(-50%, -50%) scale(0.95);
+    }
+  }
+
+  &._off {
+    img {
+      &:nth-child(1) {
+        opacity: 0;
+      }
+      &:nth-child(2) {
+        opacity: 1;
+      }
+    }
+  }
 }
 .uicontrols {
   pointer-events: none;

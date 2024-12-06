@@ -13,6 +13,7 @@ import useCameraAnimations from './hooks/useCameraAnimations';
 
 import gsap from 'gsap';
 import CopyBar from './components/CopyBar';
+import MuteButton from './components/MuteButton';
 
 const SCENES = {
   PREHYSTORIC: 'prehystoric',
@@ -94,6 +95,7 @@ const AScenes = () => {
         <Social />
         <DropBox />
         <CopyBar />
+        <MuteButton />
       </div>
       <div className="sceneController" ref={wrapper}>
         <div className="scene__bg">
