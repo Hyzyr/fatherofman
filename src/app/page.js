@@ -23,6 +23,8 @@ export default function Home() {
     setTimeout(() => setError(false), 2000);
   };
 
+  return <NYC animated={false} />;
+
   return (
     <>
       {!granted && (

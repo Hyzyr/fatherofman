@@ -15,13 +15,13 @@ const NYCScene = ({ animated = true, onCharClick }) => {
           url={IMAGES_URL + 'buildings.webp'}
           addClass="buildings"
           fill>
-          <SceneVideo addClass="left1" />
-          <SceneVideo addClass="left2" />
-          <SceneVideo addClass="left3" />
-          <SceneVideo addClass="right1" />
-          <SceneVideo addClass="right2" />
-          <SceneVideo addClass="right3" />
-          <SceneVideo addClass="right4" />
+          <SceneVideo addClass="left1" play={animated} />
+          <SceneVideo addClass="left2" play={animated} />
+          <SceneVideo addClass="left3" play={animated} />
+          <SceneVideo addClass="right1" play={animated} />
+          <SceneVideo addClass="right2" play={animated} />
+          <SceneVideo addClass="right3" play={animated} />
+          <SceneVideo addClass="right4" play={animated} />
         </SceneItem>
         <SceneItem
           url={IMAGES_URL + 'flag.zip'}
@@ -32,10 +32,10 @@ const NYCScene = ({ animated = true, onCharClick }) => {
       </div>
       <div className="scene__front">
         <SceneItem url={IMAGES_URL + 'building.webp'} addClass="building" fill>
-          <SceneVideo addClass="mid1" />
-          <SceneVideo addClass="mid2" />
-          <SceneVideo addClass="mid3" />
-          <SceneVideo addClass="mid4" />
+          <SceneVideo addClass="mid1" play={animated} />
+          <SceneVideo addClass="mid2" play={animated} />
+          <SceneVideo addClass="mid3" play={animated} />
+          <SceneVideo addClass="mid4" play={animated} />
         </SceneItem>
         <SceneItem url={IMAGES_URL + 'ground.webp'} addClass="ground" fill />
         <SceneItem
