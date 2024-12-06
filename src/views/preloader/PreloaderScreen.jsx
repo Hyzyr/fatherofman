@@ -7,7 +7,7 @@ import PreloaderSlider from './PreloaderSlider';
 import PreloaderPopup from './PreloaderPopup';
 import useSounds from '@/hooks/useSounds';
 
-const PreloaderScreen = ({ progress, granted, setGranted, completed }) => {
+const PreloaderScreen = ({ progress, setGranted, completed }) => {
   const [hydrated, setHydrated] = useState(false);
   const [error, setError] = useState(false);
   const timeout = React.useRef(null);
@@ -31,7 +31,7 @@ const PreloaderScreen = ({ progress, granted, setGranted, completed }) => {
 
   return (
     <>
-      {completed && !granted && (
+      {completed && (
         <PreloaderPopup
           onConfirm={() => setGranted(true)}
           onCancel={() => showError(false)}

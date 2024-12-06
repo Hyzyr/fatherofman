@@ -12,6 +12,7 @@ import DropBox from './components/DropBox';
 import useCameraAnimations from './hooks/useCameraAnimations';
 
 import gsap from 'gsap';
+import CopyBar from './components/CopyBar';
 
 const SCENES = {
   PREHYSTORIC: 'prehystoric',
@@ -92,6 +93,7 @@ const AScenes = () => {
         <NavArrow next onClick={navNextScene} />
         <Social />
         <DropBox />
+        <CopyBar />
       </div>
       <div className="sceneController" ref={wrapper}>
         <div className="scene__bg">
