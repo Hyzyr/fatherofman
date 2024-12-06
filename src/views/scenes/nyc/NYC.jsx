@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import NYCScene from './NYCScene';
+import PopupNYC from './PopupNYC';
 
 const NYC = ({ animated }) => {
   const [test, settest] = useState(false);
-  const [popup, setPopup] = useState(false);
+  const [popup, setPopup] = useState(true);
 
   React.useEffect(() => {
     settest(true);
@@ -13,7 +14,11 @@ const NYC = ({ animated }) => {
   return (
     <>
       <NYCScene animated={animated} onCharClick={() => setPopup(true)} />
-        
+      <PopupNYC
+        active={popup}
+        addClass={'popup--nyc'}
+        close={() => setPopup(false)}
+      />
     </>
   );
 };
