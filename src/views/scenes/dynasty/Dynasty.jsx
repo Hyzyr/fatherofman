@@ -8,11 +8,13 @@ const Dynasty = ({ animated }) => {
   return (
     <>
       <DynastyScene animated={animated} onCharClick={() => setPopup(true)} />
-      <PopupDynasty
-        active={popup}
-        addClass={'popup--dynasty'}
-        close={() => setPopup(false)}
-      />
+      {animated && (
+        <PopupDynasty
+          active={popup}
+          addClass={'popup--dynasty'}
+          close={() => setPopup(false)}
+        />
+      )}
     </>
   );
 };

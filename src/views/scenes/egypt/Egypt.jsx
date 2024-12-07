@@ -8,11 +8,13 @@ const Egypt = ({ animated }) => {
   return (
     <>
       <EgyptScene animated={animated} onCharClick={() => setPopup(true)} />
-      <PopupEgypt
-        active={popup}
-        addClass={'popup--egypt'}
-        close={() => setPopup(false)}
-      />
+      {animated && (
+        <PopupEgypt
+          active={popup}
+          addClass={'popup--egypt'}
+          close={() => setPopup(false)}
+        />
+      )}
     </>
   );
 };
