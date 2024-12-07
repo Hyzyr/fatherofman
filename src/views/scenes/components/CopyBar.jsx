@@ -19,6 +19,11 @@ const CopyBar = () => {
     <div className={`copybar`} onClick={toggleCopied}>
       <div className="copybar-bg">
         <img src="/images/components/textbox_long.webp" alt="textbox-bg" />
+        <img
+          src="/images/components/copy-ico.png"
+          className="_copy"
+          alt="copy"
+        />
       </div>
       <div className="copybar-text">
         {!copied && <span>{mainText}</span>}
