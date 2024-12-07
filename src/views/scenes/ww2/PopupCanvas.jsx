@@ -26,9 +26,7 @@ const PopupCanvas = (
   useEffect(() => {
     if (!ref.current) return 0;
     let imgHeight = ref.current.clientHeight;
-    console.log({ imgHeight });
     setWidth(instaStyle ? (9 / 16) * imgHeight : imgHeight);
-    console.log(instaStyle ? (9 / 16) * imgHeight : imgHeight);
   }, [instaStyle]);
 
   return (

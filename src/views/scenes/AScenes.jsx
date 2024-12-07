@@ -68,7 +68,6 @@ const AScenes = () => {
         wrapperEl
           .querySelectorAll('.sceneController__scene')
           .forEach((scene) => {
-            console.log(scene, scene.classList.contains('active'));
             if (!scene.classList.contains('active'))
               gsap.set(scene.querySelector('.scene'), { display: 'none' });
           }),

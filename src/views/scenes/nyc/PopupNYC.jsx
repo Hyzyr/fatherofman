@@ -8,10 +8,16 @@ import {
   useAnimation,
 } from 'framer-motion';
 
+import gsap from 'gsap';
+
 const imgURL = '/images/components/nyc/';
 
+const getBgMusic = () => {
+  if (typeof window === 'undefined') return;
+  return document.querySelector('.muteButton audio');
+};
+
 const PopupNYC = ({ close, ...props }) => {
-  const initialVideos = videosData;
   const [loadedVideos, setLoadedVideos] = useState({});
   const [videos, setVideos] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -20,6 +26,7 @@ const PopupNYC = ({ close, ...props }) => {
   const [isLoading, setIsLoading] = useState(true);
   const videoRefs = useRef([]);
   const backgroundVideoRef = useRef(null);
+  const tabletRef = useRef(null);
   const controls = useAnimation();
   const y = useMotionValue(0);
   // const { playMusic, pauseMusic } = useMusic();
@@ -32,10 +39,23 @@ const PopupNYC = ({ close, ...props }) => {
 
   useEffect(() => {
     setIsPaused(!props.active);
+    if (props.active) {
+      let height = tabletRef.current.clientHeight;
+      tabletRef.current.style.width = `${height * 0.69}px`;
+    }
+    const audioBg = getBgMusic();
+    if (audioBg)
+      gsap.to(audioBg, {
+        volume: props.active ? 0 : 1,
+        duration: 0.25,
+        onComplete: () => {
+          if (sound?.start) sound.start();
+        },
+      });
   }, [props.active]);
 
   useEffect(() => {
-    const shuffledVideos = [...initialVideos].sort(() => Math.random() - 0.5);
+    const shuffledVideos = [...videosData].sort(() => Math.random() - 0.5);
     setVideos(shuffledVideos);
   }, []);
 
@@ -68,14 +88,6 @@ const PopupNYC = ({ close, ...props }) => {
       }
     }
   }, [isPaused, currentIndex]);
-
-  // useEffect(() => {
-  //   if (isPaused) {
-  //     playMusic();
-  //   } else {
-  //     pauseMusic();
-  //   }
-  // }, [isPaused]);
 
   const onClose = () => {
     setIsPaused(true);
@@ -126,8 +138,12 @@ const PopupNYC = ({ close, ...props }) => {
   };
   return (
     <Popup {...props} close={onClose}>
-      <img src="/images/components/nyc/ipad_1.webp" alt="stone" />
       <div className="popupTablet">
+        <img
+          src="/images/components/nyc/ipad_1.webp"
+          alt="ipad_1"
+          ref={tabletRef}
+        />
         <div className="popupTablet__bg">
           {isLoading && (
             <img

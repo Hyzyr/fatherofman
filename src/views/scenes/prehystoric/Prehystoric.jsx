@@ -27,7 +27,6 @@ const Prehystoric = ({ animated }) => {
     const audioBg = getBgMusic();
 
     if (audioBg) {
-      console.log(audioBg, 'audioBg');
       let duration = 5;
       let sound = await playSound(url);
       duration = sound?.buffer?.duration;

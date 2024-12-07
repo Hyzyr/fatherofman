@@ -11,7 +11,7 @@ const SceneItem = ({
   clickable = false,
   onClick,
   animate = true,
-  children
+  children,
 }) => {
   if (!url || typeof url !== 'string') return null;
   let className = `scene__item ${addClass}`;
@@ -21,6 +21,7 @@ const SceneItem = ({
 
   const onClickFunc = () => {
     if (clickable && onClick) onClick();
+    dispatchEvent();
   };
 
   return (
@@ -42,6 +43,11 @@ const SceneItem = ({
       {!url.endsWith('zip') && <img src={url} alt={url.split('.')[0]} />}
     </div>
   );
+};
+
+const dispatchEvent = () => {
+  let ev = new Event('charClick');
+  window.dispatchEvent(ev);
 };
 
 export default SceneItem;

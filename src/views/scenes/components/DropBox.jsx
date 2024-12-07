@@ -1,7 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const DropBox = () => {
   const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    const listener = () => setActive(false);
+    window.addEventListener('charClick', listener);
+    return () => window.removeEventListener('charClick', listener);
+  }, []);
 
   return (
     <div className={`dropbox ${active ? 'active' : ''}`}>
