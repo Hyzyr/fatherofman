@@ -7,12 +7,14 @@ const SceneVideo = ({
   controlHeight = false,
   fill = false,
   play = true,
+  videoURL,
 }) => {
   const [loaded, setLoaded] = useState(false);
   const video = React.useMemo(() => {
+    if (videoURL) return videoURL;
     let index = getRandomToN(screenVideos.length);
     return screenVideos[index];
-  }, []);
+  }, [videoURL]);
   const ref = React.useRef(null);
 
   let className = `scene__video ${addClass}`;

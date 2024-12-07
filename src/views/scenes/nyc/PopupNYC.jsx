@@ -129,6 +129,12 @@ const PopupNYC = ({ close, ...props }) => {
       <img src="/images/components/nyc/ipad_1.webp" alt="stone" />
       <div className="popupTablet">
         <div className="popupTablet__bg">
+          {isLoading && (
+            <img
+              src={'/videos/thumb/' + videos[currentIndex]?.thumb}
+              alt="thumb"
+            />
+          )}
           <video
             ref={backgroundVideoRef}
             src={'/videos/' + videos[currentIndex]?.src}

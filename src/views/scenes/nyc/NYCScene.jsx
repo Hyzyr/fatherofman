@@ -3,10 +3,17 @@ import React, { useRef } from 'react';
 import Scene from '../components/Scene';
 import SceneItem from '../components/SceneItem';
 import SceneVideo from '../components/SceneVideo';
+import { screenVideos } from './constants';
+import { getRandomToN } from '@/utils/random';
 
 const IMAGES_URL = '/images/scenes/nyc/';
 
 const NYCScene = ({ animated = true, onCharClick }) => {
+  const video = React.useMemo(() => {
+    let index = getRandomToN(screenVideos.length);
+    return screenVideos[index];
+  }, []);
+
   return (
     <Scene name="nyc">
       <div className="scene__back"></div>
@@ -18,9 +25,10 @@ const NYCScene = ({ animated = true, onCharClick }) => {
           <SceneVideo addClass="left1" play={animated} />
           <SceneVideo addClass="left2" play={animated} />
           <SceneVideo addClass="left3" play={animated} />
+          <SceneVideo addClass="left4" play={animated} />
           <SceneVideo addClass="right1" play={animated} />
-          <SceneVideo addClass="right2" play={animated} />
-          <SceneVideo addClass="right3" play={animated} />
+          <SceneVideo addClass="right2" play={animated} videoURL={video} />
+          <SceneVideo addClass="right3" play={animated} videoURL={video} />
           <SceneVideo addClass="right4" play={animated} />
         </SceneItem>
         <SceneItem

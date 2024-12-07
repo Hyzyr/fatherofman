@@ -19,7 +19,6 @@ const useExportImg = ({ wrapper }) => {
       const cloneTextarea = cloneContent.querySelector('textarea');
       const img = cloneContent.querySelector('img');
       img.style.objectFit = 'cover';
-      console.log(img);
 
       if (cloneTextarea) {
         // Replace textarea with div in the clone only
@@ -35,6 +34,9 @@ const useExportImg = ({ wrapper }) => {
 
       // Add clone to temp container
       tempContainer.appendChild(cloneContent);
+
+      let space = tempContainer.querySelector('.space');
+      if (space) space.remove();
       document.body.appendChild(tempContainer);
 
       try {

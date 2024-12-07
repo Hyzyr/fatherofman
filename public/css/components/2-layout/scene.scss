@@ -567,6 +567,13 @@
         height: 31.7%;
         transform: skew(-2deg, 35deg);
       }
+      &.left4 {
+        top: 53.1%;
+        left: 29.4%;
+        width: 5.7%;
+        height: 20.2%;
+        transform: skew(1deg, 13deg);
+      }
       &.right1 {
         top: 13.3%;
         right: 31.9%;
@@ -575,18 +582,24 @@
         transform: skew(1deg, -8deg);
       }
       &.right2 {
-        top: 54.7%;
-        right: 26.8%;
-        width: 3.9%;
-        height: 17.5%;
-        transform: skew(21deg, -58deg) rotate(23deg);
+        top: 52.6%;
+        right: 23.7%;
+        width: 6.2%;
+        height: 15.8%;
+        transform: skew(26.8deg, -53deg) rotate(25deg);
+        video {
+          object-position: 17.2%;
+        }
       }
       &.right3 {
-        top: 49.1%;
+        top: 48.6%;
         right: 19.7%;
-        width: 7%;
-        height: 20.7%;
-        transform: skew(0deg, 5deg);
+        width: 6.5%;
+        height: 21%;
+        transform: skew(1deg, 2deg);
+        video {
+          object-position: 55%;
+        }
       }
       &.right4 {
         top: -12%;

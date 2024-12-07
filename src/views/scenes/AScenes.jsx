@@ -76,14 +76,17 @@ const AScenes = () => {
     );
   };
   const setActiveScene = (sceneName) => {
+    if (killAnimations.current || sceneName === activeScene) return;
     setActive(sceneName);
     navTo(sceneNamesArr.indexOf(sceneName));
   };
   const navNextScene = () => {
+    if (killAnimations.current) return;
     let newSceneName = navNext();
     setActive(newSceneName);
   };
   const navPrevScene = () => {
+    if (killAnimations.current) return;
     let newSceneName = navPrev();
     setActive(newSceneName);
   };

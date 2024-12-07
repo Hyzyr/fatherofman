@@ -1,0 +1,7 @@
+++ the redness is still wrong on the preloader
++ prehistoric, voice over is still doubled when clicked multiple times
++ WW2 Feature (Him's journal) should have a white frame (to look like old photo) on the image editor section (left side). White frame will not be exportable, just for aesthetics so it looks like an old photo
++ Additional aspect on the image editor section, background image selected should be able to be movable, but is limited to the frame resolution of the selected image itself (i will explain in a recording video later this afternoon) 
+- NYC scene still got duplicated videos on different billboard, 
+- and the video is not starting on the first minute of staying inside the scene
+- responsiveness problem

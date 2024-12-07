@@ -11,7 +11,6 @@ let getRandomText = () => {
   let index = getRandomToN(randomTextList.length);
   return randomTextList[index];
 };
-let randomN = getRandomText();
 
 const PopupWW2 = (props) => {
   const [instaStyle, setInstaStyle] = useState(false);
@@ -88,7 +87,7 @@ const PopupWW2 = (props) => {
           </div>
         </div>
         <div className="popup__inner-journal-column">
-          <div className="popupEditor">
+          <div className="popupEditor _nogap">
             <h3>Memorabilia</h3>
             <div className="popupEditor__list">
               {memorabiliaImages.map((imgData) => (

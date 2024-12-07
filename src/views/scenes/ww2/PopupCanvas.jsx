@@ -16,6 +16,7 @@ const PopupCanvas = (
   //   const ref = useRef();
   const rndRef = useRef(null);
 
+  const [imgPosition, setImgPosition] = useState({});
   const [textPosition, setTextPosition] = useState({
     x: 50,
     y: 50,
@@ -32,15 +33,39 @@ const PopupCanvas = (
 
   return (
     <div className="popupEditor__canvas" ref={ref} style={{ width: width }}>
-      {image ? (
-        <img
-          src={image}
-          alt="Photo Card Big"
-          className="w-full h-full object-cover"
-        />
-      ) : (
-        <span className="space"></span>
+      <span className="space">
+        <img src="/images/components/white-screen.webp" alt="white-screen" />
+      </span>
+      {image && (
+        <Rnd
+          ref={rndRef}
+          // bounds="parent"
+          size={{
+            width: imgPosition.width ?? '100%',
+            height: imgPosition.height ?? '100%',
+          }}
+          position={{ x: imgPosition.x ?? 0, y: imgPosition.y ?? 0 }}
+          onDragStop={(e, d) =>
+            setImgPosition((prev) => ({ ...prev, x: d.x, y: d.y }))
+          }
+          onResizeStop={(e, direction, ref, delta, position) => {
+            setImgPosition({
+              width: ref.offsetWidth,
+              height: ref.offsetHeight,
+              x: position.x,
+              y: position.y,
+            });
+          }}
+          enableResizing={{
+            top: true,
+            right: true,
+            bottom: true,
+            left: true,
+          }}>
+          <img src={image} alt="Photo Card Big" />
+        </Rnd>
       )}
+
       <Rnd
         ref={rndRef}
         bounds="parent"
@@ -65,15 +90,12 @@ const PopupCanvas = (
           right: true,
           bottom: true,
           left: true,
-        }}
-        dragHandleClassName="drag-handle"
-        className="absolute">
+        }}>
         <textarea
           value={manualText}
           onChange={(e) => setManualText(e.target.value)}
           style={{ color: textColor, fontSize: `${fontSize}px` }}
           placeholder="Enter your text here..."
-          className="drag-handle"
         />
       </Rnd>
     </div>

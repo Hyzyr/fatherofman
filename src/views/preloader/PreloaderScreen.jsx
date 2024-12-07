@@ -48,7 +48,7 @@ const PreloaderScreen = ({ progress, setGranted, completed }) => {
                 alt="completed"
               />
               <img
-                src="/images/cursor/cursor-helper/following-cursor-clicked.webp"
+                src="/images/cursor/cursor-helper/following-cursor-clicked-red.png"
                 alt="completed"
               />
             </div>
