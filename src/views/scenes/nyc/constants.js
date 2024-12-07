@@ -455,6 +455,25 @@ export const videosData = [
 const videsWithIds = (idsArr) => {
   return videosData.filter((data) => idsArr.indexOf(data.id) !== -1);
 };
-export const screenVideos = videsWithIds([
-  32, 33, 34, 30, 31, 12, 28, 19, 40, 27,
-]);
+export const screenVideos = videsWithIds([32, 28, 38, 19, 27, 40, 6, 31, 30]);
+
+// id: 32,
+// src: 'him-bleach.mp4', //HIM BLEACH.mp4
+// id: 28,
+// src: 'pussy-destroyer.mp4', //pussy destroyer.mp4
+// id: 38,
+// src: 'youre-not-him.mp4', //YOURE NOT HIM.mp4
+// id: 33,
+// src: 'him-evangelion.mp4', //HIM EVANGELION.mp4
+// id: 19,
+// src: 'i-am-father.mp4', //I AM FATHER.mp4
+// id: 27,
+// src: 'him-go-crazy.mp4', //Him Go Crazy.mp4
+// id: 40,
+// src: 'him-the-last-aurabender.mp4', //HIM the last aurabender.mp4
+// id: 6,
+// src: 'dont-copy-my-flow..mp4', //dont copy my flow.mp4
+// id: 31,
+// src: 'not-a-movie.mp4', //NOT A MOVIE.mp4
+// id: 30,
+// src: 'him-fighter.mp4', //Him Fighter.mp4
