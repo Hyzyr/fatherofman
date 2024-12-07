@@ -19,7 +19,20 @@ const DropBox = () => {
       </button>
       <div className="dropbox__inner">
         <div className="dropbox__inner-bg">
-          <img src="/images/components/textbox-website.webp" alt="textbox-bg" />
+          <img
+            src="/images/components/textbox/low-opacity-bg.webp"
+            className="_bg"
+            alt="textbox-bg"
+          />
+          <img
+            src="/images/components/textbox/symbol_hd.webp"
+            className="_shape"
+            alt="textbox-bg"
+          />
+          <span className="border-v border-l"></span>
+          <span className="border-v border-r"></span>
+          <span className="border-h border-t"></span>
+          <span className="border-h border-b"></span>
         </div>
       </div>
     </div>

@@ -21,6 +21,7 @@ const PrehystoricScene = ({ animated = true, onCharClick }) => {
           animate={animated}
           addClass="smoke"
           speed={0.08}
+          fill
         />
         <SceneItem url={IMAGES_URL + 'volcano.webp'} addClass="volcano" fill />
       </div>
@@ -45,6 +46,7 @@ const PrehystoricScene = ({ animated = true, onCharClick }) => {
           url={IMAGES_URL + 'character.zip'}
           animate={animated}
           addClass="character"
+          controlHeight
           clickable
           onClick={onCharClick}
           delay={0.6}

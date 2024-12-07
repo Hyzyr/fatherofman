@@ -12,7 +12,6 @@ export default function Home() {
   const [granted, setGranted] = useState(false);
   const { loaded, progress } = useAssetLoader({ assets: AllAssetFiles });
 
-  return <NYC />;
   return (
     <>
       {!granted && (

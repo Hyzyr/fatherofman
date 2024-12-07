@@ -450,6 +450,17 @@ export const videosData = [
     shares: '5.2K',
     bLiked: false,
   },
+  {
+    id: 42,
+    src: 'him-wukong-edit.mp4', //him-wukong-edit.mp4.mp4
+    thumb: 'him-wukong-edit.webp',
+    username: '@HimFatherofMan',
+    caption: 'The first and the last',
+    likes: '100K',
+    comments: '150K',
+    shares: '5.2K',
+    bLiked: false,
+  },
 ];
 
 const videsWithIds = (idsArr) => {
@@ -465,14 +476,14 @@ export const screenVideos = videsWithIds([32, 28, 38, 19, 27, 40, 6, 31, 30]);
 // src: 'youre-not-him.mp4', //YOURE NOT HIM.mp4
 // id: 33,
 // src: 'him-evangelion.mp4', //HIM EVANGELION.mp4
-// id: 19,
-// src: 'i-am-father.mp4', //I AM FATHER.mp4
-// id: 27,
-// src: 'him-go-crazy.mp4', //Him Go Crazy.mp4
-// id: 40,
-// src: 'him-the-last-aurabender.mp4', //HIM the last aurabender.mp4
 // id: 6,
 // src: 'dont-copy-my-flow..mp4', //dont copy my flow.mp4
+// id: 42,
+// src: 'him-wukong-edit.mp4', //him-wukong-edit.mp4.mp4
+// id: 40,
+// src: 'him-the-last-aurabender.mp4', //HIM the last aurabender.mp4
+// id: 19,
+// src: 'i-am-father.mp4', //I AM FATHER.mp4
 // id: 31,
 // src: 'not-a-movie.mp4', //NOT A MOVIE.mp4
 // id: 30,
