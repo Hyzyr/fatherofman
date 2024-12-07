@@ -14,6 +14,7 @@ import useCameraAnimations from './hooks/useCameraAnimations';
 import gsap from 'gsap';
 import CopyBar from './components/CopyBar';
 import MuteButton from './components/MuteButton';
+import SceneWrapper from './SceneWrapper';
 
 const SCENES = {
   PREHYSTORIC: 'prehystoric',
@@ -38,6 +39,8 @@ const AScenes = () => {
     setScrolling: (state) => {
       killAnimations.current = state;
       setScrolling(state);
+      if (state) showAllScenes();
+      else hideUnusedScenes();
     },
   });
   useCameraAnimations({
@@ -47,6 +50,31 @@ const AScenes = () => {
     killAnimations,
   });
 
+  useEffect(() => {
+    setActiveScene(activeScene);
+  }, []);
+
+  const showAllScenes = () => {
+    let wrapperEl = wrapper.current;
+
+    gsap.set(wrapperEl.querySelectorAll('.sceneController__scene .scene'), {
+      clearProps: 'display',
+    });
+  };
+  const hideUnusedScenes = () => {
+    let wrapperEl = wrapper.current;
+    setTimeout(
+      () =>
+        wrapperEl
+          .querySelectorAll('.sceneController__scene')
+          .forEach((scene) => {
+            console.log(scene, scene.classList.contains('active'));
+            if (!scene.classList.contains('active'))
+              gsap.set(scene.querySelector('.scene'), { display: 'none' });
+          }),
+      100
+    );
+  };
   const setActiveScene = (sceneName) => {
     setActive(sceneName);
     navTo(sceneNamesArr.indexOf(sceneName));
@@ -135,15 +163,6 @@ const AScenes = () => {
         </div>
       </div>
     </>
-  );
-};
-
-const SceneWrapper = ({ active, children }) => {
-  return (
-    <div className={`sceneController__scene ${active ? 'active' : ''}`}>
-      {children}
-      <div className={`sceneController__scene-fog`}></div>
-    </div>
   );
 };
 

@@ -34,7 +34,7 @@ const useSceneController = ({
   const navTo = (index) => {
     const track = wrapper.current.querySelector('.sceneController__track');
 
-    gsap.to(track, {
+    navTimeline.current.to(track, {
       left: `${window.innerWidth * -index}px`,
       duration: 2,
       ease: 'power3.out',

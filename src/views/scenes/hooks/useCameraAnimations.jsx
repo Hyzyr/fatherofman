@@ -16,10 +16,8 @@ const useCameraAnimations = ({
   killAnimations,
 }) => {
   useEffect(() => {
-    const wrapper = document.querySelector(
-      '.sceneController__scene.active .scene'
-    );
-    gsap.set(wrapper, {
+    const wrappers = document.querySelectorAll('.sceneController__scene .scene');
+    gsap.set(wrappers, {
       scale: 1 + bgMove / 100,
       xPercent: 0,
       yPercent: 0,
