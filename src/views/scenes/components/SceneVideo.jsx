@@ -10,12 +10,10 @@ const SceneVideo = ({
 }) => {
   const [loaded, setLoaded] = useState(false);
   const video = React.useMemo(() => {
-    console.log(screenVideos);
     let index = getRandomToN(screenVideos.length);
     return screenVideos[index];
   }, []);
   const ref = React.useRef(null);
-  console.log({ video });
 
   let className = `scene__video ${addClass}`;
   className += controlHeight ? ' _height' : '';

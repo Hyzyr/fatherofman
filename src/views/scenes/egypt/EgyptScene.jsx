@@ -6,7 +6,6 @@ import SceneItem from '../components/SceneItem';
 const IMAGES_URL = '/images/scenes/egypt/';
 
 const EgyptScene = ({ animated = true, onCharClick }) => {
-
   return (
     <Scene name="egypt">
       <div className="scene__back">
@@ -33,7 +32,7 @@ const EgyptScene = ({ animated = true, onCharClick }) => {
         />
       </div>
       <div className="scene__front">
-        <SceneItem url={IMAGES_URL + 'sphinx.webp'} addClass="sphinx" />
+        <SceneItem url={IMAGES_URL + 'sphinx2.webp'} addClass="sphinx" />
         <SceneItem url={IMAGES_URL + 'sand.webp'} addClass="ground" fill />
         <SceneItem
           url={IMAGES_URL + 'grass.zip'}
@@ -41,6 +40,13 @@ const EgyptScene = ({ animated = true, onCharClick }) => {
           addClass="grass"
           speed={0.1}
         />
+        <SceneItem url={IMAGES_URL + 'cactus-front.webp'} addClass="cactus" />
+        <SceneItem
+          url={IMAGES_URL + 'foreground-egypt.webp'}
+          addClass="foreground"
+          fill
+        />
+
         <SceneItem
           url={IMAGES_URL + 'grass.zip'}
           animate={animated}

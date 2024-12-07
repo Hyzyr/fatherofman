@@ -20,18 +20,19 @@ const PrehystoricScene = ({ animated = true, onCharClick }) => {
           url={IMAGES_URL + 'smoke.zip'}
           animate={animated}
           addClass="smoke"
-          speed={0.1}
+          speed={0.08}
         />
         <SceneItem url={IMAGES_URL + 'volcano.webp'} addClass="volcano" fill />
       </div>
       <div className="scene__front">
-        <SceneItem url={IMAGES_URL + 'ground.webp'} addClass="ground" fill />
+        <SceneItem url={IMAGES_URL + 'ground-2.webp'} addClass="ground" fill />
         <SceneItem url={IMAGES_URL + 'mid-ground.webp'} addClass="ground-mid" />
         <SceneItem
           url={IMAGES_URL + 'dinos.zip'}
           animate={animated}
           addClass="dinos"
-          speed={0.13}
+          speed={0.1}
+          delay={0.2}
         />
         <SceneItem
           url={IMAGES_URL + 'snake-tree.zip'}
@@ -46,19 +47,20 @@ const PrehystoricScene = ({ animated = true, onCharClick }) => {
           addClass="character"
           clickable
           onClick={onCharClick}
-          speed={0.1}
+          delay={0.6}
+          speed={0.06}
         />
         <SceneItem
           url={IMAGES_URL + 'palms.zip'}
           animate={animated}
           addClass="palms"
-          speed={0.13}
+          speed={0.1}
         />
         <SceneItem
           url={IMAGES_URL + 'grass.zip'}
           animate={animated}
           addClass="grass"
-          speed={0.1}
+          speed={0.08}
         />
         <SceneItem
           url={IMAGES_URL + 'silhouette-l.zip'}

@@ -13,11 +13,16 @@ const getBgMusic = () => {
 
 const Prehystoric = ({ animated }) => {
   const index = useRef(null);
+  const isPlaying = useRef(false);
   const { playSound } = useSounds();
 
   const onCharClick = async () => {
+    if (isPlaying.current) return;
+    isPlaying.current = true;
+
     let newIndex = getRandomToN(VOICE_LIST.length, index.current);
     index.current = newIndex;
+
     let url = `/voice-over/${VOICE_LIST[newIndex]}`;
     const audioBg = getBgMusic();
 
@@ -30,14 +35,20 @@ const Prehystoric = ({ animated }) => {
       gsap
         .timeline()
         .to(audioBg, {
-          volume: 0,
+          volume: 0.1,
           duration: 0.4,
           onComplete: () => {
             if (sound?.start) sound.start();
           },
         })
         .to({}, { duration })
-        .to(audioBg, { volume: 1, duration: 0.5 });
+        .to(audioBg, {
+          volume: 1,
+          duration: 0.5,
+          onComplete: () => {
+            isPlaying.current = false;
+          },
+        });
     } else playSound(url);
   };
 
