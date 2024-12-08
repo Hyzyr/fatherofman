@@ -42,7 +42,10 @@ const useSceneController = ({
       .to(fg, {
         x: -index * innerWidth,
         duration: 2.4,
-        ease: CustomEase.create('custom', 'M0,0 C0.155,0.262 0.586,0.847 1,1 '),
+        ease: CustomEase.create(
+          'custom',
+          'M0,0 C-0.013,0.147 0.212,0.401 0.421,0.624 0.591,0.806 0.88,1 1,1 '
+        ),
       })
       .to(
         track,
@@ -51,7 +54,7 @@ const useSceneController = ({
           duration: 1.2,
           ease: CustomEase.create(
             'custom',
-            'M0,0 C0.354,0.217 0.754,0.583 1,1 '
+            'M0,0 C0.022,0.077 0.212,0.401 0.421,0.624 0.591,0.806 0.83,0.908 1,1 '
           ),
           delay: 0.3,
           onStart: () => {

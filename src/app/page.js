@@ -18,7 +18,6 @@ export default function Home() {
   }, []);
   if (!ready) return null;
 
-  return <NYC animated />;
   return (
     <>
       {loaded && <AScenes active={granted} />}
