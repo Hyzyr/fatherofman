@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const MuteButton = () => {
-  const [mute, setMute] = useState(true);
+  const [mute, setMute] = useState(false);
   const audio = React.useRef(null);
   const toggleMute = () => {
     if (audio.current) !mute ? audio.current.pause() : audio.current.play();
