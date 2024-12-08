@@ -2,6 +2,7 @@ import { useGSAP } from '@gsap/react';
 import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { getRandomToN } from '@/utils/random';
+import { createPortal } from 'react-dom';
 
 const HELPER_TEXTS = [
   "Don't fade your ancestor",
@@ -38,7 +39,7 @@ const CursorHelper = () => {
     }
   );
 
-  return (
+  return createPortal(
     <div className="helper" ref={ref}>
       <div className="helper-text">My Child</div>
       <div className="helper-img">
@@ -47,7 +48,8 @@ const CursorHelper = () => {
           alt="cursor-helper"
         />
       </div>
-    </div>
+    </div>,
+    document.getElementById('popups')
   );
 };
 
