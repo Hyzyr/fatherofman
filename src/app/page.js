@@ -6,11 +6,17 @@ import useAssetLoader from '@/hooks/useAssetLoader';
 import Preloader from '@/views/preloader/PreloaderScreen';
 import AScenes from '@/views/scenes/AScenes';
 import NYC from '@/views/scenes/nyc/NYC';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
-  const [granted, setGranted] = useState(false);
+  const [granted, setGranted] = useState(true);
+  const [ready, setReady] = useState(false);
   const { loaded, progress } = useAssetLoader({ assets: AllAssetFiles });
+
+  useEffect(() => {
+    setReady(true);
+  }, []);
+  if (!ready) return null;
 
   return (
     <>
@@ -21,7 +27,7 @@ export default function Home() {
           setGranted={setGranted}
         />
       )}
-      {granted && <AScenes />}
+      {loaded && <AScenes active={granted} />}
       <CursorHelper />
     </>
   );

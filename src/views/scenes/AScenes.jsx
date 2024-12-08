@@ -15,6 +15,7 @@ import gsap from 'gsap';
 import CopyBar from './components/CopyBar';
 import MuteButton from './components/MuteButton';
 import SceneWrapper from './SceneWrapper';
+import ScenecFg from './ScenecFg';
 
 const SCENES = {
   PREHYSTORIC: 'prehystoric',
@@ -26,7 +27,7 @@ const SCENES = {
 const sceneNamesArr = Object.values(SCENES);
 const IMAGES_URL = '/images/scenes/';
 
-const AScenes = () => {
+const AScenes = ({ active }) => {
   const [scrolling, setScrolling] = useState(false);
   const [activeScene, setActive] = useState(sceneNamesArr[0]);
   const wrapper = useRef(null);
@@ -44,7 +45,7 @@ const AScenes = () => {
     },
   });
   useCameraAnimations({
-    animated: !scrolling,
+    animated: !scrolling && active,
     wrapperSelector: `.sceneController`,
     scope: wrapper,
     killAnimations,
@@ -132,33 +133,36 @@ const AScenes = () => {
           <img src={IMAGES_URL + 'sky.webp'} alt="sky" />
         </div>
         <div className="sceneController__track">
+          <ScenecFg />
           <SceneWrapper active={SCENES.PREHYSTORIC === activeScene}>
             <Prehystoric
-              animated={SCENES.PREHYSTORIC === activeScene}
+              animated={
+                active && !scrolling && SCENES.PREHYSTORIC === activeScene
+              }
               // onCharClick={() => setActiveScene(SCENES.WW2)}
             />
           </SceneWrapper>
           <SceneWrapper active={SCENES.EGYPT === activeScene}>
             <Egypt
-              animated={SCENES.EGYPT === activeScene}
+              animated={active && !scrolling && SCENES.EGYPT === activeScene}
               // onCharClick={() => setActiveScene(SCENES.NYC)}
             />
           </SceneWrapper>
           <SceneWrapper active={SCENES.DYNASTY === activeScene}>
             <Dynasty
-              animated={SCENES.DYNASTY === activeScene}
+              animated={active && !scrolling && SCENES.DYNASTY === activeScene}
               // onCharClick={() => setActiveScene(SCENES.EGYPT)}
             />
           </SceneWrapper>
           <SceneWrapper active={SCENES.WW2 === activeScene}>
             <WW2
-              animated={SCENES.WW2 === activeScene}
+              animated={active && !scrolling && SCENES.WW2 === activeScene}
               // onCharClick={() => setActiveScene(SCENES.DYNASTY)}
             />
           </SceneWrapper>
           <SceneWrapper active={SCENES.NYC === activeScene}>
             <NYC
-              animated={SCENES.NYC === activeScene}
+              animated={active && !scrolling && SCENES.NYC === activeScene}
               // onCharClick={() => setActiveScene(SCENES.PREHYSTORIC)}
             />
           </SceneWrapper>
