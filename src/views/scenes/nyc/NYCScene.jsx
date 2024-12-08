@@ -17,15 +17,15 @@ const NYCScene = ({ animated = true, onCharClick }) => {
           url={IMAGES_URL + 'buildings.webp'}
           addClass="buildings"
           fill>
-          <SceneVideo addClass="left1" play={animated} videoURL={screenVideos[0]}/>
-          <SceneVideo addClass="left2" play={animated} videoURL={screenVideos[1]}/>
-          {/* <SceneVideo addClass="left3" play={animated} videoURL={screenVideos[2]}/> */}
-          <SceneItem url={IMAGES_URL + 'him-evangelion.zip'} animate={animated} addClass="vid left3" fill  />
-          <SceneVideo addClass="left4" play={animated} videoURL={screenVideos[3]}/>
-          <SceneVideo addClass="right1" play={animated} videoURL={screenVideos[7]}/>
-          <SceneVideo addClass="right2" play={animated} videoURL={screenVideos[8]} />
-          <SceneVideo addClass="right3" play={animated} videoURL={screenVideos[8]} />
-          <SceneVideo addClass="right4" play={animated} videoURL={screenVideos[9]}/>
+          <SceneItem url={IMAGES_URL + 'vid-him-bleach.zip'} animate={animated} addClass="vid left1" fill  />
+          <SceneItem url={IMAGES_URL + 'vide-youre-not-him.zip'} animate={animated} addClass="vid left2" fill  />
+          <SceneItem url={IMAGES_URL + 'vid-pussy-destroyer.zip'} animate={animated} addClass="vid left3" fill  />
+          <SceneItem url={IMAGES_URL + 'vid-him-evangelion.zip'} animate={animated} addClass="vid left4" fill  />
+          
+          <SceneItem url={IMAGES_URL + 'vid-i-am-father.zip'} animate={animated} addClass="vid right1" fill  />
+          <SceneItem url={IMAGES_URL + 'vid-not-a-movie.zip'} animate={animated} addClass="vid right2" fill  />
+          <SceneItem url={IMAGES_URL + 'vid-not-a-movie.zip'} animate={animated} addClass="vid right3" fill  />
+          <SceneItem url={IMAGES_URL + 'vid-him-fighter.zip'} animate={animated} addClass="vid right4" fill  />
         </SceneItem>
         <SceneItem
           url={IMAGES_URL + 'flag.zip'}
@@ -36,11 +36,10 @@ const NYCScene = ({ animated = true, onCharClick }) => {
       </div>
       <div className="scene__front">
         <SceneItem url={IMAGES_URL + 'building.webp'} addClass="building" fill>
-          {/* <SceneVideo addClass="mid1" play={animated} videoURL={screenVideos[4]}/> */}
-          <SceneItem url={IMAGES_URL + 'dont-copy-my-flow.zip'} animate={animated} addClass="vid mid1" fill  />
-          <SceneVideo addClass="mid2" play={animated} videoURL={screenVideos[5]}/>
-          <SceneVideo addClass="mid3" play={animated} videoURL={screenVideos[6]}/>
-          <SceneVideo addClass="mid4" play={animated} videoURL={screenVideos[5]}/>
+          <SceneItem url={IMAGES_URL + 'vid-dont-copy-my-flow.zip'} animate={animated} addClass="vid mid1" fill  />
+          <SceneItem url={IMAGES_URL + 'vid-him-wukong.zip'} animate={animated} addClass="vid mid2" fill  />
+          <SceneItem url={IMAGES_URL + 'vid-him-the-last-aurabender.zip'} animate={animated} addClass="vid mid3" fill  />
+          <SceneItem url={IMAGES_URL + 'banner.webp'} animate={animated} addClass="vid mid4" fill  />
         </SceneItem>
         <SceneItem url={IMAGES_URL + 'ground.webp'} addClass="ground" fill />
         <SceneItem

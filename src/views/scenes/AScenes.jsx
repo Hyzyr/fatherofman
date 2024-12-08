@@ -76,17 +76,21 @@ const AScenes = ({ active }) => {
     );
   };
   const setActiveScene = (sceneName) => {
-    if (killAnimations.current || sceneName === activeScene) return;
+    if (scrolling || killAnimations.current || sceneName === activeScene)
+      return;
+    killAnimations.current = true;
     setActive(sceneName);
     navTo(sceneNamesArr.indexOf(sceneName));
   };
   const navNextScene = () => {
-    if (killAnimations.current) return;
+    if (scrolling || killAnimations.current) return;
+    killAnimations.current = true;
     let newSceneName = navNext();
     setActive(newSceneName);
   };
   const navPrevScene = () => {
-    if (killAnimations.current) return;
+    if (scrolling || killAnimations.current) return;
+    killAnimations.current = true;
     let newSceneName = navPrev();
     setActive(newSceneName);
   };

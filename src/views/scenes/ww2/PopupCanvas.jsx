@@ -1,3 +1,4 @@
+import { promiseLoadImage } from '@/utils/fetch';
 import React, { useEffect, useRef, useState } from 'react';
 import { Rnd } from 'react-rnd';
 
@@ -23,11 +24,50 @@ const PopupCanvas = (
     width: 200,
     height: 100,
   });
+
+  const updateImagePos = (newState) => {
+    setImgPosition((oldState) => ({ ...oldState, ...newState }));
+  };
   useEffect(() => {
     if (!ref.current) return 0;
     let imgHeight = ref.current.clientHeight;
     setWidth(instaStyle ? (9 / 16) * imgHeight : imgHeight);
   }, [instaStyle]);
+  useEffect(() => {
+    if (!image) return;
+
+    promiseLoadImage(image).then((img) => {
+      if (!img?.width) return;
+      const imageWidth = img.naturalWidth;
+      const imageHeight = img.naturalHeight;
+
+      // Calculate the scaling factor to fit the image within the wrapper
+      const scaleFactor = Math.min(
+        ref.current.clientWidth / imageWidth,
+        ref.current.clientHeight / imageHeight
+      ).toFixed(3);
+      console.log({
+        refclientWidth: ref.current.clientWidth,
+        refclientHeight: ref.current.clientHeight,
+        imageWidth,
+        imageHeight,
+      });
+      console.log({
+        top: 0,
+        left: 0,
+        width: `${imageWidth * scaleFactor}px`,
+        height: `${imageHeight * scaleFactor}px`,
+      });
+      updateImagePos({
+        top: 10,
+        left: 10,
+        width: `${imageWidth * scaleFactor}px`,
+        height: `${imageHeight * scaleFactor}px`,
+      });
+      window.img = img;
+      console.log(img);
+    });
+  }, [image]);
 
   return (
     <div className="popupEditor__canvas" ref={ref} style={{ width: width }}>
@@ -37,7 +77,7 @@ const PopupCanvas = (
       {image && (
         <Rnd
           ref={rndRef}
-          // bounds="parent"
+          bounds="parent"
           size={{
             width: imgPosition.width ?? '100%',
             height: imgPosition.height ?? '100%',

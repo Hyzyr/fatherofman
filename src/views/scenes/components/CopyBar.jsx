@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { copyTextToClipboard } from '@/utils/clipboard';
 
 const mainText = 'Coming soon';
 
@@ -9,6 +10,8 @@ const CopyBar = () => {
   const toggleCopied = () => {
     if (timeout.current) clearTimeout(timeout.current);
     else setCopied(true);
+
+    copyTextToClipboard(mainText);
     timeout.current = setTimeout(() => {
       setCopied(false);
       timeout.current = null;

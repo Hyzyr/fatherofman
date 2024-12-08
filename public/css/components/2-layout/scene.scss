@@ -1,9 +1,12 @@
 @keyframes arrow {
-  from {
-    transform: translate(-50%, 0) scale(1.02);
+  0% {
+    transform: translate(-50%, 0) scale(1.1);
+  }
+  10% {
+    transform: translate(-50%, 0) scale(1.1);
   }
   to {
-    transform: translate(-50%, 3%) scale(0.98);
+    transform: translate(-50%, 0) scale(1);
   }
 }
 .scene {
@@ -275,7 +278,7 @@
         width: 77%;
       }
       &.character {
-        left: 42.9%;
+        left: 42%;
         height: 51.6%;
         bottom: 4.3%;
       }
@@ -554,11 +557,11 @@
         transform: skew(-1deg, 17deg);
       }
       &.left3 {
-        top: 53.1%;
+        top: 54.3%;
         left: 29.4%;
         width: 5.7%;
         height: 20.2%;
-        transform: skew(1deg, 13deg);
+        transform: skew(0deg, 30deg);
       }
       &.left4 {
         top: 47.1%;
@@ -574,23 +577,25 @@
         transform: skew(1deg, -8deg);
       }
       &.right2 {
-        top: 52.6%;
-        right: 23.7%;
-        width: 6.2%;
-        height: 15.8%;
-        transform: skew(26.8deg, -53deg) rotate(25deg);
-        video {
-          object-position: 17.2%;
+        top: 52.9%;
+        right: 23.55%;
+        width: 8.2%;
+        height: 15.3%;
+        transform: skew(34.8deg, -61deg) rotate(36deg);
+        img {
+          object-fit: cover;
+          object-position: -14.9%;
         }
       }
       &.right3 {
-        top: 48.6%;
-        right: 19.7%;
-        width: 6.5%;
-        height: 21%;
-        transform: skew(1deg, 2deg);
-        video {
-          object-position: 55%;
+        top: 46%;
+        right: 16.9%;
+        width: 9.4%;
+        height: 27.2%;
+        transform: skew(0, 6.8deg);
+        img {
+          object-fit: cover;
+          object-position: 56%;
         }
       }
       &.right4 {
@@ -656,11 +661,11 @@
         transform: skew(-1deg, 17deg);
       }
       &.left3 {
-        top: 53.1%;
+        top: 54.3%;
         left: 29.4%;
         width: 5.7%;
         height: 20.2%;
-        transform: skew(1deg, 13deg);
+        transform: skew(0deg, 30deg);
       }
       &.left4 {
         top: 47.1%;

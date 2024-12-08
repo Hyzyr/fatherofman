@@ -251,11 +251,6 @@
     .react-draggable {
       position: absolute;
 
-      & > img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
       textarea {
         width: 100%;
         height: 100%;
