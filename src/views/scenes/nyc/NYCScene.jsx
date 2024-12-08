@@ -17,18 +17,18 @@ const NYCScene = ({ animated = true, onCharClick }) => {
           url={IMAGES_URL + 'buildings.webp'}
           addClass="buildings"
           fill>
-          <SceneItem url={IMAGES_URL + 'vid-him-bleach.zip'} animate={animated} addClass="vid left1" fill  />
-          <SceneItem url={IMAGES_URL + 'vide-youre-not-him.zip'} animate={animated} addClass="vid left2" fill  />
-          <SceneItem url={IMAGES_URL + 'vid-pussy-destroyer.zip'} animate={animated} addClass="vid left3" fill  />
-          <SceneItem url={IMAGES_URL + 'vid-him-evangelion.zip'} animate={animated} addClass="vid left4" fill  />
+          <SceneItem url={IMAGES_URL + 'vid-him-bleach.zip'} animate={animated} delay={1} addClass="vid left1" fill  />
+          <SceneItem url={IMAGES_URL + 'vide-youre-not-him.zip'} animate={animated} delay={1} addClass="vid left2" fill  />
+          <SceneItem url={IMAGES_URL + 'vid-pussy-destroyer.zip'} animate={animated} delay={1} addClass="vid left3" fill  />
+          <SceneItem url={IMAGES_URL + 'vid-him-evangelion.zip'} animate={animated} delay={1} addClass="vid left4" fill  />
           
-          <SceneItem url={IMAGES_URL + 'vid-i-am-father.zip'} animate={animated} addClass="vid right1" fill  />
-          <SceneItem url={IMAGES_URL + 'vid-not-a-movie.zip'} animate={animated} addClass="vid right2" fill  />
-          <SceneItem url={IMAGES_URL + 'vid-not-a-movie.zip'} animate={animated} addClass="vid right3" fill  />
-          <SceneItem url={IMAGES_URL + 'vid-him-fighter.zip'} animate={animated} addClass="vid right4" fill  />
+          <SceneItem url={IMAGES_URL + 'vid-i-am-father.zip'} animate={animated} delay={1} addClass="vid right1" fill  />
+          <SceneItem url={IMAGES_URL + 'vid-not-a-movie.zip'} animate={animated} delay={1} addClass="vid right2" fill  />
+          <SceneItem url={IMAGES_URL + 'vid-not-a-movie.zip'} animate={animated} delay={1} addClass="vid right3" fill  />
+          <SceneItem url={IMAGES_URL + 'vid-him-fighter.zip'} animate={animated} delay={1} addClass="vid right4" fill  />
         </SceneItem>
         <SceneItem
-          url={IMAGES_URL + 'flag.zip'}
+          url={IMAGES_URL + 'flag.webp'}
           animate={animated}
           addClass="flag"
           controlHeight
@@ -36,17 +36,17 @@ const NYCScene = ({ animated = true, onCharClick }) => {
       </div>
       <div className="scene__front">
         <SceneItem url={IMAGES_URL + 'building.webp'} addClass="building" fill>
-          <SceneItem url={IMAGES_URL + 'vid-dont-copy-my-flow.zip'} animate={animated} addClass="vid mid1" fill  />
-          <SceneItem url={IMAGES_URL + 'vid-him-wukong.zip'} animate={animated} addClass="vid mid2" fill  />
-          <SceneItem url={IMAGES_URL + 'vid-him-the-last-aurabender.zip'} animate={animated} addClass="vid mid3" fill  />
-          <SceneItem url={IMAGES_URL + 'banner.webp'} animate={animated} addClass="vid mid4" fill  />
+          <SceneItem url={IMAGES_URL + 'vid-dont-copy-my-flow.zip'} animate={animated} delay={1} addClass="vid mid1" fill  />
+          <SceneItem url={IMAGES_URL + 'vid-him-wukong.zip'} animate={animated} delay={1} addClass="vid mid2" fill  />
+          <SceneItem url={IMAGES_URL + 'vid-him-the-last-aurabender.zip'} animate={animated} delay={1} addClass="vid mid3" fill  />
+          <SceneItem url={IMAGES_URL + 'banner.webp'} animate={animated} delay={1} addClass="vid mid4" fill  />
         </SceneItem>
         <SceneItem url={IMAGES_URL + 'ground.webp'} addClass="ground" fill />
         <SceneItem
           url={IMAGES_URL + 'taxi.zip'}
           animate={animated}
           addClass="taxi"
-          delay={1}
+          delay={2.5}
           fill
         />
         <SceneItem
@@ -54,11 +54,13 @@ const NYCScene = ({ animated = true, onCharClick }) => {
           animate={animated}
           addClass="officer"
           controlHeight
+          delay={1}
         />
         <SceneItem
-          url={IMAGES_URL + 'people.zip'}
+          url={IMAGES_URL + 'people.webp'}
           animate={animated}
           addClass="people"
+          delay={1}
           controlHeight
           speed={0.1}
         />
@@ -70,9 +72,10 @@ const NYCScene = ({ animated = true, onCharClick }) => {
           onClick={onCharClick}
           controlHeight
           speed={0.1}
+          delay={1}
         />
         <SceneItem
-          url={IMAGES_URL + 'person.zip'}
+          url={IMAGES_URL + 'person.webp'}
           animate={animated}
           addClass="person"
           controlHeight
