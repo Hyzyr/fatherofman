@@ -72,6 +72,7 @@ const WW2Scene = ({ animated = true, onCharClick }) => {
           url={IMAGES_URL + 'character.zip'}
           addClass="character"
           clickable
+          controlHeight
           onClick={onCharClick}
           speed={0.1}
           animate={animated}

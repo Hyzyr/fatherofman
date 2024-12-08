@@ -9,7 +9,7 @@ import NYC from '@/views/scenes/nyc/NYC';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
-  const [granted, setGranted] = useState(true);
+  const [granted, setGranted] = useState(false);
   const [ready, setReady] = useState(false);
   const { loaded, progress } = useAssetLoader({ assets: AllAssetFiles });
 
@@ -20,6 +20,8 @@ export default function Home() {
 
   return (
     <>
+      {loaded && <AScenes active={granted} />}
+      <CursorHelper />
       {!granted && (
         <Preloader
           completed={loaded}
@@ -27,8 +29,6 @@ export default function Home() {
           setGranted={setGranted}
         />
       )}
-      {loaded && <AScenes active={granted} />}
-      <CursorHelper />
     </>
   );
 }

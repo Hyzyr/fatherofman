@@ -30,6 +30,7 @@ const DynastyScene = ({ animated = true, onCharClick }) => {
           animate={animated}
           addClass="warriors"
           speed={0.12}
+          fill
         />
       </div>
       <div className="scene__front">
@@ -42,7 +43,7 @@ const DynastyScene = ({ animated = true, onCharClick }) => {
         <SceneItem
           url={IMAGES_URL + 'grass.zip'}
           animate={animated}
-          speed={0.1}
+          speed={0.12}
           addClass="land"
           fill
         />
@@ -51,6 +52,7 @@ const DynastyScene = ({ animated = true, onCharClick }) => {
           animate={animated}
           addClass="soldier"
           clickable
+          controlHeight
           onClick={onCharClick}
           speed={0.1}
         />

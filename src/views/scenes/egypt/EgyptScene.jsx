@@ -58,6 +58,7 @@ const EgyptScene = ({ animated = true, onCharClick }) => {
           animate={animated}
           addClass="chararacter"
           clickable
+          controlHeight
           onClick={onCharClick}
           speed={0.1}
         />

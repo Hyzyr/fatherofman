@@ -16,7 +16,9 @@ const useCameraAnimations = ({
   killAnimations,
 }) => {
   useEffect(() => {
-    const wrappers = document.querySelectorAll('.sceneController__scene .scene');
+    const wrappers = document.querySelectorAll(
+      '.sceneController__scene .scene'
+    );
     gsap.set(wrappers, {
       scale: 1 + bgMove / 100,
       xPercent: 0,
@@ -61,7 +63,7 @@ const useCameraAnimations = ({
 
       document.addEventListener('mousemove', debouncedMouseMove);
     },
-    { scope }
+    { scope, dependencies: [animated] }
   );
 };
 

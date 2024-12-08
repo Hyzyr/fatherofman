@@ -121,9 +121,10 @@
   &.dynasty & {
     &__item {
       &.warriors {
-        left: -7%;
+        left: -0.3%;
         width: 113%;
-        bottom: -16%;
+        bottom: -20%;
+        height: 130%;
       }
       &.road {
         left: 17%;
@@ -137,8 +138,8 @@
         right: 1.2%;
       }
       &.soldier {
-        left: 29%;
-        width: 33%;
+        left: 26.2%;
+        height: 67%;
         bottom: 3%;
 
         .scene__item-arrow {
@@ -202,8 +203,9 @@
       }
       &.pyramids {
         right: -6%;
-        bottom: 10%;
-        width: 90%;
+        bottom: 14%;
+        width: 93%;
+        height: 46.5%;
       }
       &.ground {
         bottom: -2%;
@@ -224,7 +226,7 @@
       }
       &.chararacter {
         left: 42%;
-        width: 18%;
+        height: 48.8%;
         bottom: 9%;
       }
       &.grass {
@@ -358,6 +360,7 @@
         left: 0;
         width: 100%;
         height: 80%;
+        transform: translateY(37%);
 
         img,
         canvas {
@@ -395,8 +398,9 @@
         left: -1.8%;
       }
       &.smokeR {
+        height: 100%;
         bottom: -3%;
-        width: 44%;
+        width: 27%;
         right: -1.2%;
       }
       &.soldiers {
@@ -416,9 +420,9 @@
         bottom: -2%;
       }
       &.character {
-        left: 44.9%;
-        width: 11.7%;
-        bottom: 9%;
+        left: 43.5%;
+        height: 50.7%;
+        bottom: 10.5%;
       }
     }
   }
