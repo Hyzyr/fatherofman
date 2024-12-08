@@ -35,7 +35,7 @@ const AnimatedImage = ({
         currentImage = 0;
         index.current = 0;
       }
-      updateCanvas(images[currentImage]);
+      requestAnimationFrame(() => updateCanvas(images[currentImage]));
 
       index.current += 1;
       let addDelay = 0;

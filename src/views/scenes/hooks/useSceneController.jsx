@@ -41,20 +41,17 @@ const useSceneController = ({
     navTimeline.current //asdsad
       .to(fg, {
         x: -index * innerWidth,
-        duration: 3.2,
-        ease: CustomEase.create(
-          'custom',
-          'M0,0 C0.122,0.171 0.387,0.204 0.607,0.473 0.879,0.806 0.83,0.954 1,1 '
-        ),
+        duration: 2.4,
+        ease: CustomEase.create('custom', 'M0,0 C0.155,0.262 0.586,0.847 1,1 '),
       })
       .to(
         track,
         {
           left: `${window.innerWidth * -index}px`,
-          duration: 2.5,
+          duration: 1.2,
           ease: CustomEase.create(
             'custom',
-            'M0,0 C0.354,0.722 0.73,0.868 1,1 '
+            'M0,0 C0.354,0.217 0.754,0.583 1,1 '
           ),
           delay: 0.3,
           onStart: () => {

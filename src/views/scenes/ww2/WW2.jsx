@@ -1,13 +1,12 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import WW2Scene from './WW2Scene';
 import PopupWW2 from './PopupWW2';
 
 const WW2 = ({ animated }) => {
-  const ref = useRef();
   const [popup, setPopup] = useState(false);
 
   return (
-    <div className="test" ref={ref}>
+    <>
       <WW2Scene animated={animated} onCharClick={() => setPopup(true)} />
       {animated && (
         <PopupWW2
@@ -16,7 +15,7 @@ const WW2 = ({ animated }) => {
           close={() => setPopup(false)}
         />
       )}
-    </div>
+    </>
   );
 };
 

@@ -48,9 +48,6 @@ const PopupNYC = ({ close, ...props }) => {
       gsap.to(audioBg, {
         volume: props.active ? 0 : 1,
         duration: 0.25,
-        onComplete: () => {
-          if (sound?.start) sound.start();
-        },
       });
   }, [props.active]);
 

@@ -37,7 +37,11 @@ const Prehystoric = ({ animated }) => {
           volume: 0.1,
           duration: 0.4,
           onComplete: () => {
-            if (sound?.start) sound.start();
+            if (sound?.start) {
+              try {
+                sound.start();
+              } catch (err) {}
+            }
           },
         })
         .to({}, { duration })

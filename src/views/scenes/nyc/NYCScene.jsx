@@ -6,7 +6,7 @@ import SceneVideo from '../components/SceneVideo';
 import { screenVideos } from './constants';
 
 const IMAGES_URL = '/images/scenes/nyc/';
-screenVideos
+
 const NYCScene = ({ animated = true, onCharClick }) => {
 
   return (

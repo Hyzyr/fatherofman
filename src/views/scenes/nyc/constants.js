@@ -464,9 +464,12 @@ export const videosData = [
 ];
 
 const videsWithIds = (idsArr) => {
-  return videosData.filter((data) => idsArr.indexOf(data.id) !== -1);
+  return idsArr.map((id) => {
+    return videosData[id - 1];
+    // videosData.find((data) => idsArr.indexOf(data.id) !== -1)
+  });
 };
-export const screenVideos = videsWithIds([32, 28, 38, 19, 27, 40, 6, 31, 30]);
+export const screenVideos = videsWithIds([32, 28, 38, 33, 6, 42, 40, 19, 31, 30]);
 
 // id: 32,
 // src: 'him-bleach.mp4', //HIM BLEACH.mp4
