@@ -1,12 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-const MuteButton = () => {
-  const [mute, setMute] = useState(false);
+const MuteButton = ({ active }) => {
+  const [mute, setMute] = useState(true);
   const audio = React.useRef(null);
   const toggleMute = () => {
     if (audio.current) !mute ? audio.current.pause() : audio.current.play();
     setMute(!mute);
   };
+
+  useEffect(() => {
+    if (active && audio.current) {
+      audio.current.play();
+      setMute(false);
+    }
+  }, [active]);
 
   return (
     <div

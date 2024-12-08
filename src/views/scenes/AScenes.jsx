@@ -130,7 +130,7 @@ const AScenes = ({ active }) => {
         <Social />
         <DropBox />
         <CopyBar />
-        <MuteButton />
+        <MuteButton active={active} />
       </div>
       <div className="sceneController" ref={wrapper}>
         <div className="scene__bg">

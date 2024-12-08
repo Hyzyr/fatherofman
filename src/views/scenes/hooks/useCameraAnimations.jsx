@@ -44,20 +44,20 @@ const useCameraAnimations = ({
           xPercent: -percentageX * (bgMove / 100 / 2),
           yPercent: -percentageY * (bgMove / 100 / 2),
           ease: 'Power2.easeOut',
-          duration: 7,
+          duration: 9,
           delay: 0.1,
         });
         gsap.to(main, {
           xPercent: -percentageX * -direction * (moveFactorMain / 100 / 2),
           yPercent: -percentageY * -direction * (moveFactorMain / 100 / 2),
           ease: 'Power1.easeOut',
-          duration: 12,
+          duration: 14,
         });
         gsap.to(front, {
           xPercent: -percentageX * direction * (moveFactor / 100 / 2),
           yPercent: -percentageY * direction * (moveFactor / 100 / 2),
           ease: 'Power3.easeIn',
-          duration: 8,
+          duration: 11,
         });
       };
 
