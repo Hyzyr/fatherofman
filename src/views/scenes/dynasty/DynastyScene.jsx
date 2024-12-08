@@ -24,7 +24,7 @@ const DynastyScene = ({ animated = true, onCharClick }) => {
           speed={0.12}
           fill
         />
-        <SceneItem url={IMAGES_URL + 'ground.webp'} addClass="ground" fill />
+        <SceneItem url={IMAGES_URL + 'ground2.webp'} addClass="ground" fill />
         <SceneItem
           url={IMAGES_URL + 'warriors.zip'}
           animate={animated}
