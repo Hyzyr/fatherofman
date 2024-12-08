@@ -42,3 +42,7 @@ next-env.d.ts
 .vercel
 *.bat
 public/Website Videos/*
+
+_test/*
+/_test/
+/_test/*

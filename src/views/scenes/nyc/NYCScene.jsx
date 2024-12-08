@@ -19,7 +19,8 @@ const NYCScene = ({ animated = true, onCharClick }) => {
           fill>
           <SceneVideo addClass="left1" play={animated} videoURL={screenVideos[0]}/>
           <SceneVideo addClass="left2" play={animated} videoURL={screenVideos[1]}/>
-          <SceneVideo addClass="left3" play={animated} videoURL={screenVideos[2]}/>
+          {/* <SceneVideo addClass="left3" play={animated} videoURL={screenVideos[2]}/> */}
+          <SceneItem url={IMAGES_URL + 'him-evangelion.zip'} animate={animated} addClass="vid left3" fill  />
           <SceneVideo addClass="left4" play={animated} videoURL={screenVideos[3]}/>
           <SceneVideo addClass="right1" play={animated} videoURL={screenVideos[7]}/>
           <SceneVideo addClass="right2" play={animated} videoURL={screenVideos[8]} />
@@ -35,7 +36,8 @@ const NYCScene = ({ animated = true, onCharClick }) => {
       </div>
       <div className="scene__front">
         <SceneItem url={IMAGES_URL + 'building.webp'} addClass="building" fill>
-          <SceneVideo addClass="mid1" play={animated} videoURL={screenVideos[4]}/>
+          {/* <SceneVideo addClass="mid1" play={animated} videoURL={screenVideos[4]}/> */}
+          <SceneItem url={IMAGES_URL + 'dont-copy-my-flow.zip'} animate={animated} addClass="vid mid1" fill  />
           <SceneVideo addClass="mid2" play={animated} videoURL={screenVideos[5]}/>
           <SceneVideo addClass="mid3" play={animated} videoURL={screenVideos[6]}/>
           <SceneVideo addClass="mid4" play={animated} videoURL={screenVideos[5]}/>
