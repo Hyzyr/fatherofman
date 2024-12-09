@@ -33,7 +33,7 @@ const useSceneController = ({
     }
   );
 
-  const navTo = (index) => {
+  const navTo = (index, isLong = false) => {
     const track = wrapper.current.querySelector('.sceneController__track');
     const fg = wrapper.current.querySelector('.sceneController__track-fg');
     const innerWidth = window.innerWidth;
@@ -41,23 +41,30 @@ const useSceneController = ({
     navTimeline.current //asdsad
       .to(fg, {
         x: -index * innerWidth,
-        duration: 2,
-        ease: CustomEase.create(
-          'custom',
-          'M0,0 C0.11,0.494 0.234,0.539 0.393,0.659 0.468,0.715 0.645,0.727 0.738,0.836 0.823,0.936 0.905,0.979 1,1.01 '
-        ),
+        duration: isLong ? 1.2 : 1.4,
+        ease: isLong
+          ? 'power2.in'
+          : CustomEase.create(
+              'custom',
+              'M0,0 C0.039,0.077 0.109,0.285 0.223,0.458 0.281,0.547 0.569,0.609 0.714,0.7 0.793,0.749 0.889,1.014 1,1 '
+            ),
+        //  CustomEase.create(
+        //     'custom',
+        //     'M0,0 C0.039,0.077 0.12,0.242 0.234,0.415 0.324,0.552 0.693,0.727 0.811,0.81 0.88,0.858 0.833,0.831 1,1 '
+        //   ),
+        // ease: CustomEase.create("custom", "M0,0 C0.039,0.077 0.12,0.242 0.234,0.415 0.324,0.552 0.423,0.561 0.55,0.671 0.619,0.731 0.651,0.782 0.769,0.865 0.838,0.913 0.839,0.905 1,1 "),
       })
       .to(
         track,
         {
           left: `${window.innerWidth * -index}px`,
-          duration: 1.6,
-          delay: 0.1,
+          duration: 1,
+          delay: isLong ? 0.3 : 0.1,
           // ease: CustomEase.create(
           //   'custom',
           //   'M0,0 C0.022,0.077 0.212,0.401 0.421,0.624 0.591,0.806 0.83,0.908 1,1 '
           // ),
-          ease: 'power2.out',
+          ease: 'power3.out',
           onStart: () => {
             gsap.set(track, { willChange: 'auto' });
             if (setScrolling) setScrolling(true);
@@ -74,14 +81,14 @@ const useSceneController = ({
     let currentIndex = [...sceneNames].indexOf(activeScene);
     let newIndex =
       currentIndex + 1 === sceneNames.length ? 0 : currentIndex + 1;
-    navTo(newIndex);
+    navTo(newIndex, Math.abs(currentIndex - newIndex) > 1);
     return sceneNames[newIndex];
   };
   const navPrev = () => {
     let currentIndex = [...sceneNames].indexOf(activeScene);
     let newIndex =
       currentIndex === 0 ? sceneNames.length - 1 : currentIndex - 1;
-    navTo(newIndex);
+    navTo(newIndex, Math.abs(currentIndex - newIndex) > 1);
     return sceneNames[newIndex];
   };
 

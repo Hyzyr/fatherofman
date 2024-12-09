@@ -4,7 +4,7 @@ import gsap from 'gsap';
 import { debounce, throttle } from '@/utils/debounce';
 import { calcMouseFromCenter } from '@/utils/calcEvent';
 
-const bgMove = 13;
+const bgMove = 8;
 const moveFactorMain = 2;
 const moveFactor = 0.7;
 const direction = 1;
