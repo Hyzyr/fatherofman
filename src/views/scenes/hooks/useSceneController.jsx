@@ -41,22 +41,23 @@ const useSceneController = ({
     navTimeline.current //asdsad
       .to(fg, {
         x: -index * innerWidth,
-        duration: 2.4,
+        duration: 2,
         ease: CustomEase.create(
           'custom',
-          'M0,0 C-0.013,0.147 0.212,0.401 0.421,0.624 0.591,0.806 0.88,1 1,1 '
+          'M0,0 C0.11,0.494 0.234,0.539 0.393,0.659 0.468,0.715 0.645,0.727 0.738,0.836 0.823,0.936 0.905,0.979 1,1.01 '
         ),
       })
       .to(
         track,
         {
           left: `${window.innerWidth * -index}px`,
-          duration: 1.2,
-          ease: CustomEase.create(
-            'custom',
-            'M0,0 C0.022,0.077 0.212,0.401 0.421,0.624 0.591,0.806 0.83,0.908 1,1 '
-          ),
-          delay: 0.3,
+          duration: 1.6,
+          delay: 0.1,
+          // ease: CustomEase.create(
+          //   'custom',
+          //   'M0,0 C0.022,0.077 0.212,0.401 0.421,0.624 0.591,0.806 0.83,0.908 1,1 '
+          // ),
+          ease: 'power2.out',
           onStart: () => {
             gsap.set(track, { willChange: 'auto' });
             if (setScrolling) setScrolling(true);

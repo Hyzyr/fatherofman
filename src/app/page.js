@@ -8,7 +8,7 @@ import AScenes from '@/views/scenes/AScenes';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
-  const [granted, setGranted] = useState(false);
+  const [granted, setGranted] = useState(true);
   const [ready, setReady] = useState(false);
   const { loaded, progress } = useAssetLoader({ assets: AllAssetFiles });
 
