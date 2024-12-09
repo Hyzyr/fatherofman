@@ -12,15 +12,9 @@ const WW2Scene = ({ animated = true, onCharClick }) => {
       <div className="scene__main">
         <SceneItem url={IMAGES_URL + 'bg-2.webp'} addClass="mountain" fill />
         <SceneItem
-          url={IMAGES_URL + 'trees.zip'}
-          addClass="trees"
+          url={IMAGES_URL + 'forest-dust.zip'}
+          addClass="forest"
           speed={0.13}
-          animate={animated}
-        />
-        <SceneItem
-          url={IMAGES_URL + 'smoke-bg.zip'}
-          addClass="smoke-bg"
-          speed={0.1}
           animate={animated}
         />
       </div>

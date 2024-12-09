@@ -6,6 +6,10 @@ const useAssetLoader = ({ assets }) => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
+    if (!assets || assets.length === 0) {
+      setLoaded(true);
+      return;
+    }
     preloadFiles(assets, (percentage) => {
       setProgress(percentage);
       if (percentage >= 100) setLoaded(true);

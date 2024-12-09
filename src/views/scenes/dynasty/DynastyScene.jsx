@@ -18,15 +18,42 @@ const DynastyScene = ({ animated = true, onCharClick }) => {
           fill
         />
         <SceneItem
-          url={IMAGES_URL + 'city.zip'}
+          url={IMAGES_URL + 'city.png'}
           animate={animated}
           addClass="city"
-          speed={0.12}
-          fill
-        />
+          fill>
+          <SceneItem
+            url={IMAGES_URL + 'dynasty-flag.zip'}
+            animate={animated}
+            addClass="flag"
+            speed={0.04}
+            fill
+          />
+          <SceneItem
+            url={IMAGES_URL + 'dynasty-flag.zip'}
+            animate={animated}
+            addClass="flag"
+            speed={0.04}
+            fill
+          />
+          <SceneItem
+            url={IMAGES_URL + 'dynasty-flag.zip'}
+            animate={animated}
+            addClass="flag"
+            speed={0.04}
+            fill
+          />
+          <SceneItem
+            url={IMAGES_URL + 'dynasty-flag.zip'}
+            animate={animated}
+            addClass="flag"
+            speed={0.04}
+            fill
+          />
+        </SceneItem>
         <SceneItem url={IMAGES_URL + 'ground2.webp'} addClass="ground" fill />
         <SceneItem
-          url={IMAGES_URL + 'warriors.zip'}
+          url={IMAGES_URL + 'warriors-cropped.zip'}
           animate={animated}
           addClass="warriors"
           speed={0.12}
@@ -41,7 +68,14 @@ const DynastyScene = ({ animated = true, onCharClick }) => {
           controlHeight
         />
         <SceneItem
-          url={IMAGES_URL + 'grass.zip'}
+          url={IMAGES_URL + 'grass.webp'}
+          animate={animated}
+          speed={0.12}
+          addClass="land"
+          fill
+        />
+        <SceneItem
+          url={IMAGES_URL + 'grass-moving.zip'}
           animate={animated}
           speed={0.12}
           addClass="land"

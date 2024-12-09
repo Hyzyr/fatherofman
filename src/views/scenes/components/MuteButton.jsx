@@ -9,7 +9,7 @@ const MuteButton = ({ active }) => {
   };
 
   useEffect(() => {
-    if (active && audio.current) {
+    if (active && audio.current && !mute) {
       audio.current.play();
       setMute(false);
     }

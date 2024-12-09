@@ -8,7 +8,6 @@ import { screenVideos } from './constants';
 const IMAGES_URL = '/images/scenes/nyc/';
 
 const NYCScene = ({ animated = true, onCharClick }) => {
-
   return (
     <Scene name="nyc">
       <div className="scene__back"></div>
@@ -17,15 +16,63 @@ const NYCScene = ({ animated = true, onCharClick }) => {
           url={IMAGES_URL + 'buildings.webp'}
           addClass="buildings"
           fill>
-          <SceneItem url={IMAGES_URL + 'vid-him-bleach.zip'} animate={animated} delay={1} addClass="vid left1" fill  />
-          <SceneItem url={IMAGES_URL + 'vide-youre-not-him.zip'} animate={animated} delay={1} addClass="vid left2" fill  />
-          <SceneItem url={IMAGES_URL + 'vid-pussy-destroyer.zip'} animate={animated} delay={1} addClass="vid left3" fill  />
-          <SceneItem url={IMAGES_URL + 'vid-him-evangelion.zip'} animate={animated} delay={1} addClass="vid left4" fill  />
-          
-          <SceneItem url={IMAGES_URL + 'vid-i-am-father.zip'} animate={animated} delay={1} addClass="vid right1" fill  />
-          <SceneItem url={IMAGES_URL + 'vid-not-a-movie.zip'} animate={animated} delay={1} addClass="vid right2" fill  />
-          <SceneItem url={IMAGES_URL + 'vid-not-a-movie.zip'} animate={animated} delay={1} addClass="vid right3" fill  />
-          <SceneItem url={IMAGES_URL + 'vid-him-fighter.zip'} animate={animated} delay={1} addClass="vid right4" fill  />
+          <SceneItem
+            url={IMAGES_URL + 'vid-him-bleach.zip'}
+            animate={animated}
+            delay={1}
+            addClass="vid left1"
+            fill
+          />
+          <SceneItem
+            url={IMAGES_URL + 'vide-youre-not-him.zip'}
+            animate={animated}
+            delay={1}
+            addClass="vid left2"
+            fill
+          />
+          <SceneItem
+            url={IMAGES_URL + 'vid-pussy-destroyer.zip'}
+            animate={animated}
+            delay={1}
+            addClass="vid left3"
+            fill
+          />
+          <SceneItem
+            url={IMAGES_URL + 'vid-him-evangelion.zip'}
+            animate={animated}
+            delay={1}
+            addClass="vid left4"
+            fill
+          />
+
+          <SceneItem
+            url={IMAGES_URL + 'vid-i-am-father.zip'}
+            animate={animated}
+            delay={1}
+            addClass="vid right1"
+            fill
+          />
+          <SceneItem
+            url={IMAGES_URL + 'vid-not-a-movie.zip'}
+            animate={animated}
+            delay={1}
+            addClass="vid right2"
+            fill
+          />
+          <SceneItem
+            url={IMAGES_URL + 'vid-not-a-movie.zip'}
+            animate={animated}
+            delay={1}
+            addClass="vid right3"
+            fill
+          />
+          <SceneItem
+            url={IMAGES_URL + 'vid-him-fighter.zip'}
+            animate={animated}
+            delay={1}
+            addClass="vid right4"
+            fill
+          />
         </SceneItem>
         <SceneItem
           url={IMAGES_URL + 'flag.webp'}
@@ -35,20 +82,38 @@ const NYCScene = ({ animated = true, onCharClick }) => {
         />
       </div>
       <div className="scene__front">
-        <SceneItem url={IMAGES_URL + 'building.webp'} addClass="building" fill>
-          <SceneItem url={IMAGES_URL + 'vid-dont-copy-my-flow.zip'} animate={animated} delay={1} addClass="vid mid1" fill  />
-          <SceneItem url={IMAGES_URL + 'vid-him-wukong.zip'} animate={animated} delay={1} addClass="vid mid2" fill  />
-          <SceneItem url={IMAGES_URL + 'vid-him-the-last-aurabender.zip'} animate={animated} delay={1} addClass="vid mid3" fill  />
-          <SceneItem url={IMAGES_URL + 'banner.webp'} animate={animated} delay={1} addClass="vid mid4" fill  />
-        </SceneItem>
-        <SceneItem url={IMAGES_URL + 'ground.webp'} addClass="ground" fill />
         <SceneItem
-          url={IMAGES_URL + 'taxi.zip'}
+          url={IMAGES_URL + 'taxi-cropped.zip'}
           animate={animated}
           addClass="taxi"
           delay={2.5}
           fill
         />
+        <SceneItem url={IMAGES_URL + 'building.webp'} addClass="building" fill>
+          <SceneItem
+            url={IMAGES_URL + 'vid-dont-copy-my-flow.zip'}
+            animate={animated}
+            delay={1}
+            addClass="vid mid1"
+            fill
+          />
+          <SceneItem
+            url={IMAGES_URL + 'vid-him-wukong.zip'}
+            animate={animated}
+            delay={1}
+            addClass="vid mid2"
+            fill
+          />
+          <SceneItem
+            url={IMAGES_URL + 'vid-him-the-last-aurabender.zip'}
+            animate={animated}
+            delay={1}
+            addClass="vid mid3"
+            fill
+          />
+        </SceneItem>
+        <SceneItem url={IMAGES_URL + 'ground.webp'} addClass="ground" fill />
+
         <SceneItem
           url={IMAGES_URL + 'officer.zip'}
           animate={animated}

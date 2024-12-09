@@ -124,10 +124,10 @@
   &.dynasty & {
     &__item {
       &.warriors {
-        left: -0.3%;
-        width: 113%;
-        bottom: -20%;
-        height: 130%;
+        left: 21%;
+        width: 60%;
+        bottom: 24.4%;
+        height: 26.3%;
       }
       &.road {
         left: 17%;
@@ -171,6 +171,28 @@
         canvas {
           object-fit: contain;
           object-position: bottom;
+        }
+      }
+      &.flag {
+        &:nth-last-child(1) {
+          right: 14.4%;
+          bottom: 24.6%;
+          width: 1.9%;
+        }
+        &:nth-last-child(2) {
+          right: 39.5%;
+          bottom: 36.7%;
+          width: 2.4%;
+        }
+        &:nth-last-child(3) {
+          bottom: 30%;
+          right: 48%;
+          width: 2.1%;
+        }
+        &:nth-last-child(4) {
+          bottom: 30%;
+          right: 48%;
+          width: 2.1%;
         }
       }
       &.land {
@@ -242,6 +264,12 @@
         width: 9%;
         bottom: 4%;
       }
+      &.vawes {
+        left: 9.8%;
+        top: 32.7%;
+        width: 14.2%;
+        height: 21.2%;
+      }
     }
   }
   &.prehystoric & {
@@ -276,6 +304,26 @@
         bottom: 16%;
         left: 14%;
         width: 77%;
+      }
+      &.brachiosaurus {
+        bottom: 33.9%;
+        left: 25%;
+        width: 7%;
+      }
+      &.raptor-small {
+        bottom: 24%;
+        right: 35.7%;
+        width: 7.4%;
+      }
+      &.trex {
+        bottom: 17%;
+        right: 15.6%;
+        width: 25%;
+      }
+      &.raptor {
+        bottom: 19.4%;
+        left: 27.2%;
+        width: 12.1%;
       }
       &.character {
         left: 42%;
@@ -324,15 +372,10 @@
         width: 52%;
         height: 67%;
       }
-      &.trees {
-        bottom: 17%;
-        left: 31%;
-        width: 40%;
-      }
-      &.smoke-bg {
-        bottom: 21%;
-        left: 32%;
-        width: 39%;
+      &.forest {
+        bottom: 20%;
+        left: 28.2%;
+        width: 47.3%;
       }
       &.city {
         bottom: -2%;
@@ -406,8 +449,8 @@
         right: -1.2%;
       }
       &.soldiers {
-        bottom: 18.2%;
-        left: 26%;
+        bottom: 14.6%;
+        left: 24.5%;
         width: 46%;
         height: 44%;
       }
@@ -490,10 +533,10 @@
         height: 32.8%;
       }
       &.taxi {
-        bottom: -3%;
+        bottom: 2.6%;
         left: 0;
-        width: 100.8%;
-        height: 76%;
+        width: 38.8%;
+        height: 19.3%;
       }
       &.people {
         right: 5%;

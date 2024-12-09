@@ -29,12 +29,34 @@ const PrehystoricScene = ({ animated = true, onCharClick }) => {
         <SceneItem url={IMAGES_URL + 'ground-2.webp'} addClass="ground" fill />
         <SceneItem url={IMAGES_URL + 'mid-ground.webp'} addClass="ground-mid" />
         <SceneItem
-          url={IMAGES_URL + 'dinos.zip'}
+          url={IMAGES_URL + 'brachiosaurus.zip'}
           animate={animated}
-          addClass="dinos"
+          addClass="brachiosaurus"
           speed={0.1}
           delay={0.2}
         />
+        <SceneItem
+          url={IMAGES_URL + 'small-raptor-cropped.zip'}
+          animate={animated}
+          addClass="raptor-small"
+          speed={0.1}
+          delay={0.2}
+        />
+        <SceneItem
+          url={IMAGES_URL + 'trex.zip'}
+          animate={animated}
+          addClass="trex"
+          speed={0.1}
+          delay={0.2}
+        />
+        <SceneItem
+          url={IMAGES_URL + 'yellow-raptor.zip'}
+          animate={animated}
+          addClass="raptor"
+          speed={0.1}
+          delay={0.2}
+        />
+
         <SceneItem
           url={IMAGES_URL + 'snake-tree.zip'}
           animate={animated}

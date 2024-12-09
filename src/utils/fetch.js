@@ -1,5 +1,5 @@
 import JSZip from 'jszip';
-const cacheName = 'fatherofman-main'
+const cacheName = 'fatherofman-main';
 export const fetchArchiveImages = (url) => {
   return new Promise((resolve, reject) => {
     fetch(url)
@@ -80,7 +80,7 @@ export const preloadFiles = async (fileUrls, callback) => {
           callback(percentage > 100 ? 100 : percentage);
         })
         .catch((error) => {
-          console.log('Error loading file:', error);
+          console.log('Error loading file: %s\n', url, error);
         })
     );
     await Promise.all(promises);

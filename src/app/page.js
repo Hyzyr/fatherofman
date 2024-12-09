@@ -5,7 +5,6 @@ import { AllAssetFiles } from '@/contants/Assets';
 import useAssetLoader from '@/hooks/useAssetLoader';
 import Preloader from '@/views/preloader/PreloaderScreen';
 import AScenes from '@/views/scenes/AScenes';
-import NYC from '@/views/scenes/nyc/NYC';
 import { useEffect, useState } from 'react';
 
 export default function Home() {

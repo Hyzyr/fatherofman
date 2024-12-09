@@ -1,7 +1,27 @@
-++ the redness is still wrong on the preloader
-+ prehistoric, voice over is still doubled when clicked multiple times
-+ WW2 Feature (Him's journal) should have a white frame (to look like old photo) on the image editor section (left side). White frame will not be exportable, just for aesthetics so it looks like an old photo
-+ Additional aspect on the image editor section, background image selected should be able to be movable, but is limited to the frame resolution of the selected image itself (i will explain in a recording video later this afternoon) 
-- NYC scene still got duplicated videos on different billboard, 
-- and the video is not starting on the first minute of staying inside the scene
-- responsiveness problem
+- Music play when entering website 
+- ⁠Black Icons on top (unselected scene icon) should be bigger
+- ⁠Arrow button could be bigger
+- ⁠CLICK HIM could be twice the size
+- ⁠Camera movement reduce sensitivity a little bit
+- ⁠Apply speed curve to Transition so it doesnt look stiff (smoother)
+- ⁠Dynasty monkey character shift to right a little bit (currently not centered)
+- ⁠NYC just use 1 frame for flag
+
+
+- Prehistoric monkey character resize and readjust placement
+- Replace egypt background with the new one (WIP) 
+- Replace Dynasty with new separated asset
+- Fix image Creator in WW2 scene
+- Replace WW2 trees + smoke with the new ones
+- Replace Mid building in NYC with the new one
+- Preloader = Make this load ALL ASSET first, before the prompt appears
+- Performance upgrade
+
+Image creator notes :
+- If you fit to height, then you can move (but limited to resolution) horizontally
+- ⁠if you fit to width? Then you can move (but limited to resolution) vertically
+
+
+Have you apply speedcurve on the transition? 
+
+And have u readjust the prehistoric monkey placement and size?

@@ -24,12 +24,17 @@ const EgyptScene = ({ animated = true, onCharClick }) => {
       </div>
       <div className="scene__main">
         <SceneItem
-          url={IMAGES_URL + 'pyramids.zip'}
+          url={IMAGES_URL + 'egypt-static.png'}
           animate={animated}
           addClass="pyramids"
-          speed={0.16}
-          fill
-        />
+          fill>
+          <SceneItem
+            url={IMAGES_URL + 'vawes.zip'}
+            addClass="vawes"
+            fill
+            speed={0.06}
+          />
+        </SceneItem>
       </div>
       <div className="scene__front">
         <SceneItem url={IMAGES_URL + 'sphinx2.webp'} addClass="sphinx" />
