@@ -10,7 +10,7 @@
 - Fix image Creator in WW2 scene
 + Replace WW2 trees + smoke with the new ones
 + Replace Mid building in NYC with the new one
-- Preloader = Make this load ALL ASSET first, before the prompt appears
++ Preloader = Make this load ALL ASSET first, before the prompt appears
 + Performance upgrade
 
 Image creator notes :

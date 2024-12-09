@@ -53,6 +53,7 @@
     z-index: 2;
   }
   &__item {
+    will-change: contents;
     position: absolute;
     pointer-events: none;
 
@@ -141,9 +142,10 @@
         right: 1.2%;
       }
       &.soldier {
-        left: 30.9%;
-        height: 67%;
+        left: 50%;
+        height: 70%;
         bottom: 3%;
+        transform: translateX(-60%);
 
         .scene__item-arrow {
           bottom: 88%;

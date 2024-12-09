@@ -48,8 +48,8 @@ const AnimatedImage = ({
   }, [images, animate]);
   if (!url) return null;
 
-  if (useCanvas) return <canvas ref={ref} />;
-  return <img ref={ref} />;
+  if (useCanvas) return <canvas className={'animatedCanvas'} ref={ref} />;
+  return <img className={'animatedCanvas'} ref={ref} />;
 };
 
 export default memo(AnimatedImage);
