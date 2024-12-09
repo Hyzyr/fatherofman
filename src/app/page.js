@@ -10,7 +10,9 @@ import { useEffect, useState } from 'react';
 export default function Home() {
   const [granted, setGranted] = useState(false);
   const [ready, setReady] = useState(false);
-  const { loaded, progress } = useAssetLoader({ assets: AllAssetFiles });
+  const { loaded, attached, progress } = useAssetLoader({
+    assets: AllAssetFiles,
+  });
 
   useEffect(() => {
     setReady(true);
@@ -23,7 +25,7 @@ export default function Home() {
       <CursorHelper />
       {!granted && (
         <Preloader
-          completed={loaded}
+          completed={loaded && attached}
           progress={progress}
           setGranted={setGranted}
         />

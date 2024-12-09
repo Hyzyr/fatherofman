@@ -73,7 +73,7 @@ export const preloadFiles = async (fileUrls, callback) => {
           }
         })
         .then((blob) => {
-          percentage += Math.ceil(percentagePerFile);
+          percentage += Math.floor(percentagePerFile);
           caches.open(cacheName).then((cache) => {
             cache.put(url, new Response(blob));
           });
@@ -87,6 +87,38 @@ export const preloadFiles = async (fileUrls, callback) => {
     await promiseDelay(50);
   }
 };
+export const checkImagesReadyness = async (imgs, callback) => {
+  let totalFiles = imgs.length;
+  let percentage = 0;
+  let percentagePerFile = 100 / totalFiles;
+
+  const updatePercentage = () => {
+    console.log('update percentage');
+    percentage += percentagePerFile;
+    let p = Math.ceil(percentage);
+    callback(p > 100 ? 100 : p);
+  };
+  const promises = Array.from(imgs).map((img) =>
+    promiseCheckImageReadyness(img, updatePercentage)
+  );
+
+  return await Promise.all(promises);
+};
+const promiseCheckImageReadyness = (img, callback) =>
+  new Promise((resolve) => {
+    if (img.complete && img.naturalHeight !== 0) {
+      callback();
+      resolve();
+    } else {
+      const listener = () => {
+        console.log(`Image with finished loading.`);
+        callback();
+        resolve();
+        img.removeEventListener('load', listener);
+      };
+      img.addEventListener('load', listener);
+    }
+  });
 
 const promiseDelay = (delay) => {
   return new Promise((resolve) => setTimeout(() => resolve(), delay));
