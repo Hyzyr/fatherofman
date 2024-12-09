@@ -1,21 +1,17 @@
 - Music play when entering website 
-- ⁠Black Icons on top (unselected scene icon) should be bigger
-- ⁠Arrow button could be bigger
-- ⁠CLICK HIM could be twice the size
-- ⁠Camera movement reduce sensitivity a little bit
 - ⁠Apply speed curve to Transition so it doesnt look stiff (smoother)
 - ⁠Dynasty monkey character shift to right a little bit (currently not centered)
 - ⁠NYC just use 1 frame for flag
 
 
-- Prehistoric monkey character resize and readjust placement
-- Replace egypt background with the new one (WIP) 
-- Replace Dynasty with new separated asset
++ Prehistoric monkey character resize and readjust placement
++ Replace egypt background with the new one (WIP) 
++ Replace Dynasty with new separated asset
 - Fix image Creator in WW2 scene
-- Replace WW2 trees + smoke with the new ones
-- Replace Mid building in NYC with the new one
++ Replace WW2 trees + smoke with the new ones
++ Replace Mid building in NYC with the new one
 - Preloader = Make this load ALL ASSET first, before the prompt appears
-- Performance upgrade
++ Performance upgrade
 
 Image creator notes :
 - If you fit to height, then you can move (but limited to resolution) horizontally
@@ -23,5 +19,4 @@ Image creator notes :
 
 
 Have you apply speedcurve on the transition? 
-
 And have u readjust the prehistoric monkey placement and size?
