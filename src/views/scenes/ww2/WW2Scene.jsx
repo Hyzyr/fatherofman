@@ -14,7 +14,6 @@ const WW2Scene = ({ animated = true, onCharClick }) => {
         <SceneItem
           url={IMAGES_URL + 'forest-dust.zip'}
           addClass="forest"
-          speed={0.13}
           animate={animated}
         />
       </div>
@@ -23,35 +22,30 @@ const WW2Scene = ({ animated = true, onCharClick }) => {
         <SceneItem
           url={IMAGES_URL + 'fire.zip'}
           addClass="fire"
-          speed={0.13}
           animate={animated}
           fill
         />
         <SceneItem
           url={IMAGES_URL + 'smoke-l.zip'}
           addClass="smokeL"
-          speed={0.08}
           animate={animated}
           fill
         />
         <SceneItem
           url={IMAGES_URL + 'smoke-r.zip'}
           addClass="smokeR"
-          speed={0.08}
           animate={animated}
           fill
         />{' '}
         <SceneItem
           url={IMAGES_URL + 'bullets.zip'}
           addClass="bullets"
-          speed={0.16}
           animate={animated}
           fill
         />
         <SceneItem
           url={IMAGES_URL + 'soldiers.zip'}
           addClass="soldiers"
-          speed={0.1}
           animate={animated}
           fill
         />
@@ -59,7 +53,7 @@ const WW2Scene = ({ animated = true, onCharClick }) => {
         <SceneItem
           url={IMAGES_URL + 'soldier.zip'}
           addClass="soldier"
-          speed={0.13}
+          speed={0.1}
           animate={animated}
         />
         <SceneItem
@@ -68,7 +62,6 @@ const WW2Scene = ({ animated = true, onCharClick }) => {
           clickable
           controlHeight
           onClick={onCharClick}
-          speed={0.1}
           animate={animated}
         />
         <SceneItem

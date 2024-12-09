@@ -49,14 +49,13 @@ const DynastyScene = ({ animated = true, onCharClick }) => {
           url={IMAGES_URL + 'warriors-cropped.zip'}
           animate={animated}
           addClass="warriors"
-          speed={0.12}
           fill
         />
         <SceneItem
           url={IMAGES_URL + 'arrows.zip'}
           animate={animated}
           addClass="arrows"
-          speed={0.1}
+          speed={0.04}
           fill
         />
       </div>
@@ -70,14 +69,12 @@ const DynastyScene = ({ animated = true, onCharClick }) => {
         <SceneItem
           url={IMAGES_URL + 'grass.webp'}
           animate={animated}
-          speed={0.12}
           addClass="land"
           fill
         />
         <SceneItem
           url={IMAGES_URL + 'grass-moving.zip'}
           animate={animated}
-          speed={0.12}
           addClass="land"
           fill
         />
@@ -88,13 +85,11 @@ const DynastyScene = ({ animated = true, onCharClick }) => {
           clickable
           controlHeight
           onClick={onCharClick}
-          speed={0.1}
         />
         <SceneItem
           url={IMAGES_URL + 'glows.zip'}
           animate={animated}
-          addClass="glwos"
-          speed={0.1}
+          addClass="glows"
         />
       </div>
     </Scene>

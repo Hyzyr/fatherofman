@@ -1,22 +1,6 @@
-- Music play when entering website 
-- ⁠Apply speed curve to Transition so it doesnt look stiff (smoother)
-- ⁠Dynasty monkey character shift to right a little bit (currently not centered)
-- ⁠NYC just use 1 frame for flag
-
-
-+ Prehistoric monkey character resize and readjust placement
-+ Replace egypt background with the new one (WIP) 
-+ Replace Dynasty with new separated asset
-- Fix image Creator in WW2 scene
-+ Replace WW2 trees + smoke with the new ones
-+ Replace Mid building in NYC with the new one
-+ Preloader = Make this load ALL ASSET first, before the prompt appears
-+ Performance upgrade
-
-Image creator notes :
-- If you fit to height, then you can move (but limited to resolution) horizontally
-- ⁠if you fit to width? Then you can move (but limited to resolution) vertically
-
-
-Have you apply speedcurve on the transition? 
-And have u readjust the prehistoric monkey placement and size?
+1. Prehistoric Character placement and size +
+2. Prehistoric Yellow raptor placement and size  +
+3. Dynasty character placement +
+4. Egypt character is not loopable + 
+5. Music when entering +
+6. image creator fit to width or height

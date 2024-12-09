@@ -14,13 +14,11 @@ const PrehystoricScene = ({ animated = true, onCharClick }) => {
           url={IMAGES_URL + 'ptero.zip'}
           animate={animated}
           addClass="ptero"
-          speed={0.1}
         />
         <SceneItem
           url={IMAGES_URL + 'smoke.zip'}
           animate={animated}
           addClass="smoke"
-          speed={0.08}
           fill
         />
         <SceneItem url={IMAGES_URL + 'volcano.webp'} addClass="volcano" fill />
@@ -32,42 +30,37 @@ const PrehystoricScene = ({ animated = true, onCharClick }) => {
           url={IMAGES_URL + 'brachiosaurus.zip'}
           animate={animated}
           addClass="brachiosaurus"
-          speed={0.1}
           delay={0.2}
         />
         <SceneItem
           url={IMAGES_URL + 'small-raptor-cropped.zip'}
           animate={animated}
           addClass="raptor-small"
-          speed={0.1}
           delay={0.2}
         />
         <SceneItem
           url={IMAGES_URL + 'trex.zip'}
           animate={animated}
           addClass="trex"
-          speed={0.1}
           delay={0.2}
         />
         <SceneItem
           url={IMAGES_URL + 'yellow-raptor.zip'}
           animate={animated}
           addClass="raptor"
-          speed={0.1}
           delay={0.2}
         />
-
         <SceneItem
           url={IMAGES_URL + 'snake-tree.zip'}
           animate={animated}
           addClass="tree"
           controlHeight
-          speed={0.13}
+          speed={0.1}
         />
         <SceneItem
           url={IMAGES_URL + 'character.zip'}
           animate={animated}
-          addClass="character"
+          addClass="character2"
           controlHeight
           clickable
           onClick={onCharClick}
@@ -78,26 +71,24 @@ const PrehystoricScene = ({ animated = true, onCharClick }) => {
           url={IMAGES_URL + 'palms.zip'}
           animate={animated}
           addClass="palms"
-          speed={0.1}
         />
         <SceneItem
           url={IMAGES_URL + 'grass.zip'}
           animate={animated}
           addClass="grass"
-          speed={0.08}
         />
         <SceneItem
           url={IMAGES_URL + 'silhouette-l.zip'}
           animate={animated}
           addClass="silhouetteL"
-          speed={0.16}
+          speed={0.1}
           fill
         />
         <SceneItem
           url={IMAGES_URL + 'silhouette-r.zip'}
           animate={animated}
           addClass="silhouetteR"
-          speed={0.16}
+          speed={0.1}
           fill
         />
       </div>

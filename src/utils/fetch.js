@@ -93,7 +93,6 @@ export const checkImagesReadyness = async (imgs, callback) => {
   let percentagePerFile = 100 / totalFiles;
 
   const updatePercentage = () => {
-    console.log('update percentage');
     percentage += percentagePerFile;
     let p = Math.ceil(percentage);
     callback(p > 100 ? 100 : p);
@@ -111,7 +110,6 @@ const promiseCheckImageReadyness = (img, callback) =>
       resolve();
     } else {
       const listener = () => {
-        console.log(`Image with finished loading.`);
         callback();
         resolve();
         img.removeEventListener('load', listener);

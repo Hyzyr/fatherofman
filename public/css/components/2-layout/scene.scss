@@ -152,7 +152,7 @@
           left: 59%;
         }
       }
-      &.glwos {
+      &.glows {
         left: 0%;
         width: 100%;
         bottom: 2%;
@@ -308,12 +308,12 @@
       }
       &.brachiosaurus {
         bottom: 33.9%;
-        left: 25%;
+        left: 35%;
         width: 7%;
       }
       &.raptor-small {
-        bottom: 24%;
-        right: 35.7%;
+        bottom: 29%;
+        right: 36.1%;
         width: 7.4%;
       }
       &.trex {
@@ -322,14 +322,20 @@
         width: 25%;
       }
       &.raptor {
-        bottom: 19.4%;
-        left: 27.2%;
+        bottom: 22.4%;
+        left: 18.8%;
         width: 12.1%;
       }
       &.character {
         left: 42%;
         height: 51.6%;
         bottom: 4.3%;
+      }
+      &.character2 {
+        left: 50%;
+        height: 47.6%;
+        bottom: 7.9%;
+        transform: translateX(-56%);
       }
       &.grass {
         left: -2%;

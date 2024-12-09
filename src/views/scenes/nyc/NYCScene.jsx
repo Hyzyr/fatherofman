@@ -21,6 +21,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid left1"
+            speed={0.12}
             fill
           />
           <SceneItem
@@ -28,6 +29,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid left2"
+            speed={0.12}
             fill
           />
           <SceneItem
@@ -35,6 +37,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid left3"
+            speed={0.12}
             fill
           />
           <SceneItem
@@ -42,6 +45,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid left4"
+            speed={0.12}
             fill
           />
 
@@ -50,6 +54,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid right1"
+            speed={0.12}
             fill
           />
           <SceneItem
@@ -57,6 +62,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid right2"
+            speed={0.12}
             fill
           />
           <SceneItem
@@ -64,6 +70,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid right3"
+            speed={0.12}
             fill
           />
           <SceneItem
@@ -71,6 +78,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid right4"
+            speed={0.12}
             fill
           />
         </SceneItem>
@@ -95,6 +103,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid mid1"
+            speed={0.12}
             fill
           />
           <SceneItem
@@ -102,6 +111,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid mid2"
+            speed={0.12}
             fill
           />
           <SceneItem
@@ -109,6 +119,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid mid3"
+            speed={0.12}
             fill
           />
         </SceneItem>
@@ -125,9 +136,9 @@ const NYCScene = ({ animated = true, onCharClick }) => {
           url={IMAGES_URL + 'people.webp'}
           animate={animated}
           addClass="people"
-          delay={1}
+          // delay={1}
           controlHeight
-          speed={0.1}
+          // speed={0.1}
         />
         <SceneItem
           url={IMAGES_URL + 'character.zip'}
@@ -136,7 +147,6 @@ const NYCScene = ({ animated = true, onCharClick }) => {
           clickable
           onClick={onCharClick}
           controlHeight
-          speed={0.1}
           delay={1}
         />
         <SceneItem
@@ -144,21 +154,19 @@ const NYCScene = ({ animated = true, onCharClick }) => {
           animate={animated}
           addClass="person"
           controlHeight
-          speed={0.1}
+          // speed={0.1}
         />
         <SceneItem
           url={IMAGES_URL + 'smoke-r.zip'}
           animate={animated}
           addClass="smokeR"
           controlHeight
-          speed={0.1}
         />
         <SceneItem
           url={IMAGES_URL + 'smoke.zip'}
           animate={animated}
           addClass="smokeL"
           controlHeight
-          speed={0.1}
         />
         <SceneItem
           url={IMAGES_URL + 'foreground.webp'}

@@ -13,13 +13,11 @@ const EgyptScene = ({ animated = true, onCharClick }) => {
           url={IMAGES_URL + 'birds.zip'}
           animate={animated}
           addClass="birds"
-          speed={0.1}
         />
         <SceneItem
           url={IMAGES_URL + 'birds-2.zip'}
           animate={animated}
           addClass="birds2"
-          speed={0.1}
         />
       </div>
       <div className="scene__main">
@@ -43,7 +41,6 @@ const EgyptScene = ({ animated = true, onCharClick }) => {
           url={IMAGES_URL + 'grass.zip'}
           animate={animated}
           addClass="grass"
-          speed={0.1}
         />
         <SceneItem url={IMAGES_URL + 'cactus-front.webp'} addClass="cactus" />
         <SceneItem
@@ -56,7 +53,7 @@ const EgyptScene = ({ animated = true, onCharClick }) => {
           url={IMAGES_URL + 'grass.zip'}
           animate={animated}
           addClass="grass2"
-          speed={0.16}
+          speed={0.1}
         />
         <SceneItem
           url={IMAGES_URL + 'chararacter.zip'}
@@ -65,7 +62,6 @@ const EgyptScene = ({ animated = true, onCharClick }) => {
           clickable
           controlHeight
           onClick={onCharClick}
-          speed={0.1}
         />
       </div>
     </Scene>

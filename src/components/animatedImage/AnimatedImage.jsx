@@ -5,7 +5,7 @@ import useAnimatedImages from './useAnimatedImages';
 const useCanvas = false;
 const AnimatedImage = ({
   url,
-  speed = 0.1,
+  speed = 0.04,
   delay = 0,
   animate = true,
   ...props
