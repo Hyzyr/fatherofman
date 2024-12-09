@@ -50,8 +50,8 @@ const PopupCanvas = (
       ).toFixed(3);
 
       updateImagePos({
-        top: 10,
-        left: 10,
+        x: 0,
+        y: 0,
         width: `${imageWidth * scaleFactor}px`,
         height: `${imageHeight * scaleFactor}px`,
         dragAxis: imageWidth > imageHeight ? 'x' : 'y',
@@ -59,7 +59,7 @@ const PopupCanvas = (
       window.img = img;
       console.log(img);
     });
-  }, [image]);
+  }, [image, instaStyle]);
 
   return (
     <div className="popupEditor__canvas" ref={ref} style={{ width: width }}>
