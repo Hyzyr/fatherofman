@@ -46,7 +46,7 @@ const useSceneController = ({
           ? 'power2.in'
           : CustomEase.create(
               'custom',
-              'M0,0 C0.039,0.077 0.109,0.285 0.223,0.458 0.281,0.547 0.569,0.609 0.714,0.7 0.793,0.749 0.889,1.014 1,1 '
+              'M0,0 C0.039,0.077 0.109,0.285 0.223,0.458 0.281,0.547 0.523,0.609 0.668,0.7 0.747,0.749 0.889,1.014 1,1 '
             ),
         //  CustomEase.create(
         //     'custom',
@@ -64,7 +64,11 @@ const useSceneController = ({
           //   'custom',
           //   'M0,0 C0.022,0.077 0.212,0.401 0.421,0.624 0.591,0.806 0.83,0.908 1,1 '
           // ),
-          ease: 'power3.out',
+          // ease: 'power3.out',
+          ease: CustomEase.create(
+            'custom',
+            'M0,0 C0.083,0.294 0.094,0.556 0.361,0.746 0.491,0.839 0.752,1 1,1 '
+          ),
           onStart: () => {
             gsap.set(track, { willChange: 'auto' });
             if (setScrolling) setScrolling(true);
