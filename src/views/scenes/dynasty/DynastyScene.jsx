@@ -11,42 +11,35 @@ const DynastyScene = ({ animated = true, onCharClick }) => {
       <div className="scene__back"></div>
       <div className="scene__main">
         <SceneItem
-          url={IMAGES_URL + 'arrows.zip'}
-          animate={animated}
-          addClass="arrows"
-          speed={0.1}
-          fill
-        />
-        <SceneItem
           url={IMAGES_URL + 'city.png'}
           animate={animated}
           addClass="city"
-          fill>
+          >
           <SceneItem
             url={IMAGES_URL + 'dynasty-flag.zip'}
             animate={animated}
-            addClass="flag"
+            addClass="flag flag1"
             speed={0.04}
             fill
           />
           <SceneItem
             url={IMAGES_URL + 'dynasty-flag.zip'}
             animate={animated}
-            addClass="flag"
+            addClass="flag flag2"
             speed={0.04}
             fill
           />
           <SceneItem
             url={IMAGES_URL + 'dynasty-flag.zip'}
             animate={animated}
-            addClass="flag"
+            addClass="flag flag3"
             speed={0.04}
             fill
           />
           <SceneItem
             url={IMAGES_URL + 'dynasty-flag.zip'}
             animate={animated}
-            addClass="flag"
+            addClass="flag flag4"
             speed={0.04}
             fill
           />
@@ -57,6 +50,13 @@ const DynastyScene = ({ animated = true, onCharClick }) => {
           animate={animated}
           addClass="warriors"
           speed={0.12}
+          fill
+        />
+        <SceneItem
+          url={IMAGES_URL + 'arrows.zip'}
+          animate={animated}
+          addClass="arrows"
+          speed={0.1}
           fill
         />
       </div>

@@ -165,34 +165,33 @@
         bottom: 36.6%;
         left: 10%;
         width: 88%;
-        height: 52%;
 
         img,
         canvas {
           object-fit: contain;
-          object-position: bottom;
+          // object-position: bottom;
         }
       }
       &.flag {
-        &:nth-last-child(1) {
-          right: 14.4%;
-          bottom: 24.6%;
-          width: 1.9%;
+        &.flag1 {
+          right: 14.6%;
+          bottom: 31.4%;
+          width: 1.5%;
         }
-        &:nth-last-child(2) {
-          right: 39.5%;
-          bottom: 36.7%;
+        &.flag2 {
+          right: 39.4%;
+          bottom: 45%;
           width: 2.4%;
         }
-        &:nth-last-child(3) {
-          bottom: 30%;
+        &.flag3 {
+          bottom: 37%;
           right: 48%;
           width: 2.1%;
         }
-        &:nth-last-child(4) {
-          bottom: 30%;
-          right: 48%;
-          width: 2.1%;
+        &.flag4 {
+          bottom: 14.4%;
+          left: 29.9%;
+          width: 1.5%;
         }
       }
       &.land {
