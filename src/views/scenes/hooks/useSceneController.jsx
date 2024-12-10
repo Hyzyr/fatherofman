@@ -40,7 +40,7 @@ const useSceneController = ({
     ).fromTo(
       scene.querySelector('.scene__main'),
       { scale: 1.3, y: '15vh' },
-      { scale: 1, y: 0, ease: 'Power2.in',  duration: 0.6 },
+      { scale: 1, y: 0, ease: 'Power2.in', duration: 0.6 },
       '<'
     );
     return tl;
@@ -116,8 +116,10 @@ const useSceneController = ({
             resetActiveScene();
           },
           onComplete: () => {
-            gsap.set(track, { willChange: 'unset' });
-            if (setScrolling) setScrolling(false);
+            setTimeout(() => {
+              gsap.set(track, { willChange: 'unset' });
+              if (setScrolling) setScrolling(false);
+            }, 150);
           },
         },
         '<'
