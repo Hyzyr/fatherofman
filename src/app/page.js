@@ -20,7 +20,7 @@ export default function Home() {
   }, []);
   if (!ready) return null;
 
-  // return <Dynasty animated />;
+  return <AScenes active />;
 
   return (
     <>
