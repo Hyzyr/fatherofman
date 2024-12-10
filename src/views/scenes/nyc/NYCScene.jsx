@@ -21,7 +21,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid left1"
-            speed={0.12}
+            speed={0.135}
             fill
           />
           <SceneItem
@@ -29,7 +29,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid left2"
-            speed={0.12}
+            speed={0.135}
             fill
           />
           <SceneItem
@@ -37,7 +37,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid left3"
-            speed={0.12}
+            speed={0.135}
             fill
           />
           <SceneItem
@@ -45,7 +45,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid left4"
-            speed={0.12}
+            speed={0.135}
             fill
           />
 
@@ -54,7 +54,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid right1"
-            speed={0.12}
+            speed={0.135}
             fill
           />
           <SceneItem
@@ -62,7 +62,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid right2"
-            speed={0.12}
+            speed={0.135}
             fill
           />
           <SceneItem
@@ -70,7 +70,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid right3"
-            speed={0.12}
+            speed={0.135}
             fill
           />
           <SceneItem
@@ -78,7 +78,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid right4"
-            speed={0.12}
+            speed={0.135}
             fill
           />
         </SceneItem>
@@ -103,7 +103,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid mid1"
-            speed={0.12}
+            speed={0.135}
             fill
           />
           <SceneItem
@@ -111,7 +111,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid mid2"
-            speed={0.12}
+            speed={0.135}
             fill
           />
           <SceneItem
@@ -119,7 +119,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid mid3"
-            speed={0.12}
+            speed={0.135}
             fill
           />
         </SceneItem>
@@ -133,10 +133,10 @@ const NYCScene = ({ animated = true, onCharClick }) => {
           delay={1}
         />
         <SceneItem
-          url={IMAGES_URL + 'people.webp'}
+          url={IMAGES_URL + 'people.zip'}
           animate={animated}
           addClass="people"
-          // delay={1}
+          delay={1}
           controlHeight
           // speed={0.1}
         />
@@ -150,11 +150,11 @@ const NYCScene = ({ animated = true, onCharClick }) => {
           delay={1}
         />
         <SceneItem
-          url={IMAGES_URL + 'person.webp'}
+          url={IMAGES_URL + 'person.zip'}
           animate={animated}
           addClass="person"
           controlHeight
-          // speed={0.1}
+          speed={0.1}
         />
         <SceneItem
           url={IMAGES_URL + 'smoke-r.zip'}
@@ -173,12 +173,12 @@ const NYCScene = ({ animated = true, onCharClick }) => {
           addClass="foreground"
           fill
         />
-        <SceneItem
+        {/* <SceneItem
           url={IMAGES_URL + 'walking-people.zip'}
           animate={animated}
           addClass="foreground2"
           fill
-        />
+        /> */}
       </div>
     </Scene>
   );
