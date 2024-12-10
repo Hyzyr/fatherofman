@@ -5,6 +5,7 @@ import { AllAssetFiles } from '@/contants/Assets';
 import useAssetLoader from '@/hooks/useAssetLoader';
 import Preloader from '@/views/preloader/PreloaderScreen';
 import AScenes from '@/views/scenes/AScenes';
+import Dynasty from '@/views/scenes/dynasty/Dynasty';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
