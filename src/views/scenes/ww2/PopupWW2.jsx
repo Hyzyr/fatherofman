@@ -52,9 +52,6 @@ const PopupWW2 = (props) => {
                 onClick={() => setInstaStyle(true)}>
                 <img src="/images/components/ww2/9-16.webp" alt="1X1" />
               </button>
-              {/* <button className="popupEditor__actions-btn" type="button">
-                <img src="/images/components/ww2/1-1.png" alt="1X1" />
-              </button> */}
               <ColorPiker currentColor={textColor} onChange={setTextColor} />
             </div>
             <PopupCanvas
@@ -68,7 +65,6 @@ const PopupWW2 = (props) => {
                 selectedImage ? `/images/journal/${selectedImage?.image}` : null
               }
             />
-
             <div className="popupEditor__range">
               <span className="_small">A</span>
               <InputRange value={fontSize} onChange={handleFontSize} />

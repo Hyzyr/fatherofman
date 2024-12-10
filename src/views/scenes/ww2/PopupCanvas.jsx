@@ -14,7 +14,7 @@ const PopupCanvas = (
   ref
 ) => {
   const [width, setWidth] = useState(0);
-  //   const ref = useRef();
+  const wrapperRef = useRef();
   const rndRef = useRef(null);
   const spaceRef = useRef(null);
 
@@ -62,25 +62,65 @@ const PopupCanvas = (
   }, [image, instaStyle]);
 
   return (
-    <div className="popupEditor__canvas" ref={ref} style={{ width: width }}>
-      <span className="space" ref={spaceRef}>
-        <img src="/images/components/white-screen.webp" alt="white-screen" />
-      </span>
-      {image && (
+    <div style={{ alignSelf: 'center' }} ref={wrapperRef}>
+      <div
+        className="popupEditor__canvas"
+        ref={ref}
+        style={{ width: width, color: textColor }}>
+        <span className="space" ref={spaceRef}>
+          <img src="/images/components/white-screen.webp" alt="white-screen" />
+        </span>
+        {image && (
+          <Rnd
+            ref={rndRef}
+            dragAxis={imgPosition.dragAxis}
+            // bounds={wrapperRef.current}
+            // bounds={{
+            //   top: 0,
+            //   left: 0,
+            //   bottom: wrapperRef.current.clientHeight - imgPosition.height,
+            //   right: wrapperRef.current.clientWidth - imgPosition.width,
+            // }}
+            size={{
+              width: imgPosition.width ?? '100%',
+              height: imgPosition.height ?? '100%',
+            }}
+            position={{ x: imgPosition.x ?? 0, y: imgPosition.y ?? 0 }}
+            onDragStop={(e, d) =>
+              setImgPosition((prev) => ({ ...prev, x: d.x, y: d.y }))
+            }
+            onResizeStop={(e, direction, ref, delta, position) => {
+              setImgPosition((prev) => ({
+                ...prev,
+                width: ref.offsetWidth,
+                height: ref.offsetHeight,
+                x: position.x,
+                y: position.y,
+              }));
+            }}
+            enableResizing={{
+              top: true,
+              right: true,
+              bottom: true,
+              left: true,
+            }}>
+            <img src={image} alt="Photo Card Big" />
+          </Rnd>
+        )}
+
         <Rnd
           ref={rndRef}
-          dragAxis={imgPosition.dragAxis}
-          // bounds={spaceRef.current}
+          bounds="parent"
           size={{
-            width: imgPosition.width ?? '100%',
-            height: imgPosition.height ?? '100%',
+            width: textPosition.width,
+            height: textPosition.height,
           }}
-          position={{ x: imgPosition.x ?? 0, y: imgPosition.y ?? 0 }}
+          position={{ x: textPosition.x, y: textPosition.y }}
           onDragStop={(e, d) =>
-            setImgPosition((prev) => ({ ...prev, x: d.x, y: d.y }))
+            setTextPosition((prev) => ({ ...prev, x: d.x, y: d.y }))
           }
           onResizeStop={(e, direction, ref, delta, position) => {
-            setImgPosition({
+            setTextPosition({
               width: ref.offsetWidth,
               height: ref.offsetHeight,
               x: position.x,
@@ -93,42 +133,14 @@ const PopupCanvas = (
             bottom: true,
             left: true,
           }}>
-          <img src={image} alt="Photo Card Big" />
+          <textarea
+            value={manualText}
+            onChange={(e) => setManualText(e.target.value)}
+            style={{ color: textColor, fontSize: `${fontSize}px` }}
+            placeholder="Enter your text here..."
+          />
         </Rnd>
-      )}
-
-      <Rnd
-        ref={rndRef}
-        bounds="parent"
-        size={{
-          width: textPosition.width,
-          height: textPosition.height,
-        }}
-        position={{ x: textPosition.x, y: textPosition.y }}
-        onDragStop={(e, d) =>
-          setTextPosition((prev) => ({ ...prev, x: d.x, y: d.y }))
-        }
-        onResizeStop={(e, direction, ref, delta, position) => {
-          setTextPosition({
-            width: ref.offsetWidth,
-            height: ref.offsetHeight,
-            x: position.x,
-            y: position.y,
-          });
-        }}
-        enableResizing={{
-          top: true,
-          right: true,
-          bottom: true,
-          left: true,
-        }}>
-        <textarea
-          value={manualText}
-          onChange={(e) => setManualText(e.target.value)}
-          style={{ color: textColor, fontSize: `${fontSize}px` }}
-          placeholder="Enter your text here..."
-        />
-      </Rnd>
+      </div>
     </div>
   );
 };

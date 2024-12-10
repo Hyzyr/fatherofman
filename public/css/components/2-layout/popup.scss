@@ -288,7 +288,8 @@
         line-height: 1.2;
         font-weight: bold;
         text-align: center;
-        border: 1px dashed rgba($brown, 0.2);
+        color: inherit;
+        border: 1px dashed currentColor;
         overflow-wrap: break-word;
         background: transparent;
         resize: none;
