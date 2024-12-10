@@ -5,7 +5,16 @@ const PopupDynasty = (props) => {
   return (
     <Popup {...props}>
       <div className="popup__inner-bg">
-        <img src="/images/components/dynasty/new-scroll.webp" alt="stone" />
+        <img
+          src="/images/components/dynasty/mob-scroll.webp"
+          className="_mob"
+          alt="stone"
+        />
+        <img
+          src="/images/components/dynasty/new-scroll.webp"
+          className="_desktop"
+          alt="stone"
+        />
       </div>
       <div className="popup__inner-dynasty">
         <p>

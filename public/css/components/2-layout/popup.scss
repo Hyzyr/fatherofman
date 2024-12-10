@@ -109,6 +109,13 @@
       max-width: 1080px;
       top: 55%;
       min-height: 85vh;
+      &-bg {
+        img {
+          &._mob {
+            display: none;
+          }
+        }
+      }
 
       &-dynasty {
         position: absolute;
@@ -520,6 +527,31 @@
       img {
         width: 60px;
         height: 60px;
+      }
+    }
+  }
+}
+
+@mixin popup680 {
+  .popup {
+    &--dynasty & {
+      &__inner {
+        &-bg {
+          img {
+            &._mob {
+              display: block;
+            }
+            &._desktop {
+              display: none;
+            }
+          }
+        }
+        &-dynasty {
+          top: 32%;
+          left: 30%;
+          width: 39%;
+          height: auto;
+        }
       }
     }
   }
