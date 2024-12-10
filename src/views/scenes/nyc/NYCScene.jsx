@@ -21,7 +21,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid left1"
-            speed={0.135}
+            speed={0.1}
             fill
           />
           <SceneItem
@@ -29,7 +29,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid left2"
-            speed={0.135}
+            speed={0.1}
             fill
           />
           <SceneItem
@@ -37,7 +37,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid left3"
-            speed={0.135}
+            speed={0.1}
             fill
           />
           <SceneItem
@@ -45,7 +45,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid left4"
-            speed={0.135}
+            speed={0.1}
             fill
           />
 
@@ -54,7 +54,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid right1"
-            speed={0.135}
+            speed={0.1}
             fill
           />
           <SceneItem
@@ -62,7 +62,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid right2"
-            speed={0.135}
+            speed={0.1}
             fill
           />
           <SceneItem
@@ -70,7 +70,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid right3"
-            speed={0.135}
+            speed={0.1}
             fill
           />
           <SceneItem
@@ -78,7 +78,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid right4"
-            speed={0.135}
+            speed={0.1}
             fill
           />
         </SceneItem>
@@ -111,7 +111,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid mid2"
-            speed={0.135}
+            speed={0.1}
             fill
           />
           <SceneItem
@@ -119,7 +119,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid mid3"
-            speed={0.135}
+            speed={0.1}
             fill
           />
         </SceneItem>
