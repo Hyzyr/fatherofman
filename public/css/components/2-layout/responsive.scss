@@ -8,3 +8,6 @@
   @include popup940;
   @include scene-940;
 }
+@media (max-width: 620px) {
+  @include popup620;
+}

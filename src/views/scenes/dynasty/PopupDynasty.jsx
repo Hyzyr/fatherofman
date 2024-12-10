@@ -1,7 +1,5 @@
 import React from 'react';
 import Popup from '@/components/Popup';
-import gsap from 'gsap';
-import useSounds from '@/hooks/useSounds';
 
 const list1 = [
   'To Ape is the essence of Him',
@@ -22,8 +20,6 @@ const list2 = [
 ];
 
 const PopupDynasty = (props) => {
-  const { playSound } = useSounds();
-
   return (
     <Popup {...props}>
       <div className="popup__inner-bg">

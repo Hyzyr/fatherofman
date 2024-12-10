@@ -138,6 +138,9 @@
         }
         &-col {
           width: calc(50% - 0.75vw);
+          &:first-child {
+            margin-top: -2em;
+          }
         }
         ul {
           color: #7c1b1b;
@@ -580,6 +583,7 @@
             gap: 0.8em;
           }
           &-col {
+            display: contents;
             gap: inherit;
             width: 100%;
           }
@@ -589,6 +593,15 @@
             }
           }
         }
+      }
+    }
+  }
+}
+@mixin popup620 {
+  .popup {
+    &--dynasty & {
+      &__inner {
+        width: 135%;
       }
     }
   }
