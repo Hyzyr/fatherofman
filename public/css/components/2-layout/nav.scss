@@ -127,6 +127,9 @@
     align-items: center;
   }
   &-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     pointer-events: all;
     position: relative;
     font-size: inherit;
@@ -364,5 +367,60 @@
 }
 
 @mixin uicontrols-1560 {
-  
+  .nav {
+    &__inner {
+      max-width: 400px;
+    }
+    &-item {
+      font-size: 15px;
+    }
+    &-arrow {
+      font-size: 18px;
+    }
+  }
+  .dropbox {
+    left: 2.5vw;
+  }
+}
+@mixin uicontrols-940 {
+  .nav {
+    &__inner {
+      max-width: 400px;
+      width: 90vw;
+    }
+    &-item {
+      font-size: 14px;
+    }
+    &-arrow {
+      font-size: 16px;
+    }
+  }
+  .dropbox {
+    top: 4.5em;
+    left: 5%;
+    width: 90%;
+    max-width: unset;
+    height: 3.2em;
+
+    &__inner {
+      &-bg {
+        ._shape {
+          top: 13px;
+        }
+      }
+    }
+  }
+
+  .social {
+    top: unset;
+    left: 50%;
+    right: unset;
+    bottom: 8%;
+    font-size: 15px;
+    transform: translateX(-50%);
+  }
+  .muteButton {
+    font-size: 15px;
+    bottom: 9%;
+  }
 }

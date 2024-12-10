@@ -23,7 +23,7 @@ export default function Home() {
   }, []);
   if (!ready) return null;
 
-  // return <NYC animated={false} />;
+  // return <AScenes animated={false} />;
 
   return (
     <>
