@@ -49,7 +49,7 @@ export const AllAssetFiles = [
   '/images/scenes/dynasty/grass.webp',
   '/images/scenes/dynasty/grass.zip',
   '/images/scenes/dynasty/grass-moving.zip',
-  '/images/scenes/dynasty/ground2.webp',
+  '/images/scenes/dynasty/mid-ground.png',
   '/images/scenes/dynasty/road.webp',
   '/images/scenes/dynasty/sun-tzu.webp',
   '/images/scenes/dynasty/warriors-cropped.zip',
