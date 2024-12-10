@@ -75,6 +75,7 @@ const DynastyScene = ({ animated = true, onCharClick }) => {
         <SceneItem
           url={IMAGES_URL + 'grass-moving.zip'}
           animate={animated}
+          speed={0.06}
           addClass="land"
           fill
         />

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { CustomEase } from 'gsap/CustomEase';
@@ -13,12 +13,41 @@ const useSceneController = ({
   sceneNames,
 }) => {
   const navTimeline = useRef(null);
+  const sceneTimeline = useRef(null);
 
-  const resetSceneStyles = () => {
-    const scenes = wrapper.current.querySelectorAll(
-      '.sceneController__scene:not(.active)'
+  const resetActiveScene = () => {
+    const scene = wrapper.current.querySelector(
+      '.sceneController__scene.active'
     );
+    gsap.set(scene.querySelector('.scene__front'), {
+      scale: 1.3,
+      yPercent: -2,
+    });
+    gsap.set(scene.querySelector('.scene__main'), { scale: 1.3, y: '15vh' });
   };
+
+  const animateActiveScene = () => {
+    if (!sceneTimeline.current) sceneTimeline.current = gsap.timeline();
+    let tl = gsap.timeline();
+
+    const scene = wrapper.current.querySelector(
+      '.sceneController__scene.active'
+    );
+    tl.fromTo(
+      scene.querySelector('.scene__front'),
+      { scale: 1.3, yPercent: -2 },
+      { scale: 1, yPercent: 0, ease: 'Power3.in', delay: 0.16, duration: 0.5 }
+    ).fromTo(
+      scene.querySelector('.scene__main'),
+      { scale: 1.3, y: '15vh' },
+      { scale: 1, y: 0, ease: 'Power2.in',  duration: 0.6 },
+      '<'
+    );
+    return tl;
+  };
+  // useEffect(() => {
+  //   animateActiveScene();
+  // }, [activeScene]);
 
   useGSAP(
     () => {
@@ -84,6 +113,7 @@ const useSceneController = ({
           onStart: () => {
             gsap.set(track, { willChange: 'auto' });
             if (setScrolling) setScrolling(true);
+            resetActiveScene();
           },
           onComplete: () => {
             gsap.set(track, { willChange: 'unset' });
@@ -91,7 +121,8 @@ const useSceneController = ({
           },
         },
         '<'
-      );
+      )
+      .add(animateActiveScene, '<+0.15');
   };
   const navNext = () => {
     let currentIndex = [...sceneNames].indexOf(activeScene);

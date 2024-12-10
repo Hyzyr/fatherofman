@@ -14,6 +14,7 @@ const PrehystoricScene = ({ animated = true, onCharClick }) => {
           url={IMAGES_URL + 'ptero.zip'}
           animate={animated}
           addClass="ptero"
+          speed={0.06}
         />
         <SceneItem
           url={IMAGES_URL + 'smoke.zip'}
