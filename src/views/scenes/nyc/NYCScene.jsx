@@ -103,7 +103,7 @@ const NYCScene = ({ animated = true, onCharClick }) => {
             animate={animated}
             delay={1}
             addClass="vid mid1"
-            speed={0.135}
+            speed={0.1}
             fill
           />
           <SceneItem
