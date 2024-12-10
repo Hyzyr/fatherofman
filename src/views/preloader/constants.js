@@ -5,7 +5,7 @@ export const PRELOADERS = [
     bgMove: 2,
     items: [
       {
-        id: 'abraham-monkey',
+        id: 'adam-transparent',
         bottom: 5,
         left: 1,
         width: 95,
@@ -22,10 +22,10 @@ export const PRELOADERS = [
     bgMove: 2,
     items: [
       {
-        id: 'abraham-monkey',
-        bottom: 8,
-        left: 39.5,
-        height: 90,
+        id: 'moses-transparent',
+        bottom: -2,
+        left: 14.5,
+        height: 102,
         img: 'moses-transparent.webp',
         direction: 1,
         speed: 0.35,
@@ -39,7 +39,7 @@ export const PRELOADERS = [
     bgMove: 2,
     items: [
       {
-        id: 'abraham-monkey',
+        id: 'yunpeng-li-syzlb-monke-alpha',
         bottom: -20,
         left: -1,
         width: 110,
@@ -56,10 +56,10 @@ export const PRELOADERS = [
     bgMove: 2,
     items: [
       {
-        id: 'abraham-monkey',
+        id: 'hitler-transparent',
         bottom: -2,
-        right: 32.2,
-        height: 95,
+        right: 0,
+        height: 104,
         img: 'hitler-transparent.webp',
         direction: 1,
         speed: 0.65,
@@ -73,7 +73,7 @@ export const PRELOADERS = [
     bgMove: 2,
     items: [
       {
-        id: 'abraham-monkey',
+        id: 'andrew-boxing-transparent',
         bottom: -4,
         left: 26,
         height: 110,
@@ -91,10 +91,10 @@ export const PRELOADERS = [
     bgMove: 2,
     items: [
       {
-        id: 'abraham-monkey',
-        bottom: 0,
-        right: -2.2,
-        width: 60,
+        id: 'adam-and-eve-transparent',
+        bottom: -8.4,
+        right: -2.1,
+        width: 103,
         img: 'adam-and-eve-transparent.webp',
         direction: 1,
         speed: 0.35,
@@ -108,10 +108,10 @@ export const PRELOADERS = [
     bgMove: 2,
     items: [
       {
-        id: 'abraham-monkey',
-        bottom: 20,
-        left: 28,
-        width: 30,
+        id: 'abraham-monke-alpha',
+        bottom: -2,
+        left: -2,
+        width: 92,
         img: 'abraham-monke-alpha.webp',
         direction: 1,
         speed: 0.35,
@@ -125,7 +125,7 @@ export const PRELOADERS = [
     bgMove: 2,
     items: [
       {
-        id: 'abraham-monkey',
+        id: 'china-warlord-3-monke-alpha',
         bottom: -2,
         right: -2,
         width: 80,
@@ -142,7 +142,7 @@ export const PRELOADERS = [
     bgMove: 2,
     items: [
       {
-        id: 'abraham-monkey',
+        id: 'martin-luther-transparent',
         bottom: -2,
         right: 0,
         height: 90,
@@ -159,7 +159,7 @@ export const PRELOADERS = [
     bgMove: 2,
     items: [
       {
-        id: 'abraham-monkey',
+        id: 'leonardo-transparent',
         bottom: 0,
         left: 25.2,
         height: 90,

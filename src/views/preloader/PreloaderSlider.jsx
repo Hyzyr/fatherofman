@@ -38,7 +38,7 @@ const PreloaderSlider = () => {
       .to(fogRef.current, {
         opacity: 0,
         duration: 0.5,
-        delay: 0.1
+        delay: 0.1,
       });
   };
   const getNextIndex = (currentIndex = activeIndex) => {
@@ -51,6 +51,7 @@ const PreloaderSlider = () => {
 
   useEffect(() => {
     const checkUpdates = () => {
+      if (window.pausePreloader) return;
       let lastCallTime = timePrev.current;
       const currentTime = new Date().getTime();
       if (
