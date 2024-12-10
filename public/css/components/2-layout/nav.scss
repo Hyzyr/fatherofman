@@ -396,11 +396,12 @@
     }
   }
   .dropbox {
-    top: 4.5em;
+    top: unset;
+    bottom: 6.3em;
     left: 5%;
     width: 90%;
     max-width: unset;
-    height: 3.2em;
+    height: 5em;
 
     &__inner {
       &-bg {
@@ -410,12 +411,14 @@
       }
     }
   }
-
+  .copybar {
+    bottom: 4.2em;
+  }
   .social {
     top: unset;
     left: 50%;
     right: unset;
-    bottom: 8%;
+    bottom: 1em;
     font-size: 15px;
     transform: translateX(-50%);
   }

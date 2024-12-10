@@ -3,6 +3,7 @@
 import CursorHelper from '@/components/CursorHelper';
 import { AllAssetFiles } from '@/contants/Assets';
 import useAssetLoader from '@/hooks/useAssetLoader';
+import useMobile from '@/hooks/useMobile';
 import Preloader from '@/views/preloader/PreloaderScreen';
 import AScenes from '@/views/scenes/AScenes';
 import Dynasty from '@/views/scenes/dynasty/Dynasty';
@@ -17,7 +18,7 @@ export default function Home() {
   const { loaded, attached, progress } = useAssetLoader({
     assets: AllAssetFiles,
   });
-
+  const isMobile = useMobile();
   useEffect(() => {
     setReady(true);
   }, []);
@@ -28,7 +29,7 @@ export default function Home() {
   return (
     <>
       {loaded && <AScenes active={granted} />}
-      <CursorHelper />
+      {!isMobile && <CursorHelper />}
       {!granted && (
         <Preloader
           completed={loaded && attached}

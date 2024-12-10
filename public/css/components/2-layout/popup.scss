@@ -602,6 +602,13 @@
         }
       }
     }
+    &--egypt & {
+      &__inner {
+        width: 140%;
+        min-height: 73%;
+        padding: 0;
+      }
+    }
   }
 }
 @mixin popup620 {

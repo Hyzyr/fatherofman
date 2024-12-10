@@ -1042,6 +1042,7 @@
         &.character2 {
           height: 47%;
           bottom: 6.5%;
+          transform: translateX(-47%);
         }
         &.trex {
           bottom: 20.5%;
@@ -1086,7 +1087,7 @@
           min-width: unset !important;
         }
         &.chararacter {
-          left: 25%;
+          left: 22%;
           height: 48.8%;
           bottom: 9%;
         }
@@ -1172,6 +1173,9 @@
           min-width: 1400px;
           transform: translateX(50%);
         }
+        &.character {
+          left: 28.5%;
+        }
       }
     }
     &.nyc & {
@@ -1195,7 +1199,7 @@
           transform: translate(-45.4%, 25%);
         }
         &.character {
-          left: -6%;
+          left: -8%;
           height: 46.2%;
           bottom: 4%;
         }
