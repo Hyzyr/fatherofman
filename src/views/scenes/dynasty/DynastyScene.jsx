@@ -18,7 +18,7 @@ const DynastyScene = ({ animated = true, onCharClick }) => {
           fill
         />
         <SceneItem
-          url={IMAGES_URL + 'city.png'}
+          url={IMAGES_URL + 'city.webp'}
           animate={animated}
           addClass="city">
           <SceneItem
@@ -60,7 +60,7 @@ const DynastyScene = ({ animated = true, onCharClick }) => {
         /> */}
       </div>
       <div className="scene__front">
-        <SceneItem url={IMAGES_URL + 'road.webp'} addClass="road" fill />
+        {/* <SceneItem url={IMAGES_URL + 'road.webp'} addClass="road" fill /> */}
         <SceneItem
           url={IMAGES_URL + 'sun-tzu.webp'}
           addClass="suntzu"
