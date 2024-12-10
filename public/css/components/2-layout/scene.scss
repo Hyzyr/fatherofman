@@ -831,3 +831,372 @@
     }
   }
 }
+
+@mixin scene-1160 {
+  .scene {
+    &.prehystoric & {
+      &__item {
+        &.ptero {
+          top: 0;
+          left: 0;
+          width: 35%;
+        }
+        &.ground {
+          left: 50%;
+          min-width: 1400px;
+          transform: translate(-50%);
+        }
+        &.ground-mid {
+          bottom: 8%;
+          left: 50%;
+          min-width: 1200px;
+          transform: translate(-50%);
+        }
+        &.brachiosaurus {
+          bottom: 35%;
+          left: 28%;
+          width: 7%;
+        }
+        &.raptor-small {
+          bottom: 29%;
+          right: 25%;
+          width: 12%;
+        }
+        &.trex {
+          bottom: 17%;
+          right: -3%;
+          width: 35%;
+        }
+        &.raptor {
+          bottom: 22.4%;
+          left: 1.5%;
+          width: 25%;
+        }
+        &.character2 {
+          left: 50%;
+          height: 54%;
+          bottom: 7.9%;
+          transform: translateX(-56%);
+        }
+        &.tree {
+          right: 0;
+          height: 97%;
+          top: -2.3%;
+          transform: translate(50%);
+        }
+        &.palms {
+          bottom: 3%;
+          width: 55%;
+          left: -5%;
+        }
+        &.smoke {
+          left: 50%;
+          min-width: 200px;
+          transform: translate(-54%);
+        }
+        &.volcano {
+          left: 50%;
+          min-width: 1200px;
+          transform: translate(-50%);
+          height: 88%;
+        }
+      }
+    }
+    &.egypt & {
+      &__item {
+        &.pyramids {
+          right: 45%;
+          min-width: 1200px;
+          transform: translate(50%);
+        }
+        &.ground {
+          left: 50%;
+          min-width: 1400px;
+          transform: translate(-50%);
+        }
+        &.foreground {
+          left: 50%;
+          min-width: 1400px;
+          transform: translate(-50%);
+        }
+        &.cactus {
+          bottom: -1.4%;
+          left: 5%;
+          width: 89%;
+          min-width: 1400px;
+        }
+        &.chararacter {
+          left: 42%;
+          height: 48.8%;
+          bottom: 9%;
+        }
+      }
+    }
+    &.dynasty & {
+      &__item {
+        &.warriors {
+          left: 22.8%;
+          width: auto;
+          bottom: 29%;
+        }
+        &.land {
+          left: 50%;
+          min-width: 1400px;
+          transform: translateX(-45.4%);
+        }
+        &.ground {
+          left: 50%;
+          min-width: 1400px;
+          transform: translate(-50%);
+        }
+        &.suntzu {
+          bottom: 38.8%;
+          height: 40.1%;
+          right: 2.1%;
+        }
+      }
+    }
+    &.ww2 & {
+      &__item {
+        &.mountain {
+          left: 50%;
+          height: auto;
+          min-width: 800px;
+          transform: translate(-45.4%, 25%);
+        }
+        &.forest {
+          left: 50%;
+          min-width: 800px;
+          transform: translateX(50%);
+        }
+        &.city {
+          left: 50%;
+          min-width: 1400px;
+          transform: translateX(-41.8%);
+        }
+        &.fire {
+          left: 50%;
+          min-width: 1400px;
+          transform: translateX(50%);
+        }
+        &.dust {
+          left: 50%;
+          min-width: 1400px;
+          transform: translateX(50%);
+        }
+        &.sparks {
+          left: 50%;
+          min-width: 1400px;
+          transform: translateX(50%);
+        }
+        &.bullets {
+          left: 50%;
+          min-width: 1400px;
+          transform: translateX(50%);
+        }
+      }
+    }
+    &.nyc & {
+      &__item {
+        &.buildings {
+          left: 50%;
+          height: 100%;
+          min-width: 1140px;
+          transform: translate(-46%, -7%);
+        }
+        &.building {
+          bottom: 18.1%;
+          left: 2.1%;
+          width: 85.8%;
+          height: 83.5%;
+        }
+        &.ground {
+          left: 50%;
+          height: auto;
+          min-width: 1200px;
+          transform: translate(-45.4%, 25%);
+        }
+      }
+    }
+  }
+}
+@mixin scene-940 {
+  .scene {
+    &.prehystoric & {
+      &__item {
+        &.raptor {
+          bottom: 26.6%;
+          left: -17.5%;
+          width: unset;
+          height: 14.6%;
+        }
+        &.raptor-small {
+          bottom: 31.6%;
+          right: 22.9%;
+          width: unset;
+          height: 8%;
+        }
+        &.character2 {
+          height: 47%;
+          bottom: 6.5%;
+        }
+        &.trex {
+          bottom: 20.5%;
+          right: 0;
+          width: unset;
+          height: 40%;
+          transform: translateX(53.3%);
+        }
+        &.palms {
+          bottom: -4.6%;
+          width: 135%;
+          left: -40.8%;
+        }
+      }
+    }
+    &.egypt & {
+      &__item {
+        &.birds {
+          top: 10%;
+          left: 10%;
+          width: 100%;
+        }
+        &.foreground {
+          left: 0;
+          transform: translate(-44%);
+          bottom: -1%;
+        }
+        &.pyramids {
+          right: 45%;
+          min-width: 1200px;
+          transform: translate(50%);
+        }
+        &.ground {
+          left: 50%;
+          min-width: 1400px;
+          transform: translate(-50%);
+        }
+        &.cactus {
+          bottom: 0;
+          left: -2.8%;
+          width: 145%;
+          min-width: unset !important;
+        }
+        &.chararacter {
+          left: 25%;
+          height: 48.8%;
+          bottom: 9%;
+        }
+        &.grass {
+          left: 0.7%;
+          width: 26%;
+          bottom: -0.6%;
+        }
+        &.grass2 {
+          right: -11%;
+          width: 21.7%;
+          bottom: 18%;
+        }
+        &.sphinx {
+          bottom: 28.9%;
+          width: 85%;
+          left: -26.1%;
+        }
+      }
+    }
+    &.dynasty & {
+      &__item {
+        &.warriors {
+          left: 22.8%;
+          width: auto;
+          bottom: 29%;
+        }
+        &.city {
+          bottom: 40.9%;
+          left: -24%;
+          width: 116.4%;
+        }
+        &.glows {
+          left: 0%;
+          width: 100%;
+          bottom: 4%;
+          min-width: 700px;
+          height: auto;
+        }
+        &.suntzu {
+          bottom: 28.8%;
+          height: 30.1%;
+          right: -14.1%;
+        }
+      }
+    }
+    &.ww2 & {
+      &__item {
+        &.mountain {
+          left: 50%;
+          height: auto;
+          min-width: 800px;
+          transform: translate(-45.4%, 4%);
+        }
+        &.forest {
+          left: 50%;
+          min-width: 742px;
+          transform: translateX(-35%);
+        }
+        &.city {
+          left: 50%;
+          min-width: 1400px;
+          transform: translateX(-41.8%);
+        }
+        &.soldiers {
+          bottom: 18.6%;
+          left: 1.5%;
+          width: auto;
+          height: 33%;
+        }
+        &.dust {
+          left: 50%;
+          min-width: 1400px;
+          transform: translateX(50%);
+        }
+        &.sparks {
+          left: 50%;
+          min-width: 1400px;
+          transform: translateX(50%);
+        }
+        &.bullets {
+          left: 50%;
+          min-width: 1400px;
+          transform: translateX(50%);
+        }
+      }
+    }
+    &.nyc & {
+      &__item {
+        &.buildings {
+          left: 50%;
+          height: 100%;
+          min-width: 1140px;
+          transform: translate(-46%, -7%);
+        }
+        &.building {
+          bottom: 18.1%;
+          left: 2.1%;
+          width: 85.8%;
+          height: 83.5%;
+        }
+        &.ground {
+          left: 42%;
+          height: 49%;
+          min-width: 1600px;
+          transform: translate(-45.4%, 25%);
+        }
+        &.character {
+          left: -6%;
+          height: 46.2%;
+          bottom: 4%;
+        }
+      }
+    }
+  }
+}

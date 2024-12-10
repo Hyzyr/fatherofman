@@ -77,13 +77,20 @@ const PrehystoricScene = ({ animated = true, onCharClick }) => {
           delay={0.6}
           speed={0.06}
         />
+        <SceneItem
+          url={IMAGES_URL + 'palms.zip'}
+          animate={animated}
+          addClass="palms"
+        />
+        <SceneItem
+          url={IMAGES_URL + 'silhouette-r.zip'}
+          animate={animated}
+          addClass="silhouetteR"
+          speed={0.1}
+          fill
+        />
         {!isMobile && (
           <>
-            <SceneItem
-              url={IMAGES_URL + 'palms.zip'}
-              animate={animated}
-              addClass="palms"
-            />
             <SceneItem
               url={IMAGES_URL + 'grass.zip'}
               animate={animated}
@@ -93,13 +100,6 @@ const PrehystoricScene = ({ animated = true, onCharClick }) => {
               url={IMAGES_URL + 'silhouette-l.zip'}
               animate={animated}
               addClass="silhouetteL"
-              speed={0.1}
-              fill
-            />
-            <SceneItem
-              url={IMAGES_URL + 'silhouette-r.zip'}
-              animate={animated}
-              addClass="silhouetteR"
               speed={0.1}
               fill
             />

@@ -1,6 +1,10 @@
 @media (max-width: 1560px) {
   @include uicontrols-1560;
 }
+@media (max-width: 1160px) {
+  @include scene-1160;
+}
 @media (max-width: 940px) {
   @include popup940;
+  @include scene-940;
 }

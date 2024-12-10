@@ -2,10 +2,13 @@
 import React, { useRef } from 'react';
 import Scene from '../components/Scene';
 import SceneItem from '../components/SceneItem';
+import useMobile from '@/hooks/useMobile';
 
 const IMAGES_URL = '/images/scenes/ww2/';
 
 const WW2Scene = ({ animated = true, onCharClick }) => {
+  const isMobile = useMobile();
+
   return (
     <Scene name="ww2">
       <div className="scene__back"></div>
@@ -19,24 +22,35 @@ const WW2Scene = ({ animated = true, onCharClick }) => {
       </div>
       <div className="scene__front">
         <SceneItem url={IMAGES_URL + 'bg.webp'} addClass="city" fill />
-        <SceneItem
-          url={IMAGES_URL + 'fire.zip'}
-          addClass="fire"
-          animate={animated}
-          fill
-        />
-        <SceneItem
-          url={IMAGES_URL + 'smoke-l.zip'}
-          addClass="smokeL"
-          animate={animated}
-          fill
-        />
-        <SceneItem
-          url={IMAGES_URL + 'smoke-r.zip'}
-          addClass="smokeR"
-          animate={animated}
-          fill
-        />{' '}
+        {!isMobile && (
+          <>
+            <SceneItem
+              url={IMAGES_URL + 'fire.zip'}
+              addClass="fire"
+              animate={animated}
+              fill
+            />
+            <SceneItem
+              url={IMAGES_URL + 'smoke-l.zip'}
+              addClass="smokeL"
+              animate={animated}
+              fill
+            />
+            <SceneItem
+              url={IMAGES_URL + 'smoke-r.zip'}
+              addClass="smokeR"
+              animate={animated}
+              fill
+            />
+            <SceneItem url={IMAGES_URL + 'stone.webp'} addClass="stone" />
+            <SceneItem
+              url={IMAGES_URL + 'soldier.zip'}
+              addClass="soldier"
+              speed={0.1}
+              animate={animated}
+            />
+          </>
+        )}
         <SceneItem
           url={IMAGES_URL + 'bullets.zip'}
           addClass="bullets"
@@ -49,13 +63,7 @@ const WW2Scene = ({ animated = true, onCharClick }) => {
           animate={animated}
           fill
         />
-        <SceneItem url={IMAGES_URL + 'stone.webp'} addClass="stone" />
-        <SceneItem
-          url={IMAGES_URL + 'soldier.zip'}
-          addClass="soldier"
-          speed={0.1}
-          animate={animated}
-        />
+
         <SceneItem
           url={IMAGES_URL + 'character.zip'}
           addClass="character"

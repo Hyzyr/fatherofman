@@ -2,18 +2,23 @@
 import React, { useRef } from 'react';
 import Scene from '../components/Scene';
 import SceneItem from '../components/SceneItem';
+import useMobile from '@/hooks/useMobile';
 
 const IMAGES_URL = '/images/scenes/egypt/';
 
 const EgyptScene = ({ animated = true, onCharClick }) => {
+  const isMobile = useMobile();
+
   return (
     <Scene name="egypt">
       <div className="scene__back">
-        <SceneItem
-          url={IMAGES_URL + 'birds.zip'}
-          animate={animated}
-          addClass="birds"
-        />
+        {!isMobile && (
+          <SceneItem
+            url={IMAGES_URL + 'birds.zip'}
+            animate={animated}
+            addClass="birds"
+          />
+        )}
         <SceneItem
           url={IMAGES_URL + 'birds-2.zip'}
           animate={animated}
@@ -26,12 +31,14 @@ const EgyptScene = ({ animated = true, onCharClick }) => {
           animate={animated}
           addClass="pyramids"
           fill>
-          <SceneItem
-            url={IMAGES_URL + 'vawes.zip'}
-            addClass="vawes"
-            fill
-            speed={0.06}
-          />
+          {!isMobile && (
+            <SceneItem
+              url={IMAGES_URL + 'vawes.zip'}
+              addClass="vawes"
+              fill
+              speed={0.06}
+            />
+          )}
         </SceneItem>
       </div>
       <div className="scene__front">

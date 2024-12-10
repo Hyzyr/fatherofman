@@ -6,6 +6,9 @@ import useAssetLoader from '@/hooks/useAssetLoader';
 import Preloader from '@/views/preloader/PreloaderScreen';
 import AScenes from '@/views/scenes/AScenes';
 import Dynasty from '@/views/scenes/dynasty/Dynasty';
+import Egypt from '@/views/scenes/egypt/Egypt';
+import NYC from '@/views/scenes/nyc/NYC';
+import WW2 from '@/views/scenes/ww2/WW2';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
@@ -20,7 +23,7 @@ export default function Home() {
   }, []);
   if (!ready) return null;
 
-  // return <AScenes active />;
+  return <NYC animated={false} />;
 
   return (
     <>
