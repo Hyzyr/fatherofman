@@ -120,8 +120,8 @@
       &-dynasty {
         position: absolute;
         top: 35%;
-        left: 29%;
-        width: 59%;
+        left: 27.3%;
+        width: 59.7%;
         height: 35%;
 
         p {
@@ -149,9 +149,16 @@
           gap: 0.5em;
 
           li {
+            position: relative;
             line-height: 1.25;
             font-weight: 500;
-            list-style-type: decimal;
+            padding-left: 1.5em;
+
+            .num {
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
           }
         }
       }

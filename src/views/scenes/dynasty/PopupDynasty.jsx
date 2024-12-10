@@ -39,14 +39,20 @@ const PopupDynasty = (props) => {
           <div className="popup__inner-dynasty-col">
             <ul>
               {list1.map((text, index) => (
-                <li key={index}>{text}</li>
+                <li key={index}>
+                  <span className="num">{index + 1}</span>
+                  {text}
+                </li>
               ))}
             </ul>
           </div>
           <div className="popup__inner-dynasty-col">
             <ul>
               {list2.map((text, index) => (
-                <li key={index}>{text}</li>
+                <li key={index}>
+                  <span className="num">{index + list1.length + 1}</span>
+                  {text}
+                </li>
               ))}
             </ul>
           </div>
