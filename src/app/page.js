@@ -20,7 +20,7 @@ export default function Home() {
   }, []);
   if (!ready) return null;
 
-  return <AScenes active />;
+  // return <AScenes active />;
 
   return (
     <>
