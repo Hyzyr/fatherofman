@@ -32,7 +32,6 @@ const useAssetLoader = ({ assets }) => {
         return waitPromise();
       })
       .then(() => {
-        setProgress(0);
         return checkAssetsAvailibility(setProgress);
       })
       .then(() => {
