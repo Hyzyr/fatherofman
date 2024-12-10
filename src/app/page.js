@@ -20,17 +20,19 @@ export default function Home() {
   }, []);
   if (!ready) return null;
 
+  // return <Dynasty animated />;
+
   return (
     <>
-      {/* {loaded && <AScenes active={granted} />}
+      {loaded && <AScenes active={granted} />}
       <CursorHelper />
-      {!granted && ( */}
-      <Preloader
-        completed={loaded && attached}
-        progress={progress}
-        setGranted={setGranted}
-      />
-      {/* )} */}
+      {!granted && (
+        <Preloader
+          completed={loaded && attached}
+          progress={progress}
+          setGranted={setGranted}
+        />
+      )}
     </>
   );
 }
