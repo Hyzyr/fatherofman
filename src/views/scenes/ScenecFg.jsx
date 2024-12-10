@@ -1,29 +1,29 @@
 import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import { debounce } from '@/utils/debounce';
 
 const ScenecFg = () => {
   let wrapper = useRef();
-  //   useEffect(() => {
-  //     const wrapperEl = wrapper.current;
-  //     wrapper.querySelectorAll('img').forEach((img) => {
-  //         // img.style.height
-  //     });
-  //   }, []);
 
   useGSAP(
     () => {
       if (!wrapper.current) return;
-      const items = wrapper.current.querySelectorAll('._emptyspace, img');
-      console.log({ width: window.innerWidth * items.length });
-      gsap.set(items, {
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-      gsap.set(wrapper.current, {
-        width: window.innerWidth * items.length,
-        x: 0,
-      });
+
+      const resetSize = debounce(() => {
+        const items = wrapper.current.querySelectorAll('._emptyspace, img');
+        gsap.set(items, {
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+        gsap.set(wrapper.current, {
+          width: window.innerWidth * items.length,
+          x: 0,
+        });
+      }, 100);
+      resetSize();
+      window.addEventListener('resize', resetSize);
+      return () => window.removeEventListener('resize', resetSize);
     },
     {
       scope: wrapper,

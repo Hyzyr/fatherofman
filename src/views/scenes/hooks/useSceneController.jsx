@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { CustomEase } from 'gsap/CustomEase';
+import { debounce } from '@/utils/debounce';
 
 gsap.registerPlugin(CustomEase);
 
@@ -13,20 +14,31 @@ const useSceneController = ({
 }) => {
   const navTimeline = useRef(null);
 
+  const resetSceneStyles = () => {
+    const scenes = wrapper.current.querySelectorAll(
+      '.sceneController__scene:not(.active)'
+    );
+  };
+
   useGSAP(
     () => {
       if (!navTimeline.current) navTimeline.current = gsap.timeline();
-      const scenes = wrapper.current.querySelectorAll(
-        '.sceneController__scene'
-      );
+      const resetSize = debounce(() => {
+        const scenes = wrapper.current.querySelectorAll(
+          '.sceneController__scene'
+        );
 
-      gsap.set('.sceneController__scene, .sceneController__scene .scene', {
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-      gsap.set('.sceneController__track', {
-        width: window.innerWidth * scenes.length,
-      });
+        gsap.set('.sceneController__scene, .sceneController__scene .scene', {
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+        gsap.set('.sceneController__track', {
+          width: window.innerWidth * scenes.length,
+        });
+      }, 100);
+      resetSize();
+      window.addEventListener('resize', resetSize);
+      return () => window.removeEventListener('resize', resetSize);
     },
     {
       scope: wrapper,
