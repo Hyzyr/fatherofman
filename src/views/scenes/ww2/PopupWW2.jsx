@@ -15,7 +15,7 @@ let getRandomText = () => {
 const PopupWW2 = (props) => {
   const [instaStyle, setInstaStyle] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
-  const [textColor, setTextColor] = useState('#000');
+  const [textColor, setTextColor] = useState('#fff');
   const [manualText, setManualText] = useState(getRandomText());
   const [fontSize, setFontSize] = useState(18);
 

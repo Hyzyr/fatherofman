@@ -4,7 +4,7 @@ import { Rnd } from 'react-rnd';
 
 const PopupCanvas = (
   {
-    textColor = '#ff0000',
+    textColor = '#fff',
     instaStyle,
     fontSize = 18,
     manualText,
