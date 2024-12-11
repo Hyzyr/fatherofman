@@ -64,12 +64,12 @@ const AScenes = ({ active }) => {
     onSwipeLeft: navPrevScene,
     onSwipeRight: navNextScene,
   });
-  useCameraAnimations({
-    animated: !isMobile && !scrolling && active,
-    wrapperSelector: `.sceneController`,
-    scope: wrapper,
-    killAnimations,
-  });
+  // useCameraAnimations({
+  //   animated: !isMobile && !scrolling && active,
+  //   wrapperSelector: `.sceneController`,
+  //   scope: wrapper,
+  //   killAnimations,
+  // });
 
   useEffect(() => {
     setActiveScene(activeScene);
