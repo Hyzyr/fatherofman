@@ -2,43 +2,53 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
+const checkIfChildOfPopup = (targetEl) => {
+  let contains = false;
+
+  document.querySelectorAll('.popup').forEach(function (popup) {
+    contains = popup.contains(targetEl) ? true : contains;
+  });
+  console.log('is popup child : ', contains);
+  return contains;
+};
+
 const useSwipeDetector = ({ onSwipeLeft, onSwipeRight }) => {
   const touchStartRef = useRef(null);
   const touchEndRef = useRef(null);
-  const touchStart = touchStartRef.current;
-  const touchEnd = touchEndRef.current;
 
   const setTouchStart = (value) => (touchStartRef.current = value);
   const setTouchEnd = (value) => (touchEndRef.current = value);
-  
+
   const handleTouchStart = React.useCallback((e) => {
-    console.log('touch')
+    if (checkIfChildOfPopup(e.target)) return;
     setTouchStart(e.targetTouches[0].clientX);
   });
 
   const handleTouchMove = React.useCallback((e) => {
-    console.log('touch move')
+    if (checkIfChildOfPopup(e.target)) return;
     setTouchEnd(e.targetTouches[0].clientX);
   });
 
-  const handleTouchEnd = React.useCallback(() => {
-    const touchStart = touchStartRef.current;
-    const touchEnd = touchEndRef.current;   
-    if (touchStartRef && touchEnd) {
-      const distance = touchStart - touchEnd;
-      if (distance > 50) {
-        console.log('Swiped left');
-        onSwipeLeft();
-        // Trigger function to change slider to the left
-      } else if (distance < -50) {
-        console.log('Swiped right');
-        onSwipeRight();
-        // Trigger function to change slider to the right
+  const handleTouchEnd = React.useCallback(
+    (e) => {
+      if (checkIfChildOfPopup(e.target)) return;
+      const touchStart = touchStartRef.current;
+      const touchEnd = touchEndRef.current;
+      if (touchStartRef && touchEnd) {
+        const distance = touchStart - touchEnd;
+        if (distance > 50) {
+          console.log('onSwipeRight');
+          onSwipeRight();
+        } else if (distance < -50) {
+          console.log('onSwipeLeft');
+          onSwipeLeft();
+        }
       }
-    }
-    setTouchStart(null);
-    setTouchEnd(null);
-  });
+      setTouchStart(null);
+      setTouchEnd(null);
+    },
+    [onSwipeLeft, onSwipeRight]
+  );
 
   useEffect(() => {
     document.addEventListener('touchstart', handleTouchStart);
@@ -49,7 +59,7 @@ const useSwipeDetector = ({ onSwipeLeft, onSwipeRight }) => {
       document.removeEventListener('touchmove', handleTouchMove);
       document.removeEventListener('touchend', handleTouchEnd);
     };
-  }, []);
+  }, [handleTouchEnd]);
 };
 
 export default useSwipeDetector;

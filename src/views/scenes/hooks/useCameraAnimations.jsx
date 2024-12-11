@@ -3,6 +3,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { debounce, throttle } from '@/utils/debounce';
 import { calcMouseFromCenter } from '@/utils/calcEvent';
+import useMobile from '@/hooks/useMobile';
 
 const bgMove = 10;
 const moveFactorMain = 2;
@@ -15,20 +16,23 @@ const useCameraAnimations = ({
   scope = undefined,
   killAnimations,
 }) => {
+  const isMobile = useMobile();
+
   useEffect(() => {
     const wrappers = document.querySelectorAll(
       '.sceneController__scene .scene'
     );
-    gsap.set(wrappers, {
-      scale: 1 + bgMove / 100,
-      xPercent: 0,
-      yPercent: 0,
-    });
-  }, [animated]);
+    if (animated && !isMobile)
+      gsap.set(wrappers, {
+        scale: 1 + bgMove / 100,
+        xPercent: 0,
+        yPercent: 0,
+      });
+  }, [animated, isMobile]);
 
   useGSAP(
     () => {
-      if (!wrapperSelector || typeof window === 'undefined') return;
+      if (!wrapperSelector || typeof window === 'undefined' || isMobile) return;
       if (!animated) return;
 
       const debouncedMouseMove = (event) => {
@@ -62,8 +66,10 @@ const useCameraAnimations = ({
       };
 
       document.addEventListener('mousemove', debouncedMouseMove);
+      return () =>
+        document.removeEventListener('mousemove', debouncedMouseMove);
     },
-    { scope, dependencies: [animated] }
+    { scope, dependencies: [animated, isMobile] }
   );
 };
 

@@ -565,10 +565,24 @@
 
 @mixin popup940 {
   .popup {
+    background: rgba($black, 0.5);
+    &__inner {
+      &-bg {
+        filter: drop-shadow(0 5px 25px rgba($yellow, 0.6));
+      }
+    }
+
     &--dynasty & {
       &__inner {
+        top: 52%;
+        width: 83%;
+        padding: 0;
+        min-height: 80%;
+
         &-bg {
           img {
+            transform: scale(1.6, 1.1);
+
             &._mob {
               display: block;
             }
@@ -579,10 +593,10 @@
         }
 
         &-dynasty {
-          top: 30%;
-          left: 28%;
-          width: 41%;
-          height: 32%;
+          top: 28%;
+          left: 17%;
+          width: 64.3%;
+          height: 36%;
           overflow-y: scroll;
 
           &-row {
@@ -595,7 +609,6 @@
             width: 100%;
           }
           ul {
-            padding-left: 1.5em;
             li {
             }
           }
@@ -604,9 +617,16 @@
     }
     &--egypt & {
       &__inner {
-        width: 140%;
-        min-height: 73%;
+        width: 90%;
+        min-height: 70%;
         padding: 0;
+        top: 50%;
+
+        &-bg {
+          img {
+            transform: scale(1.6, 1.1);
+          }
+        }
       }
     }
   }
@@ -615,7 +635,6 @@
   .popup {
     &--dynasty & {
       &__inner {
-        width: 135%;
       }
     }
   }

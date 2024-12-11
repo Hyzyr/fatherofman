@@ -410,6 +410,9 @@
         }
       }
     }
+    &.active {
+      height: 74%;
+    }
   }
   .copybar {
     bottom: 4.2em;

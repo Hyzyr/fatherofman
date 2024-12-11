@@ -17,6 +17,7 @@ import MuteButton from './components/MuteButton';
 import SceneWrapper from './SceneWrapper';
 import ScenecFg from './ScenecFg';
 import useSwipeDetector from './useSwipeDetector';
+import useMobile from '@/hooks/useMobile';
 
 const SCENES = {
   PREHYSTORIC: 'prehystoric',
@@ -33,6 +34,8 @@ const AScenes = ({ active }) => {
   const [activeScene, setActive] = useState(sceneNamesArr[0]);
   const wrapper = useRef(null);
   const killAnimations = useRef(false);
+
+  const isMobile = useMobile();
 
   const { navTo, navNext, navPrev } = useSceneController({
     wrapper,
@@ -62,7 +65,7 @@ const AScenes = ({ active }) => {
     onSwipeRight: navNextScene,
   });
   useCameraAnimations({
-    animated: !scrolling && active,
+    animated: !isMobile && !scrolling && active,
     wrapperSelector: `.sceneController`,
     scope: wrapper,
     killAnimations,
@@ -130,8 +133,13 @@ const AScenes = ({ active }) => {
             onClick={() => setActiveScene(SCENES.NYC)}
           />
         </Nav>
-        <NavArrow prev onClick={navPrevScene} />
-        <NavArrow next onClick={navNextScene} />
+        {!isMobile && (
+          <>
+            <NavArrow prev onClick={navPrevScene} />
+            <NavArrow next onClick={navNextScene} />
+          </>
+        )}
+
         <Social />
         <DropBox />
         <CopyBar />
