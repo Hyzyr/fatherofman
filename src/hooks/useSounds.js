@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 
 async function playBackgroundSound(url, loop, start) {
   try {
-    console.log('play url', url);
     // Fetch the audio file
     const response = await fetch(url);
     const arrayBuffer = await response.arrayBuffer();

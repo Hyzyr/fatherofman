@@ -8,7 +8,6 @@ const checkIfChildOfPopup = (targetEl) => {
   document.querySelectorAll('.popup').forEach(function (popup) {
     contains = popup.contains(targetEl) ? true : contains;
   });
-  console.log('is popup child : ', contains);
   return contains;
 };
 
@@ -37,10 +36,8 @@ const useSwipeDetector = ({ onSwipeLeft, onSwipeRight }) => {
       if (touchStartRef && touchEnd) {
         const distance = touchStart - touchEnd;
         if (distance > 50) {
-          console.log('onSwipeRight');
           onSwipeRight();
         } else if (distance < -50) {
-          console.log('onSwipeLeft');
           onSwipeLeft();
         }
       }

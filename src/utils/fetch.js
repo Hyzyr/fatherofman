@@ -15,7 +15,6 @@ export const fetchArchiveImages = (url) => {
 export const loadArchiveImages = async (zip) => {
   const images = [];
   const images64 = [];
-  window.zip = zip;
   zip.forEach((_, file) => {
     if (
       file.name.endsWith('.jpg') ||

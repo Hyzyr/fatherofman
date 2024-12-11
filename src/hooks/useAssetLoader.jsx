@@ -1,3 +1,4 @@
+import { allAssetFiles, assetsNotUsedInMob } from '@/contants/Assets';
 import { checkImagesReadyness, preloadFiles } from '@/utils/fetch';
 import { useEffect, useState } from 'react';
 
@@ -14,12 +15,21 @@ const waitPromise = (wait = 300) =>
     setTimeout(res, wait);
   });
 
-const useAssetLoader = ({ assets }) => {
+const getAssets = () => {
+  if (window.innerWidth < 940)
+    return allAssetFiles.filter(
+      (url) => {assetsNotUsedInMob.indexOf(url) === -1}
+    );
+  return allAssetFiles;
+};
+
+const useAssetLoader = () => {
   const [progress, setProgress] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [attached, setAttached] = useState(false);
 
   useEffect(() => {
+    const assets = getAssets();
     if (!assets || assets.length === 0) {
       setLoaded(true);
       return;

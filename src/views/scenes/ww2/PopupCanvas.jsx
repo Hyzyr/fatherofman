@@ -63,8 +63,6 @@ const PopupCanvas = (
         height: `${imageHeight * scaleFactor}px`,
         dragAxis: imageWidth > imageHeight ? 'x' : 'y',
       });
-      window.img = img;
-      console.log(img);
     });
   }, [image, instaStyle]);
 
