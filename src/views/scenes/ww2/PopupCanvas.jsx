@@ -2,6 +2,12 @@ import { promiseLoadImage } from '@/utils/fetch';
 import React, { useEffect, useRef, useState } from 'react';
 import { Rnd } from 'react-rnd';
 
+function focusInput(input) {
+  input.focus();
+  var length = input.value.length;
+  input.setSelectionRange(length, length);
+}
+
 const PopupCanvas = (
   {
     textColor = '#fff',
@@ -17,6 +23,7 @@ const PopupCanvas = (
   const wrapperRef = useRef();
   const rndRef = useRef(null);
   const spaceRef = useRef(null);
+  const inputRef = useRef(null);
 
   const [imgPosition, setImgPosition] = useState({});
   const [textPosition, setTextPosition] = useState({
@@ -115,10 +122,13 @@ const PopupCanvas = (
             width: textPosition.width,
             height: textPosition.height,
           }}
+          enableUserSelectHack={false}
           position={{ x: textPosition.x, y: textPosition.y }}
-          onDragStop={(e, d) =>
-            setTextPosition((prev) => ({ ...prev, x: d.x, y: d.y }))
-          }
+          onDragStop={(e, d) => {
+            if (textPosition.x !== d.x || textPosition.y !== d.y)
+              setTextPosition((prev) => ({ ...prev, x: d.x, y: d.y }));
+            else focusInput(inputRef.current);
+          }}
           onResizeStop={(e, direction, ref, delta, position) => {
             setTextPosition({
               width: ref.offsetWidth,
@@ -134,10 +144,12 @@ const PopupCanvas = (
             left: true,
           }}>
           <textarea
+            ref={inputRef}
             value={manualText}
             onChange={(e) => setManualText(e.target.value)}
             style={{ color: textColor, fontSize: `${fontSize}px` }}
             placeholder="Enter your text here..."
+            pattern=".*"
           />
         </Rnd>
       </div>

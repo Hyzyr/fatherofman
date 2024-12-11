@@ -686,7 +686,7 @@
       }
     }
     &__canvas {
-      height: 22vh;
+      height: 27vh;
     }
     &__footer {
       .buttonText {
@@ -709,8 +709,30 @@
 }
 @mixin popup620 {
   .popup {
-    &--dynasty & {
+    &--ww2 & {
       &__inner {
+        &-journal {
+          left: 9%;
+          &-column {
+            &:first-child {
+              flex-grow: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+  .popupEditor {
+    height: 100%;
+    justify-content: space-between;
+    gap: 0;
+    &__list {
+      height: 18vh;
+      max-width: 61vw;
+      padding: 0.5em 0;
+      gap: 6px;
+      &-thumb {
+        border-width: 2px;
       }
     }
   }

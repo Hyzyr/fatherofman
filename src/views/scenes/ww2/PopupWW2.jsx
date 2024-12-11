@@ -18,7 +18,7 @@ const PopupWW2 = (props) => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [textColor, setTextColor] = useState('#fff');
   const [manualText, setManualText] = useState(getRandomText());
-  const [fontSize, setFontSize] = useState(18);
+  const [fontSize, setFontSize] = useState(16);
   const isMobile = useMobile();
 
   const exportEl = useRef(null);
