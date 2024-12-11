@@ -17,16 +17,21 @@ const useExportImg = ({ wrapper }) => {
       // Clone the content for export
       const cloneContent = wrapperEl.cloneNode(true);
       const cloneTextarea = cloneContent.querySelector('textarea');
+      const realTextarea = wrapperEl.querySelector('textarea');
+      const cStyle = getComputedStyle(realTextarea);
       const img = cloneContent.querySelector('img');
       img.style.objectFit = 'cover';
 
       if (cloneTextarea) {
         // Replace textarea with div in the clone only
         const divElement = document.createElement('div');
-        divElement.style.cssText = cloneTextarea.style.cssText;
-        divElement.style.display = 'flex';
-        divElement.style.alignItems = 'center';
-        divElement.style.justifyContent = 'center';
+        // divElement.style.cssText = cloneTextarea.style.cssText;
+        divElement.style.font = cStyle.font;
+        divElement.style.textAlign = cStyle.textAlign;
+        divElement.style.color = cStyle.color;
+        divElement.style.display = cStyle.display;
+        divElement.style.alignItems = cStyle.alignItems;
+        divElement.style.justifyContent = cStyle.justifyContent;
         divElement.style.border = '0';
         divElement.innerHTML = cloneTextarea.value.replace(/\n/g, '<br>');
         cloneTextarea.parentNode?.replaceChild(divElement, cloneTextarea);
