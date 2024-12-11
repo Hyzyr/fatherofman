@@ -54,7 +54,7 @@ const Preloader = ({ data }) => {
 
   return (
     <>
-      <div className="preloader__main" ref={ref}>
+      <div className={`preloader__main ${data.id}`} ref={ref}>
         <img
           src={'/images/preloader/' + data.bg}
           className="preloader__main-bg"

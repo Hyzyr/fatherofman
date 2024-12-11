@@ -11,4 +11,5 @@
 }
 @media (max-width: 620px) {
   @include popup620;
+  @include preloader620;
 }

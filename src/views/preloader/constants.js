@@ -1,5 +1,6 @@
 export const PRELOADERS = [
   {
+    id: 'adam',
     bg: 'adam-bg.webp',
     bgpos: 'center',
     bgMove: 2,
@@ -17,6 +18,7 @@ export const PRELOADERS = [
     ],
   },
   {
+    id: 'moses',
     bg: 'moses-bg.webp',
     bgpos: 'bottom',
     bgMove: 2,
@@ -34,6 +36,7 @@ export const PRELOADERS = [
     ],
   },
   {
+    id: 'yunpeng',
     bg: 'china-warlord-2-bg.webp',
     bgpos: 'top',
     bgMove: 2,
@@ -51,6 +54,7 @@ export const PRELOADERS = [
     ],
   },
   {
+    id: 'hitler',
     bg: 'hitler-bg.webp',
     bgpos: 'bottom right',
     bgMove: 2,
@@ -68,6 +72,7 @@ export const PRELOADERS = [
     ],
   },
   {
+    id: 'andrew',
     bg: 'andrew-boxing-bg.webp',
     bgpos: 'bottom',
     bgMove: 2,
@@ -86,6 +91,7 @@ export const PRELOADERS = [
   },
   // 2nd sequence
   {
+    id: 'adam-eve',
     bg: 'adam-and-eve.webp',
     bgpos: 'center',
     bgMove: 2,
@@ -103,6 +109,7 @@ export const PRELOADERS = [
     ],
   },
   {
+    id: 'abraham',
     bg: 'abraham-monke-bg.webp',
     bgpos: 'bottom',
     bgMove: 2,
@@ -120,6 +127,7 @@ export const PRELOADERS = [
     ],
   },
   {
+    id: 'china-warlord3',
     bg: 'china-warlord-3-bg.webp',
     bgpos: 'bottom',
     bgMove: 2,
@@ -137,6 +145,7 @@ export const PRELOADERS = [
     ],
   },
   {
+    id: 'martin-luther',
     bg: 'martin-luther-bg.webp',
     bgpos: 'center',
     bgMove: 2,
@@ -154,6 +163,7 @@ export const PRELOADERS = [
     ],
   },
   {
+    id: 'leonardo',
     bg: 'leonardo-bg.webp',
     bgpos: 'bottom',
     bgMove: 2,

@@ -51,7 +51,6 @@ const PreloaderSlider = () => {
 
   useEffect(() => {
     const checkUpdates = () => {
-      if (window.pausePreloader) return;
       let lastCallTime = timePrev.current;
       const currentTime = new Date().getTime();
       if (
