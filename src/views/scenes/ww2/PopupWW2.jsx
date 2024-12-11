@@ -6,6 +6,7 @@ import PopupCanvas from './PopupCanvas';
 import { getRandomToN } from '@/utils/random';
 import InputRange from '@/components/InputRange';
 import useExportImg from './useExportImg';
+import useMobile from '@/hooks/useMobile';
 
 let getRandomText = () => {
   let index = getRandomToN(randomTextList.length);
@@ -18,6 +19,7 @@ const PopupWW2 = (props) => {
   const [textColor, setTextColor] = useState('#fff');
   const [manualText, setManualText] = useState(getRandomText());
   const [fontSize, setFontSize] = useState(18);
+  const isMobile = useMobile();
 
   const exportEl = useRef(null);
 
@@ -30,10 +32,18 @@ const PopupWW2 = (props) => {
   return (
     <Popup {...props}>
       <div className="popup__inner-bg">
-        <img
-          src="/images/components/ww2/journal-without-textbox.webp"
-          alt="journal"
-        />
+        {!isMobile && (
+          <img
+            src="/images/components/ww2/journal-without-textbox.webp"
+            alt="journal"
+          />
+        )}
+        {isMobile && (
+          <img
+            src="/images/components/ww2/journal-without-textbox-half.webp"
+            alt="journal"
+          />
+        )}
       </div>
       <div className="popup__inner-journal">
         <div className="popup__inner-journal-column">
@@ -84,7 +94,7 @@ const PopupWW2 = (props) => {
         </div>
         <div className="popup__inner-journal-column">
           <div className="popupEditor _nogap">
-            <h3>Memorabilia</h3>
+            {!isMobile && <h3>Memorabilia</h3>}
             <div className="popupEditor__list">
               {memorabiliaImages.map((imgData) => (
                 <div

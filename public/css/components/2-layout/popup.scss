@@ -237,6 +237,16 @@
     .colorPiker {
       margin-left: 1em;
     }
+    &-btn {
+      display: flex;
+      font-size: inherit;
+      width: 2.2em;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
   }
   &__range {
     display: flex;
@@ -628,6 +638,72 @@
           }
         }
       }
+    }
+    &--ww2 & {
+      &__inner {
+        width: 90%;
+        height: 83%;
+        min-height: unset;
+        max-height: 660px;
+        max-width: 430px;
+        padding: 0;
+        top: 52%;
+
+        &-bg {
+          img {
+            transform: scale(1.04, 1.06);
+          }
+        }
+        &-journal {
+          top: 9%;
+          flex-direction: column;
+          gap: 0.5em;
+
+          &-column {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .popupEditor {
+    h3 {
+      font-size: 18px;
+    }
+    &__actions {
+      font-size: 16px;
+      &-btn {
+        font-size: 14px;
+        width: 2em;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+      .colorPiker {
+        font-size: 0.8em;
+      }
+    }
+    &__canvas {
+      height: 22vh;
+    }
+    &__footer {
+      .buttonText {
+        font-size: 16px;
+      }
+    }
+    &__range {
+      order: 1;
+      font-size: 14px;
+      max-width: 240px;
+      margin-top: -0.5em;
+    }
+    &__list {
+      height: 160px;
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
     }
   }
 }
