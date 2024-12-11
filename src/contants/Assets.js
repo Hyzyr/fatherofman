@@ -1,13 +1,13 @@
 export const AllAssetFiles = [
+  '/images/animations/loader-monkey.zip',
   '/images/cursor/cursor-helper/following-cursor-normal.webp',
   '/images/cursor/cursor-helper/following-cursor-clicked-red.png',
-  '/images/animations/loader-monkey.zip',
   '/images/components/textbox-website.webp',
   '/images/components/button-bg.webp',
   '/images/components/click-him.webp',
   '/images/components/confirm-popup.webp',
   '/images/components/confirm-popup-buttons-row.webp',
-  '/images/scenes/egypt/birds.zip',
+  // '/images/scenes/egypt/birds.zip',
   '/images/scenes/egypt/birds-2.zip',
   '/images/scenes/egypt/cactus-front.webp',
   '/images/scenes/egypt/chararacter.zip',
@@ -16,8 +16,8 @@ export const AllAssetFiles = [
   '/images/scenes/egypt/grass.zip',
   '/images/scenes/egypt/sand.webp',
   '/images/scenes/egypt/sphinx2.webp',
-  '/images/scenes/egypt/vawes.zip',
-  '/images/scenes/nyc/walking-people.zip',
+  // '/images/scenes/egypt/vawes.zip',
+  // '/images/scenes/nyc/walking-people.zip',
   '/images/scenes/nyc/building.webp',
   '/images/scenes/nyc/buildings.webp',
   '/images/scenes/nyc/character.zip',
@@ -87,3 +87,7 @@ export const AllAssetFiles = [
   '/images/scenes/scene-3-to-4.webp',
   '/images/scenes/scene-4-to-5.webp',
 ];
+
+const ignoreMob= [
+  
+]

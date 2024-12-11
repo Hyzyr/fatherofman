@@ -13,7 +13,7 @@ import WW2 from '@/views/scenes/ww2/WW2';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
-  const [granted, setGranted] = useState(true);
+  const [granted, setGranted] = useState(false);
   const [ready, setReady] = useState(false);
   const { loaded, attached, progress } = useAssetLoader({
     assets: AllAssetFiles,
