@@ -9,6 +9,7 @@ import {
 } from 'framer-motion';
 
 import gsap from 'gsap';
+import useMobile from '@/hooks/useMobile';
 
 const imgURL = '/images/components/nyc/';
 
@@ -28,6 +29,7 @@ const PopupNYC = ({ close, ...props }) => {
   const backgroundVideoRef = useRef(null);
   const tabletRef = useRef(null);
   const controls = useAnimation();
+  const isMobile = useMobile();
   const y = useMotionValue(0);
   // const { playMusic, pauseMusic } = useMusic();
 
@@ -41,7 +43,8 @@ const PopupNYC = ({ close, ...props }) => {
     setIsPaused(!props.active);
     if (props.active) {
       let height = tabletRef.current.clientHeight;
-      tabletRef.current.style.width = `${height * 0.69}px`;
+      let ratio = isMobile ? 0.49 : 0.69;
+      tabletRef.current.style.width = `${height * ratio}px`;
     }
     const audioBg = getBgMusic();
     if (audioBg)
@@ -136,11 +139,20 @@ const PopupNYC = ({ close, ...props }) => {
   return (
     <Popup {...props} close={onClose}>
       <div className="popupTablet">
-        <img
-          src="/images/components/nyc/ipad_1.webp"
-          alt="ipad_1"
-          ref={tabletRef}
-        />
+        {!isMobile && (
+          <img
+            src="/images/components/nyc/ipad_1.webp"
+            alt="ipad_1"
+            ref={tabletRef}
+          />
+        )}
+        {isMobile && (
+          <img
+            src="/images/components/nyc/iphone.webp"
+            alt="iphone"
+            ref={tabletRef}
+          />
+        )}
         <div className="popupTablet__bg">
           {isLoading && (
             <img

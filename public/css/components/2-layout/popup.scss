@@ -665,6 +665,13 @@
         }
       }
     }
+    &--nyc & {
+      &__inner {
+        top: 55%;
+        width: 90%;
+        height: 95vh;
+      }
+    }
   }
   .popupEditor {
     h3 {
@@ -704,6 +711,25 @@
       width: 100%;
       max-width: 300px;
       margin: 0 auto;
+    }
+  }
+  .popupTablet {
+    overflow: unset;
+    border-radius: 8vh;
+
+    & > img {
+      transform: scale(1.02);
+    }
+    &__top {
+      top: 8%;
+    }
+    &__bg {
+      overflow: hidden;
+      border-radius: inherit;
+    }
+    &__player {
+      overflow: hidden;
+      border-radius: inherit;
     }
   }
 }
