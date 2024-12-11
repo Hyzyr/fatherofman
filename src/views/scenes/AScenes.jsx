@@ -147,7 +147,8 @@ const AScenes = ({ active }) => {
       </div>
       <div className="sceneController" ref={wrapper}>
         <div className="scene__bg">
-          <img src={IMAGES_URL + 'sky.webp'} alt="sky" />
+          {!isMobile && <img src={IMAGES_URL + 'sky.webp'} alt="sky" />}
+          {isMobile && <img src={IMAGES_URL + 'sky-mob.webp'} alt="sky" />}
         </div>
         <div className="sceneController__track">
           <ScenecFg />
