@@ -16,6 +16,7 @@ import CopyBar from './components/CopyBar';
 import MuteButton from './components/MuteButton';
 import SceneWrapper from './SceneWrapper';
 import ScenecFg from './ScenecFg';
+import useSwipeDetector from './useSwipeDetector';
 
 const SCENES = {
   PREHYSTORIC: 'prehystoric',
@@ -43,6 +44,22 @@ const AScenes = ({ active }) => {
       if (state) showAllScenes();
       else hideUnusedScenes();
     },
+  });
+  const navNextScene = () => {
+    if (scrolling || killAnimations.current) return;
+    killAnimations.current = true;
+    let newSceneName = navNext();
+    setActive(newSceneName);
+  };
+  const navPrevScene = () => {
+    if (scrolling || killAnimations.current) return;
+    killAnimations.current = true;
+    let newSceneName = navPrev();
+    setActive(newSceneName);
+  };
+  useSwipeDetector({
+    onSwipeLeft: navPrevScene,
+    onSwipeRight: navNextScene,
   });
   useCameraAnimations({
     animated: !scrolling && active,
@@ -81,18 +98,6 @@ const AScenes = ({ active }) => {
     killAnimations.current = true;
     setActive(sceneName);
     navTo(sceneNamesArr.indexOf(sceneName));
-  };
-  const navNextScene = () => {
-    if (scrolling || killAnimations.current) return;
-    killAnimations.current = true;
-    let newSceneName = navNext();
-    setActive(newSceneName);
-  };
-  const navPrevScene = () => {
-    if (scrolling || killAnimations.current) return;
-    killAnimations.current = true;
-    let newSceneName = navPrev();
-    setActive(newSceneName);
   };
 
   return (
