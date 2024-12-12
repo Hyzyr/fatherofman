@@ -4,7 +4,7 @@ import { createPortal } from 'react-dom';
 const Popup = ({ active, close, addClass, children }) => {
   const [hydrated, setHydrated] = useState(false);
   const closePopup = (event) => {
-    if (event.target === event.currentTarget) close();
+    if (event.target === event.currentTarget && close) close();
   };
   useEffect(() => {
     setHydrated(true);

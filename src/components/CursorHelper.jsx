@@ -14,12 +14,22 @@ const HELPER_TEXTS = [
 
 const CursorHelper = () => {
   const ref = useRef(null);
+  const helperRef = useRef(null);
   useGSAP(
     () => {
+      const imgWrapper = ref.current.querySelector('.cursor__img');
+
       const mousemove = (event) => {
-        gsap.set(ref.current, {
+        gsap.to(helperRef.current, {
           x: event.clientX,
           y: event.clientY,
+          duration: 0.45,
+          ease: 'Power4.out',
+        });
+        gsap.to(ref.current, {
+          x: event.clientX,
+          y: event.clientY,
+          duration: 0.1,
         });
       };
       const updateText = () => {
@@ -27,10 +37,19 @@ const CursorHelper = () => {
           innerText: HELPER_TEXTS[getRandomToN(HELPER_TEXTS.length)],
         });
       };
+      const onClick = () =>
+        imgWrapper?.classList && imgWrapper.classList.add('clicked');
+      const onRelase = () =>
+        imgWrapper?.classList && imgWrapper.classList.remove('clicked');
+
+      document.addEventListener('mousedown', onClick);
+      document.addEventListener('mouseup', onRelase);
       document.addEventListener('mousemove', mousemove);
       const interval = setInterval(updateText, 2200);
       return () => {
         document.removeEventListener('mousemove', mousemove);
+        document.removeEventListener('mousedown', onClick);
+        document.removeEventListener('mouseup', onRelase);
         clearInterval(interval);
       };
     },
@@ -40,17 +59,28 @@ const CursorHelper = () => {
   );
 
   return createPortal(
-    <div className="helper" ref={ref}>
-      <div className="helper-text">My Child</div>
-      <div className="helper-img">
-        <img
-          src="/images/cursor/cursor-helper/following-cursor-normal.png"
-          alt="cursor-helper"
-        />
+    <>
+      <div className="cursor" ref={ref}>
+        <div className="cursor__img">
+          <img src="/images/cursor/select-cursor-new.png" alt="" />
+          <img src="/images/cursor/clicked-cursor-new.png" alt="" />
+        </div>
       </div>
-    </div>,
+      <div className="cursorhelper" ref={helperRef}>
+        <div className="cursorhelper-text">My Child</div>
+        <div className="cursorhelper-img">
+          <img
+            src="/images/cursor/cursor-helper/following-cursor-normal.png"
+            alt="cursor-helper"
+          />
+        </div>
+      </div>
+    </>,
     document.getElementById('popups')
   );
+};
+export const Cursor = () => {
+  return <></>;
 };
 
 export default CursorHelper;
