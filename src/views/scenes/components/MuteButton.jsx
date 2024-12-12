@@ -10,7 +10,7 @@ const MuteButton = ({ active }) => {
 
   useEffect(() => {
     if (active && audio.current && !mute) {
-      audio.current.play();
+    audio.current.play();
       setMute(false);
     }
   }, [active]);
@@ -24,7 +24,7 @@ const MuteButton = ({ active }) => {
       <audio
         src="/sounds/bg-sound.mp3"
         ref={audio}
-        autoPlay={!mute}
+        // autoPlay={!mute}
         loop></audio>
     </div>
   );

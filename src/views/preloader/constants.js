@@ -25,7 +25,7 @@ export const PRELOADERS = [
     items: [
       {
         id: 'moses-transparent',
-        bottom: -2,
+        bottom: -5,
         left: 14.5,
         height: 102,
         img: 'moses-transparent.webp',

@@ -56,7 +56,7 @@ export const promiseLoadImageArr = async (srcList) => {
 export const preloadFiles = async (fileUrls, callback) => {
   let totalFiles = fileUrls.length;
   let percentage = 0;
-  let percentagePerFile = 80 / totalFiles;
+  let percentagePerFile = 100 / totalFiles;
 
   const groupedArray = groupArray(fileUrls, 2);
 
@@ -89,7 +89,7 @@ export const preloadFiles = async (fileUrls, callback) => {
 export const checkImagesReadyness = async (imgs, callback) => {
   let totalFiles = imgs.length;
   let percentage = 0;
-  let percentagePerFile = 20 / totalFiles;
+  let percentagePerFile = 100 / totalFiles;
 
   const updatePercentage = () => {
     percentage += percentagePerFile;
