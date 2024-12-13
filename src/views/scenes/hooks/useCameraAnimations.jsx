@@ -51,18 +51,18 @@ const useCameraAnimations = ({
           duration: 5,
           delay: 0.1,
         });
-        gsap.to(main, {
-          xPercent: -percentageX * -direction * (moveFactorMain / 100 / 2),
-          yPercent: -percentageY * -direction * (moveFactorMain / 100 / 2),
-          ease: 'power1.in',
-          duration: 7,
-        });
-        gsap.to(front, {
-          xPercent: -percentageX * direction * (moveFactor / 100 / 2),
-          yPercent: -percentageY * direction * (moveFactor / 100 / 2),
-          ease: 'power4.out',
-          duration: 3,
-        });
+        // gsap.to(main, {
+        //   xPercent: -percentageX * -direction * (moveFactorMain / 100 / 2),
+        //   yPercent: -percentageY * -direction * (moveFactorMain / 100 / 2),
+        //   ease: 'power1.in',
+        //   duration: 7,
+        // });
+        // gsap.to(front, {
+        //   xPercent: -percentageX * direction * (moveFactor / 100 / 2),
+        //   yPercent: -percentageY * direction * (moveFactor / 100 / 2),
+        //   ease: 'power4.out',
+        //   duration: 3,
+        // });
       };
 
       document.addEventListener('mousemove', debouncedMouseMove);
