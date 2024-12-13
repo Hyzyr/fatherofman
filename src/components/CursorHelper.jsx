@@ -33,7 +33,7 @@ const CursorHelper = () => {
         });
       };
       const updateText = () => {
-        gsap.set('.helper-text', {
+        gsap.set('.cursorhelper-text', {
           innerText: HELPER_TEXTS[getRandomToN(HELPER_TEXTS.length)],
         });
       };
