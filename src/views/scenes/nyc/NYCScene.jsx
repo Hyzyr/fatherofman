@@ -106,14 +106,6 @@ const NYCScene = ({ animated = true, onCharClick }) => {
               addClass="taxi"
               delay={2.5}
               fill
-            />{' '}
-            <SceneItem
-              url={IMAGES_URL + 'people.zip'}
-              animate={animated}
-              addClass="people"
-              delay={1}
-              controlHeight
-              // speed={0.1}
             />
           </>
         )}
@@ -147,13 +139,23 @@ const NYCScene = ({ animated = true, onCharClick }) => {
         <SceneItem url={IMAGES_URL + 'ground.webp'} addClass="ground" fill />
 
         {!isMobile && (
-          <SceneItem
-            url={IMAGES_URL + 'officer.zip'}
-            animate={animated}
-            addClass="officer"
-            controlHeight
-            delay={1}
-          />
+          <>
+            <SceneItem
+              url={IMAGES_URL + 'officer.zip'}
+              animate={animated}
+              addClass="officer"
+              controlHeight
+              delay={1}
+            />
+            <SceneItem
+              url={IMAGES_URL + 'people.zip'}
+              animate={animated}
+              addClass="people"
+              delay={1}
+              controlHeight
+              // speed={0.1}
+            />
+          </>
         )}
         <SceneItem
           url={IMAGES_URL + 'character.zip'}
