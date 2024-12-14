@@ -17,9 +17,9 @@ const waitPromise = (wait = 300) =>
 
 const getAssets = () => {
   if (window.innerWidth < 940)
-    return allAssetFiles.filter((url) => {
-      assetsNotUsedInMob.indexOf(url) === -1;
-    });
+    return allAssetFiles.filter(
+      (url) => assetsNotUsedInMob.indexOf(url) === -1
+    );
   return allAssetFiles;
 };
 
@@ -30,6 +30,7 @@ const useAssetLoader = () => {
 
   useEffect(() => {
     const assets = getAssets();
+    console.log({ assets });
     if (!assets || assets.length === 0) {
       setLoaded(true);
       return;
