@@ -1,90 +1,24 @@
 'use client';
-import React, { useRef } from 'react';
+import React, { useMemo } from 'react';
 import Scene from '../components/Scene';
-import SceneItem from '../components/SceneItem';
+import FrameScene from '../components/FrameScene';
 import useMobile from '@/hooks/useMobile';
-
-const IMAGES_URL = '/images/scenes/ww2/';
+import { getWW2Layers } from './layers';
 
 const WW2Scene = ({ animated = true, onCharClick }) => {
   const isMobile = useMobile();
+  const layers = useMemo(
+    () => getWW2Layers({ animated, onCharClick, isMobile }),
+    [animated, isMobile, onCharClick]
+  );
 
   return (
     <Scene name="ww2">
       <div className="scene__back"></div>
       <div className="scene__main">
-        <SceneItem url={IMAGES_URL + 'bg-2.webp'} addClass="mountain" fill />
-        <SceneItem
-          url={IMAGES_URL + 'forest-dust.zip'}
-          addClass="forest"
-          animate={animated}
-        />
+        <FrameScene layers={layers} animated={animated} />
       </div>
-      <div className="scene__front">
-        <SceneItem url={IMAGES_URL + 'bg.webp'} addClass="city" fill />
-        {!isMobile && (
-          <>
-            <SceneItem
-              url={IMAGES_URL + 'fire.zip'}
-              addClass="fire"
-              animate={animated}
-              fill
-            />
-            <SceneItem
-              url={IMAGES_URL + 'smoke-l.zip'}
-              addClass="smokeL"
-              animate={animated}
-              fill
-            />
-            <SceneItem
-              url={IMAGES_URL + 'smoke-r.zip'}
-              addClass="smokeR"
-              animate={animated}
-              fill
-            />
-            <SceneItem url={IMAGES_URL + 'stone.webp'} addClass="stone" />
-            <SceneItem
-              url={IMAGES_URL + 'soldier.zip'}
-              addClass="soldier"
-              speed={0.1}
-              animate={animated}
-            />
-          </>
-        )}
-        <SceneItem
-          url={IMAGES_URL + 'bullets.zip'}
-          addClass="bullets"
-          animate={animated}
-          fill
-        />
-        <SceneItem
-          url={IMAGES_URL + 'soldiers.zip'}
-          addClass="soldiers"
-          animate={animated}
-          fill
-        />
-
-        <SceneItem
-          url={IMAGES_URL + 'character.zip'}
-          addClass="character"
-          clickable
-          controlHeight
-          onClick={onCharClick}
-          animate={animated}
-        />
-        <SceneItem
-          url={IMAGES_URL + 'dust.zip'}
-          addClass="dust"
-          speed={0.1}
-          animate={animated}
-        />
-        <SceneItem
-          url={IMAGES_URL + 'sparks.zip'}
-          addClass="sparks"
-          speed={0.1}
-          animate={animated}
-        />
-      </div>
+      <div className="scene__front"></div>
     </Scene>
   );
 };

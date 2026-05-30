@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
-const Popup = ({ active, close, addClass, children }) => {
+const Popup = ({ active = '', close, addClass, children }) => {
   const [hydrated, setHydrated] = useState(false);
   const closePopup = (event) => {
     if (event.target === event.currentTarget && close) close();

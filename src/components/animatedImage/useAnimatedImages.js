@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { fetchArchiveImages, loadArchiveImages } from '@/utils/fetch';
+import { useEffect, useState } from 'react';
+import { fetchArchiveImages, loadArchiveImageUrls } from '@/utils/fetch';
 
 const useAnimatedImages = ({ url }) => {
   const [images, setImages] = useState(null);
@@ -9,16 +9,26 @@ const useAnimatedImages = ({ url }) => {
   };
 
   useEffect(() => {
+    if (!url) return;
+
+    let active = true;
+    setImages(null);
+
     fetchArchiveImages(url)
-      .then((zip) => loadArchiveImages(zip))
-      .then((images) => updateImages(images))
+      .then((zip) => loadArchiveImageUrls(zip))
+      .then((images) => {
+        if (active) updateImages(images);
+      })
       .catch((err) => {
+        if (!active) return;
         console.log('ERROR fetching : ', url);
         console.log(err.message);
       });
 
-    return () => {};
-  }, []);
+    return () => {
+      active = false;
+    };
+  }, [url]);
 
   return { images };
 };

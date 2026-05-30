@@ -33,6 +33,8 @@ const SceneItem = ({
           speed={speed}
           delay={delay}
           animate={animate}
+          layout={fill ? 'fill' : controlHeight ? 'height' : 'width'}
+          objectFit={fill ? 'fill' : 'contain'}
         />
       )}
       {clickable && (

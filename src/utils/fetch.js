@@ -13,11 +13,17 @@ export const fetchArchiveImages = (url) => {
 };
 
 export const loadArchiveImages = async (zip) => {
+  const imageUrls = await loadArchiveImageUrls(zip);
+  return promiseLoadImageArr(imageUrls);
+};
+
+export const loadArchiveImageUrls = async (zip) => {
   const images = [];
-  const images64 = [];
+  const imageUrls = [];
   zip.forEach((_, file) => {
     if (
       file.name.endsWith('.jpg') ||
+      file.name.endsWith('.jpeg') ||
       file.name.endsWith('.png') ||
       file.name.endsWith('.webp')
     )
@@ -29,10 +35,16 @@ export const loadArchiveImages = async (zip) => {
     const image = images[index];
 
     const data64 = await zip.file(image).async('base64');
-    const img = await promiseLoadImage('data:image/jpeg;base64,' + data64);
-    images64[index] = img;
+    imageUrls[index] = `data:${getImageMimeType(image)};base64,${data64}`;
   }
-  return images64;
+
+  return imageUrls;
+};
+
+const getImageMimeType = (image) => {
+  if (image.endsWith('.png')) return 'image/png';
+  if (image.endsWith('.webp')) return 'image/webp';
+  return 'image/jpeg';
 };
 
 export const promiseLoadImage = (src) => {
@@ -41,6 +53,9 @@ export const promiseLoadImage = (src) => {
     img.src = src;
     img.onload = () => {
       resolve(img);
+    };
+    img.onerror = () => {
+      reject(new Error(`Failed to load image: ${src}`));
     };
   });
 };
@@ -88,6 +103,10 @@ export const preloadFiles = async (fileUrls, callback) => {
 };
 export const checkImagesReadyness = async (imgs, callback) => {
   let totalFiles = imgs.length;
+  if (totalFiles === 0) {
+    callback(100);
+    return;
+  }
   let percentage = 0;
   let percentagePerFile = 100 / totalFiles;
 
@@ -108,12 +127,17 @@ const promiseCheckImageReadyness = (img, callback) =>
       callback();
       resolve();
     } else {
+      const cleanup = () => {
+        img.removeEventListener('load', listener);
+        img.removeEventListener('error', listener);
+      };
       const listener = () => {
         callback();
         resolve();
-        img.removeEventListener('load', listener);
+        cleanup();
       };
       img.addEventListener('load', listener);
+      img.addEventListener('error', listener);
     }
   });
 
