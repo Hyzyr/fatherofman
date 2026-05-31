@@ -4,8 +4,8 @@ import gsap from 'gsap';
 import { calcMouseFromCenter } from '@/utils/calcEvent';
 import useMobile from '@/hooks/useMobile';
 
-const bgMove = 10;
-const moveFactorMain = 2;
+const bgMove = 6;
+const moveFactorMain = 1.6;
 const moveFactor = 0.7;
 const direction = 1;
 
