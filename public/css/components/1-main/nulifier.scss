@@ -104,5 +104,5 @@ svg {
 .optimize {
   transform: translateZ(0);
   backface-visibility: hidden;
-  will-change: auto;
+  will-change: transform;
 }

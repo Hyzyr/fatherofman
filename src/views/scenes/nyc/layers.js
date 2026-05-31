@@ -1,6 +1,11 @@
 const IMAGES_URL = '/images/scenes/nyc/';
 
-export const getNYCLayers = ({ animated = true, onCharClick, isMobile = false, includeAllAssets = false } = {}) => {
+export const getNYCLayers = ({
+  animated = true,
+  onCharClick,
+  isMobile = false,
+  includeAllAssets = false,
+} = {}) => {
   const showDesktopLayers = includeAllAssets || !isMobile;
 
   return [
@@ -11,7 +16,13 @@ export const getNYCLayers = ({ animated = true, onCharClick, isMobile = false, i
       variants: [
         {
           maxWidth: 1160,
-          bounds: { left: 0.5, height: 1, minWidthPx: 1140, translateX: -0.46, translateY: -0.07 },
+          bounds: {
+            left: 0.5,
+            height: 1,
+            minWidthPx: 1140,
+            translateX: -0.46,
+            translateY: -0.07,
+          },
         },
       ],
       fit: 'fill',
@@ -24,7 +35,15 @@ export const getNYCLayers = ({ animated = true, onCharClick, isMobile = false, i
       visible: showDesktopLayers,
       delay: 1,
       speed: 0.1,
-      bounds: { top: 0.001, left: -0.02, width: 0.17, height: 0.317, skewX: -2, skewY: 35 },
+      bounds: {
+        top: -0.11,
+        left: -0.022,
+        width: 0.17,
+        height: 0.317,
+        skewX: -1,
+        skewY: 28,
+      },
+      zIndex: -1,
       fit: 'fill',
     },
     {
@@ -35,7 +54,15 @@ export const getNYCLayers = ({ animated = true, onCharClick, isMobile = false, i
       visible: showDesktopLayers,
       delay: 1,
       speed: 0.1,
-      bounds: { top: 0.38, left: 0.208, width: 0.044, height: 0.307, skewX: -1, skewY: 17 },
+      bounds: {
+        top: 0.34,
+        left: 0.208,
+        width: 0.044,
+        height: 0.32,
+        skewX: -1.2,
+        skewY: 22,
+      },
+      zIndex: -1,
       fit: 'fill',
     },
     {
@@ -46,7 +73,14 @@ export const getNYCLayers = ({ animated = true, onCharClick, isMobile = false, i
       visible: showDesktopLayers,
       delay: 1,
       speed: 0.1,
-      bounds: { top: 0.543, left: 0.294, width: 0.057, height: 0.202, skewY: 30 },
+      bounds: {
+        top: 0.5,
+        left: 0.294,
+        width: 0.057,
+        height: 0.202,
+        skewY: 31,
+      },
+      zIndex: -1,
       fit: 'fill',
     },
     {
@@ -58,6 +92,7 @@ export const getNYCLayers = ({ animated = true, onCharClick, isMobile = false, i
       delay: 1,
       speed: 0.1,
       bounds: { top: 0.471, left: 0.375, width: 0.04, height: 0.077 },
+      zIndex: -1,
       fit: 'fill',
     },
     {
@@ -68,19 +103,16 @@ export const getNYCLayers = ({ animated = true, onCharClick, isMobile = false, i
       visible: showDesktopLayers,
       delay: 1,
       speed: 0.1,
-      bounds: { top: 0.133, right: 0.319, width: 0.05, height: 0.137, skewX: 1, skewY: -8 },
+      bounds: {
+        top: 0.133,
+        right: 0.319,
+        width: 0.05,
+        height: 0.137,
+        skewX: 1,
+        skewY: -8,
+      },
+      zIndex: -1,
       fit: 'fill',
-    },
-    {
-      id: 'vid-right2',
-      parentId: 'buildings',
-      url: IMAGES_URL + 'vid-not-a-movie.zip',
-      animate: animated,
-      visible: showDesktopLayers,
-      delay: 1,
-      speed: 0.1,
-      bounds: { top: 0.529, right: 0.2355, width: 0.082, height: 0.153, skewX: 34.8, skewY: -61, rotate: 36 },
-      fit: 'cover',
     },
     {
       id: 'vid-right3',
@@ -90,7 +122,15 @@ export const getNYCLayers = ({ animated = true, onCharClick, isMobile = false, i
       visible: showDesktopLayers,
       delay: 1,
       speed: 0.1,
-      bounds: { top: 0.46, right: 0.169, width: 0.094, height: 0.272, skewY: 6.8 },
+      bounds: {
+        top: 0.44,
+        right: 0.2,
+        width: 0.065,
+        height: 0.30,
+        skewX: 1,
+        skewY: 2,
+      },
+      zIndex: -1,
       fit: 'cover',
     },
     {
@@ -101,7 +141,8 @@ export const getNYCLayers = ({ animated = true, onCharClick, isMobile = false, i
       visible: showDesktopLayers,
       delay: 1,
       speed: 0.1,
-      bounds: { top: -0.12, right: 0, width: 0.23, height: 0.367, skewY: -31 },
+      bounds: { top: 0, right: 0, width: 0.23, height: 0.4, skewY: -31 },
+      zIndex: -1,
       fit: 'fill',
     },
     {
@@ -141,6 +182,7 @@ export const getNYCLayers = ({ animated = true, onCharClick, isMobile = false, i
       speed: 0.1,
       bounds: { top: 0.191, left: 0.227, width: 0.57, height: 0.377 },
       fit: 'fill',
+      zIndex: -1,
     },
     {
       id: 'vid-mid2',
@@ -151,7 +193,9 @@ export const getNYCLayers = ({ animated = true, onCharClick, isMobile = false, i
       speed: 0.1,
       bounds: { top: 0.573, left: 0.21, width: 0.59, height: 0.107 },
       fit: 'fill',
+      zIndex: -1,
     },
+
     {
       id: 'vid-mid3',
       parentId: 'building',
@@ -161,6 +205,7 @@ export const getNYCLayers = ({ animated = true, onCharClick, isMobile = false, i
       speed: 0.1,
       bounds: { top: 0.061, left: 0.27, width: 0.489, height: 0.111 },
       fit: 'fill',
+      zIndex: -1,
     },
     {
       id: 'ground',
@@ -223,13 +268,6 @@ export const getNYCLayers = ({ animated = true, onCharClick, isMobile = false, i
       fit: 'contain',
     },
     // {
-    //   id: 'foreground',
-    //   url: IMAGES_URL + 'foreground.webp',
-    //   visible: showDesktopLayers,
-    //   bounds: { left: -0.05, bottom: -0.025, width: 1.05, height: 1.05 },
-    //   fit: 'fill',
-    // },
-    // {
     //   id: 'walking-people',
     //   url: IMAGES_URL + 'walking-people.zip',
     //   animate: animated,
@@ -237,5 +275,13 @@ export const getNYCLayers = ({ animated = true, onCharClick, isMobile = false, i
     //   bounds: { left: -0.05, bottom: -0.025, width: 1.05, height: 0.9 },
     //   fit: 'fill',
     // },
+    // dont add this no need this element
+    {
+      id: 'foreground',
+      url: IMAGES_URL + 'foreground.webp',
+      visible: showDesktopLayers,
+      bounds: { left: -0.05, bottom: -0.025, width: 1.05, height: 1.05 },
+      fit: 'fill',
+    },
   ];
 };
