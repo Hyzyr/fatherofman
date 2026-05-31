@@ -1,6 +1,4 @@
 import { allAssetFiles, assetsNotUsedInMob } from '@/contants/Assets';
-import { preloadFrameSceneLayers } from '@/views/scenes/components/frameSceneLoader';
-import { getAllSceneLayers } from '@/views/scenes/layers';
 import { checkImagesReadyness, preloadFiles } from '@/utils/fetch';
 import { useEffect, useState } from 'react';
 
@@ -79,13 +77,6 @@ const getAssets = () => {
   return allAssetFiles;
 };
 
-const getFrameSceneLayers = () =>
-  getAllSceneLayers({
-    animated: false,
-    isMobile: window.innerWidth < 940,
-    includeAllAssets: true,
-  });
-
 const useAssetLoader = () => {
   const [progress, setProgress] = useState(0);
   const [loaded, setLoaded] = useState(false);
@@ -99,13 +90,8 @@ const useAssetLoader = () => {
       return;
     }
     preloadFiles(assets, (percentage) => {
-      setProgress(Math.floor(percentage * 0.75));
+      setProgress(percentage);
     })
-      .then(() =>
-        preloadFrameSceneLayers(getFrameSceneLayers(), (percentage) => {
-          setProgress(75 + Math.floor(percentage * 0.25));
-        })
-      )
       .then(() => {
         setLoaded(true);
         setProgress(0);

@@ -3,7 +3,7 @@ import React from 'react';
 
 const Scene = ({ name = '', forwardRef, children, ...props }) => {
   return (
-    <div className={`scene ${name}`} ref={forwardRef} {...props}>
+    <div className={`scene optimize ${name}`} ref={forwardRef} {...props}>
       {children}
     </div>
   );

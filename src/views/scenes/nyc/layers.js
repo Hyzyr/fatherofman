@@ -222,20 +222,20 @@ export const getNYCLayers = ({ animated = true, onCharClick, isMobile = false, i
       bounds: { left: 0.209, bottom: 0.172, height: 0.206 },
       fit: 'contain',
     },
-    {
-      id: 'foreground',
-      url: IMAGES_URL + 'foreground.webp',
-      visible: showDesktopLayers,
-      bounds: { left: -0.05, bottom: -0.025, width: 1.05, height: 1.05 },
-      fit: 'fill',
-    },
-    {
-      id: 'walking-people',
-      url: IMAGES_URL + 'walking-people.zip',
-      animate: animated,
-      visible: showDesktopLayers,
-      bounds: { left: -0.05, bottom: -0.025, width: 1.05, height: 0.9 },
-      fit: 'fill',
-    },
+    // {
+    //   id: 'foreground',
+    //   url: IMAGES_URL + 'foreground.webp',
+    //   visible: showDesktopLayers,
+    //   bounds: { left: -0.05, bottom: -0.025, width: 1.05, height: 1.05 },
+    //   fit: 'fill',
+    // },
+    // {
+    //   id: 'walking-people',
+    //   url: IMAGES_URL + 'walking-people.zip',
+    //   animate: animated,
+    //   visible: showDesktopLayers,
+    //   bounds: { left: -0.05, bottom: -0.025, width: 1.05, height: 0.9 },
+    //   fit: 'fill',
+    // },
   ];
 };

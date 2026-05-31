@@ -100,3 +100,9 @@ svg {
   -webkit-appearance: none;
   box-shadow: 0;
 }
+
+.optimize {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: auto;
+}

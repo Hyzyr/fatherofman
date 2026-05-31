@@ -1,7 +1,7 @@
 'use client';
 import {
-  FrameStage,
-  useFrameStageControls,
+  FrameloomScene,
+  useFrameloomSceneControls,
 } from 'frameloom/react';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { loadFrameLayer } from './frameSceneLoader';
@@ -45,6 +45,10 @@ const renderFrame = ({ context, frame, width, height, fit = 'contain' }) => {
   if (rect.width > 0 && rect.height > 0) {
     context.drawImage(image, rect.x, rect.y, rect.width, rect.height);
   }
+};
+
+const releaseLayers = (layers) => {
+  layers.forEach((layer) => layer.release?.());
 };
 
 const dispatchCharClick = () => {
@@ -186,10 +190,12 @@ const useStageSize = () => {
 };
 
 const FrameScene = ({ layers = [], animated = true, className = '' }) => {
-  const stage = useFrameStageControls();
+  const scene = useFrameloomSceneControls();
   const { ref, stageSize } = useStageSize();
   const timers = useRef([]);
   const frameIndexes = useRef(new Map());
+  const visibleLayersRef = useRef([]);
+  const loadedLayersRef = useRef([]);
   const [loadedLayers, setLoadedLayers] = useState([]);
   const [sceneLoadComplete, setSceneLoadComplete] = useState(false);
   const visibleLayers = useMemo(
@@ -200,15 +206,19 @@ const FrameScene = ({ layers = [], animated = true, className = '' }) => {
     () => visibleLayers.map((layer) => `${layer.id}:${layer.url}`).join('|'),
     [visibleLayers]
   );
+  visibleLayersRef.current = visibleLayers;
 
   useEffect(() => {
     let active = true;
+    const layersToLoad = visibleLayersRef.current;
+    releaseLayers(loadedLayersRef.current);
+    loadedLayersRef.current = [];
     setLoadedLayers([]);
     setSceneLoadComplete(false);
     frameIndexes.current.clear();
 
     Promise.all(
-      visibleLayers.map((layer) =>
+      layersToLoad.map((layer) =>
         loadFrameLayer(layer).catch((err) => {
           console.log('ERROR loading frame scene layer asset : ', layer.id);
           console.log(err.message);
@@ -217,25 +227,45 @@ const FrameScene = ({ layers = [], animated = true, className = '' }) => {
       )
     )
       .then((nextLayers) => {
-        if (!active) return;
-        setLoadedLayers(nextLayers.filter(Boolean));
+        const nextLoadedLayers = nextLayers.filter(Boolean);
+
+        if (!active) {
+          releaseLayers(nextLoadedLayers);
+          return;
+        }
+
+        loadedLayersRef.current = nextLoadedLayers;
+        setLoadedLayers(nextLoadedLayers);
         setSceneLoadComplete(true);
       });
 
     return () => {
       active = false;
+      releaseLayers(loadedLayersRef.current);
+      loadedLayersRef.current = [];
     };
-  }, [visibleLayers]);
+  }, [layerKey]);
 
   const resolvedLayers = useMemo(() => {
     const rects = new Map();
+    const currentLayersById = new Map(
+      visibleLayers.map((layer) => [layer.id, layer])
+    );
 
     return loadedLayers.map((layer, index) => {
-      const parentRect = layer.parentId
-        ? rects.get(layer.parentId) || ROOT_RECT
+      const currentLayer = currentLayersById.get(layer.id) || layer;
+      const mergedLayer = {
+        ...currentLayer,
+        frames: layer.frames,
+        frameUrls: layer.frameUrls,
+        imageAspect: layer.imageAspect,
+        release: layer.release,
+      };
+      const parentRect = mergedLayer.parentId
+        ? rects.get(mergedLayer.parentId) || ROOT_RECT
         : ROOT_RECT;
       const { placement, rect } = resolveLayerPlacement({
-        layer: { ...layer, zIndex: layer.zIndex ?? index },
+        layer: { ...mergedLayer, zIndex: mergedLayer.zIndex ?? index },
         parentRect,
         stageSize,
       });
@@ -243,13 +273,16 @@ const FrameScene = ({ layers = [], animated = true, className = '' }) => {
       rects.set(layer.id, rect);
 
       return {
-        ...layer,
+        ...mergedLayer,
         placement,
         rect,
-        zIndex: layer.zIndex ?? index,
+        zIndex: mergedLayer.zIndex ?? index,
       };
     });
-  }, [loadedLayers, stageSize]);
+  }, [loadedLayers, stageSize, visibleLayers]);
+
+  const isReady =
+    visibleLayers.length === 0 || sceneLoadComplete;
 
   const stageLayers = useMemo(
     () =>
@@ -271,13 +304,11 @@ const FrameScene = ({ layers = [], animated = true, className = '' }) => {
       })),
     [resolvedLayers]
   );
-  const isReady =
-    visibleLayers.length === 0 || sceneLoadComplete;
 
   useEffect(() => {
-    if (stageLayers.length === 0) return;
-    stage.render();
-  }, [isReady, stage, stageLayers.length, stageSize]);
+    if (!isReady || stageLayers.length === 0) return;
+    scene.render();
+  }, [isReady, scene, stageLayers, stageSize]);
 
   useEffect(() => {
     timers.current.forEach((timer) => clearTimeout(timer));
@@ -294,7 +325,7 @@ const FrameScene = ({ layers = [], animated = true, className = '' }) => {
 
       const showFrame = () => {
         frameIndexes.current.set(layer.id, frame);
-        stage.render();
+        scene.render();
 
         if (!shouldAnimate || frameCount <= 1) return;
 
@@ -312,7 +343,7 @@ const FrameScene = ({ layers = [], animated = true, className = '' }) => {
       timers.current.forEach((timer) => clearTimeout(timer));
       timers.current = [];
     };
-  }, [animated, isReady, layerKey, resolvedLayers, stage]);
+  }, [animated, isReady, layerKey, resolvedLayers, scene]);
 
   const hitboxes = resolvedLayers.filter((layer) => layer.clickable);
 
@@ -329,16 +360,13 @@ const FrameScene = ({ layers = [], animated = true, className = '' }) => {
         height: '100%',
         pointerEvents: 'none',
       }}>
-      {stageLayers.length > 0 && (
-        <FrameStage
-          ref={stage.ref}
+      {resolvedLayers.length > 0 && (
+        <FrameloomScene
+          ref={scene.ref}
           layers={stageLayers}
           decorative
           fallback="Layered animated scene"
           style={{ width: '100%', height: '100%' }}
-          onLoadComplete={() => {
-            stage.render();
-          }}
           onLoadError={(err, layerId) => {
             console.log('ERROR rendering frame scene layer : ', layerId);
             console.log(err.message);
